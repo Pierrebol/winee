@@ -1,0 +1,34 @@
+.search_bar input[type=text]{
+    height: 7vh;
+    width: 100vh;
+    border-radius: 5px;
+    border: solid thin lightgrey;
+    padding: 5px 10px;
+}
+
+input {
+    font-family: 'Indie Flower', cursive;
+}
+.search_bar{
+    float:center;
+    margin:7px;
+    display: flex;
+    justify-content: center;
+}
+
+.search_bar button{
+    height: 7vh;
+    background-color: #964242;
+    color: #f2f2f2;
+    float: right;
+    padding: 5px 10px;
+    margin-left: 16px;
+    border: solid thin #964242;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+.search_bar button:hover {
+    opacity: 0.6;
+}
