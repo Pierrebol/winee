@@ -8,9 +8,13 @@
 require "open-uri"
 
 puts "Cleaning database..."
+Designation.destroy_all
 Wine.destroy_all
 User.destroy_all
 Winebox.destroy_all
+
+puts "Creating a designation..."
+designation_1 = Designation.create!(description: 'Le saint-estèphe, ou appellation saint-estèphe contrôlée, est un vin rouge français d appellation d origine contrôlée produit sur la commune de Saint-Estèphe dans le Médoc, une des subdivisions du vignoble de Bordeaux.', region: 'Bordeaux')
 
 puts "Creating Users..."
 user1 = User.create!(email: "bollack@edhec.com", password: "azerty")
@@ -18,14 +22,14 @@ user2 = User.create(email: "gasp@edhec.com", password: "azerty")
 user3 = User.create!(email: "dubet@edhec.com", password: "azerty")
 user4 = User.create!(email: "dez@edhec.com", password: "azerty")
 
-puts "Creating Wines (can take some time please wait and dance) ^^..."
+puts "Creating Wines (can take some time please wait and dance) ^^... AAAANNNNNNDYYYYYYYYY"
 wine_1 = Wine.new(name: 'Les sables fauves',
                   grape_variety: 'Sauvignon, colombard, chardonnay et gros manseng',
                   vineyard: 'Domaine de Laballe',
                   description: 'Des parfums exotiques du nez à la bouche !',
                   category: 'Blanc',
                   price: 7.70,
-                  designation_id: 1,
+                  designation: designation_1,
                   country: 'France',
                   year: '2020',
                   )
@@ -40,7 +44,7 @@ wine_2 = Wine.new(name: 'Batti Batti',
                   description: 'Le rosé qui fait battre notre cœur et nos papilles !',
                   category: 'Rosé',
                   price: 9.50,
-                  designation_id: 1,
+                  designation: designation_1,
                   country: 'France',
                   year: '2020'
                   )
@@ -56,7 +60,7 @@ wine_3 = Wine.new(name: 'Syrah',
                   description: 'La syrah se plie aux charmes maritimes de la Sicile !',
                   category: 'Rouge',
                   price: 9.90,
-                  designation_id: 1,
+                  designation: designation_1,
                   country: 'Italie',
                   year: '2019'
                   )
@@ -71,7 +75,7 @@ wine_4 = Wine.new(name: 'Rosso Fuoco',
                   description: 'Tout est bon dans le Piémont ',
                   category: 'Rouge',
                   price: 12.90,
-                  designation_id: 1,
+                  designation: designation_1,
                   country: 'Italie',
                   year: '2019'
                   )
@@ -87,7 +91,7 @@ wine_5 = Wine.new(name: 'Saint-Joseph',
                   description: 'Un incontournable dans le Rhône !',
                   category: 'Rouge',
                   price: 24.50,
-                  designation_id: 1,
+                  designation: designation_1,
                   country: 'France',
                   year: '2019'
                   )
@@ -103,7 +107,7 @@ wine_6 = Wine.new(name: 'Grand Vernet',
                   description: 'Une partition de cépages sur un air parfumé !',
                   category: 'Rouge',
                   price: 10.50,
-                  designation_id: 1,
+                  designation: designation_1,
                   country: 'France',
                   year: '2020'
                   )
@@ -118,7 +122,7 @@ wine_7 = Wine.new(name: 'El picaro',
                   description: 'Charnu, généreux et ensoleillé, un vin typique d Espagne !',
                   category: 'Rouge',
                   price: 9.50,
-                  designation_id: 1,
+                  designation: designation_1,
                   country: 'Espagne',
                   year: '2020'
                   )
@@ -134,7 +138,7 @@ wine_8 = Wine.new(name: 'Brastis pastis breton',
                   description: 'Avec sa bouteille en forme de phare, ce pastis breton fera sensation auprès de vos convives lors de vos apéros, vos barbecues d été et vos parties de pétanque !',
                   category: 'Spiritueux',
                   price: 32.90,
-                  designation_id: 1,
+                  designation: designation_1,
                   country: 'Bretagne',
                   year: '2020'
                   )
@@ -150,7 +154,7 @@ wine_9 = Wine.new(name: 'Rhum Clément - Vieux VO',
                   description: 'Bien équilibré',
                   category: 'Spiritueux',
                   price: 34,
-                  designation_id: 1,
+                  designation: designation_1,
                   country: 'Martinique',
                   year: '2020'
                   )
@@ -165,7 +169,7 @@ wine_10 = Wine.new(name: 'Gin Citadelle',
                    description: 'Une merveille qui va même sans son tonic !',
                    category: 'Spiritueux',
                    price: 31,
-                   designation_id: 1,
+                   designation: designation_1,
                    country: 'France',
                    year: '2020'
                   )
@@ -174,7 +178,7 @@ wine_10.photo.attach(io: file_10, filename: 'citadelle.jpg', content_type: 'imag
 wine_10.save
 
 
-puts "Creating cellars, should take less time, please be patient ^^"
+puts "Creating wineboxes, should take less time, please be patient ^^"
 Winebox.create!(user: user1, wine: wine_2, quantity_of_wine: 10)
 Winebox.create!(user: user1, wine: wine_4, quantity_of_wine: 20)
 Winebox.create!(user: user1, wine: wine_6, quantity_of_wine: 30)
