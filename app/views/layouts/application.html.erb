@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Winee</title>
+    <title>Winee | votre cave à vin digitale</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="description" content="Gérer votre cave de manière ludique grâce à Winee. Stockez votre vin en tout sécurité et faites vous livrer en 15min !">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -17,4 +18,8 @@
 
     <%= yield %>
   </body>
+
+  <footer>
+    <%= render 'shared/footer' %>
+  </footer>
 </html>
