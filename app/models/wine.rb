@@ -3,7 +3,7 @@ class Wine < ApplicationRecord
   has_one_attached :photo
   has_many :order_wines
   has_many :delivery_products
-  has_many :cellars
+  has_many :wineboxes
   has_many :reviews
 
   validates :name, presence: true

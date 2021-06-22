@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_22_102356) do
+ActiveRecord::Schema.define(version: 2021_06_22_132508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,16 +34,6 @@ ActiveRecord::Schema.define(version: 2021_06_22_102356) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
-  end
-
-  create_table "cellars", force: :cascade do |t|
-    t.integer "quantity_of_wine"
-    t.bigint "wine_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_cellars_on_user_id"
-    t.index ["wine_id"], name: "index_cellars_on_wine_id"
   end
 
   create_table "deliveries", force: :cascade do |t|
@@ -113,6 +103,16 @@ ActiveRecord::Schema.define(version: 2021_06_22_102356) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "wineboxes", force: :cascade do |t|
+    t.bigint "wine_id", null: false
+    t.integer "quantity_of_wine"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_wineboxes_on_user_id"
+    t.index ["wine_id"], name: "index_wineboxes_on_wine_id"
+  end
+
   create_table "wines", force: :cascade do |t|
     t.string "name"
     t.string "grape_variety"
@@ -130,8 +130,6 @@ ActiveRecord::Schema.define(version: 2021_06_22_102356) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "cellars", "users"
-  add_foreign_key "cellars", "wines"
   add_foreign_key "deliveries", "users"
   add_foreign_key "delivery_products", "deliveries"
   add_foreign_key "delivery_products", "wines"
@@ -140,5 +138,7 @@ ActiveRecord::Schema.define(version: 2021_06_22_102356) do
   add_foreign_key "orders", "users"
   add_foreign_key "reviews", "users"
   add_foreign_key "reviews", "wines"
+  add_foreign_key "wineboxes", "users"
+  add_foreign_key "wineboxes", "wines"
   add_foreign_key "wines", "designations"
 end
