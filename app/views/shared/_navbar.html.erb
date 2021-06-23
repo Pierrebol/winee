@@ -11,10 +11,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item <%= active_class(root_path) %>">
+        <li class="nav-item <%= root_path %>">
         <%= link_to "Accueil", root_path, class: "nav-link" %>
         </li>
-        <li class="nav-item <%= path %>">
+        <li class="nav-item <%=  %>">
         <%= link_to "Ma cave", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item <%= %>">
