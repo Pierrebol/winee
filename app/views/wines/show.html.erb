@@ -1,0 +1,27 @@
+<div class="container_show_wine">
+  <div class="search_bar">
+    <form action="#">
+      <input type="text"
+          placeholder="Rechercher une bouteille..."
+          name="search">
+      <button href="#">
+         Lancer la recherche
+      </button>
+    </form>
+  </div>
+  <div class="wine_show_card">
+    <div class="wine_show_card_photo"></div>
+     <% if @wine.photo.attached? %>
+        <%= cl_image_tag @wine.photo.key, height: 600, width: 400, :gravity=>"faces", crop: :fill %>
+      <% else %>
+        <img src="https://source.unsplash.com/z1C4U9-zeVs" alt="" id="photo-default">
+      <% end %>
+    <div class="wine_show_card_infos">
+      <h1><%= @wine.name %></h1>
+      <p><%= @wine.description %></p>
+    </div>
+    <div class="wine_show_card_ordering">
+
+    </div>
+  </div>
+</div>
