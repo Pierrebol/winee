@@ -11,12 +11,29 @@
       </button>
     </form>
   </div>
+
   <div class="filter-content">
     <div class="filters">
-      A remplir
-    </div>
-    <div class="cards">
       à remplir
+    </div>
+    <div class="cards-containers">
+      <div class="cards-container">
+        <div class="container-title">
+          Mes recommandations
+        </div>
+        <div class="cards">
+          <%= link_to wine_path(@wines), class: "link-wine" do %>
+            <div class="card-wine-img">
+              <%= @wines.each do |wine| %>
+                <%= cl_image_tag wine.photo.key, crop: :fill %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+
+
