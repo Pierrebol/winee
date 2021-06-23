@@ -54,28 +54,13 @@
 	font-family: 'Roboto', sans-serif;
 }
 
-#center-nav-link {
-	display: flex;
-}
-
 
 #navbarSupportedContent {
-	justify-content: space-between;
+	justify-content: space-around;
 	flex-grow: 1;
-	ul {
-		width: 100%;
-		display: flex !important;
-		justify-content: space-between !important;
-	}
 }
 
 .navbar-nav {
 	margin: 0 auto !important;
-
-}
-
-#center-nav-link {
-	margin: 0;
-	justify-content: space-around;
 
 }
