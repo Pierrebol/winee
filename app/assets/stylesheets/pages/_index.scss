@@ -1,3 +1,29 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "show";
+
+.container-index {
+  background-color: #964242;
+}
+
+.search-bar-container {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-content {
+  display: flex;
+  .filters {
+    width: 300px;
+  }
+}
+
+.container-title {
+  padding: 15px;
+  p {
+    height: 25px;
+    margin: 0;
+  }
+}
