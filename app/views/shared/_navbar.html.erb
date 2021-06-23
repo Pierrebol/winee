@@ -22,9 +22,6 @@
       <div class="nav-item <%= %>">
       <%= link_to "Nos conseils", root_path, class: "nav-link" %>
       </div>
-      <div class="nav-item <%= %>">
-      <%= link_to "Mon compte", root_path, class: "nav-link" %>
-      </div>
       <div class="nav-item dropdown">
         <% img = "" %>
         <% if current_user.photo.attached? %>
