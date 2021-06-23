@@ -16,23 +16,103 @@
     <div class="filters">
       à remplir
     </div>
+
     <div class="cards-containers">
+
       <div class="cards-container">
         <div class="container-title">
-          Mes recommandations
+          <p>Recommandations de la semaine</p>
         </div>
+
         <div class="cards">
-          <%= link_to wine_path(@wines), class: "link-wine" do %>
-            <div class="card-wine-img">
-              <%= @wines.each do |wine| %>
-                <%= cl_image_tag wine.photo.key, crop: :fill %>
+          <% @wines.sample(3).each do |wine| %>
+            <div class="card">
+              <%= link_to wine_path(@wines), class: "link-wine" do %>
+                <div class="card-wine-img">
+                  <%= cl_image_tag wine.photo.key, crop: :fill %>
+                </div>
               <% end %>
+              <div class="infos-quantity-actions">
+                <div class="infos-quantity">
+                  <div class="infos">
+                    <p> <%= wine.name %> </p>
+                    <p> <%= wine.vineyard %> </p>
+                  </div>
+                  <div class="quantity">
+                    <p> <%= wine.price %> € </p>
+                  </div>
+                </div>
+                <div class="buttons-action">
+                  <button>
+                    <p>Ajouter au panier</p>
+                  </button>
+                  <button>
+                    <p>Se faire livrer</p>
+                  </button>
+                </div>
+              </div>
             </div>
           <% end %>
         </div>
       </div>
+
+      <div class="cards-container">
+        <div class="container-title">
+          <p>Parce que vous aimez ...</p>
+        </div>
+
+        <div class="cards">
+          <% @wines.sample(3).each do |wine| %>
+            <div class="card">
+              <%= link_to wine_path(@wines), class: "link-wine" do %>
+                <div class="card-wine-img">
+                  <%= cl_image_tag wine.photo.key, crop: :fill %>
+                </div>
+              <% end %>
+              <div class="infos-quantity">
+                <div class="infos">
+                  <p> <%= wine.name %> </p>
+                  <p> <%= wine.vineyard %> </p>
+                </div>
+                <div class="quantity">
+                  <p> <%= wine.price %> € </p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="cards-container">
+        <div class="container-title">
+          <p>Quelques spiritueux</p>
+        </div>
+
+        <div class="cards">
+          <% @spirits.sample(3).each do |spirit| %>
+            <div class="card">
+              <%= link_to wine_path(@wines), class: "link-wine" do %>
+                <div class="card-wine-img">
+                  <%= cl_image_tag spirit.photo.key, crop: :fill %>
+                </div>
+              <% end %>
+              <div class="infos-quantity">
+                <div class="infos">
+                  <p> <%= spirit.name %> </p>
+                  <p> <%= spirit.vineyard %> </p>
+                </div>
+                <div class="quantity">
+                  <p> <%= spirit.price %> € </p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
     </div>
   </div>
+
 </div>
 
 

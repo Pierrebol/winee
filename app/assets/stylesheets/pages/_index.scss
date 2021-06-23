@@ -14,8 +14,16 @@
 
 .filter-content {
   display: flex;
+  .filters {
+    width: 300px;
+  }
 }
 
-.card-wine-img {
-  object-fit: cover;
+.container-title {
+  padding: 15px;
+  p {
+    height: 25px;
+    margin: 0;
+  }
 }
+
