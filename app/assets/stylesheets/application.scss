@@ -11,3 +11,14 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.body {
+	font-family: 'Roboto', sans-serif;
+}
+
+
+#page-container {
+	min-height: calc(100vh - 180px);
+	background: $my-primary;
+	font-family: 'Roboto', sans-serif;
+}

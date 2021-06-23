@@ -1,0 +1,59 @@
+<div class="container_show_wine">
+  <div class="search_bar">
+    <form action="#">
+      <input type="text"
+          placeholder="Rechercher une bouteille..."
+          name="search">
+      <button href="#">
+         Lancer la recherche
+      </button>
+    </form>
+  </div>
+  <div class="wine_show_card">
+    <div class="wine_show_card_photo">
+     <% if @wine.photo.attached? %>
+        <%= cl_image_tag @wine.photo.key, height: 600, width: 400, :gravity=>"faces", crop: :fill %>
+      <% else %>
+        <img src="https://source.unsplash.com/z1C4U9-zeVs" alt="" id="photo-default">
+      <% end %>
+    </div>
+    <div class="wine_show_card_infos">
+      <h1><%= @wine.name %>, <%= @wine.year %></h1>
+      <div class="wine_show_card_infos_details">
+        <h3><%= @wine.vineyard%>, <%= @wine.country%></h3>
+        <h5> <%= @wine.category %> </h5>
+        <p><%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> </p>
+      </div>
+      <div class="wine_show_card_infos_advices">
+        <div class="wine_show_card_infos_advices_infos">
+          <h5>Informations</h5>
+          <p><strong>Région : </strong><%= @wine.designation.region %></p>
+          <p><strong>Cépages : </strong><%= @wine.grape_variety %></p>
+          <p><strong>Contenance : </strong> 750 mL</p>
+        </div>
+        <div class="wine_show_card_infos_advices_service">
+          <h5>Comment le servir ?</h5>
+          <p><strong>Viande : </strong><br>viandes rouges grillées, rôties ou en sauce, boeuf, agneau magret, gibier, confit de canard</p>
+          <p><strong>Fromage : </strong><br>livarot, maroilles, epoisses, salers, camembert</p>
+          <p><strong>Poisson : </strong><br>lamproie à la bordelaise</p>
+          <p><strong>Légumes : </strong><br> truffe sous la cendre, fricassée de cèpes à la bordelaise</p>
+        </div>
+      </div>
+    </div>
+    <div class="wine_show_card_ordering">
+      <div class="wine_show_card_ordering_space">
+        <div class="quantity">
+          <h5>Quantité en stock :</h5>
+          <div class="box_quantity">
+            <strong>18</strong>
+          </div>
+        </div>
+        <div class="ordering_buttons">
+          <button class="basket_button" href="#">Ajouter à mon panier</button>
+          <button href="#">Se faire livrer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
