@@ -10,10 +10,10 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <% if user_signed_in? %>
-      <div class="nav-item <%= active_class(root_path) %>">
+      <div class="nav-item">
       <%= link_to "Accueil", root_path, class: "nav-link" %>
       </div>
-      <div class="nav-item <%= path %>">
+      <div class="nav-item">
       <%= link_to "Ma cave", root_path, class: "nav-link" %>
       </div>
       <div class="nav-item <%= %>">
@@ -50,9 +50,10 @@
       <div class="nav-item">
         <%= link_to "A propos de Winee", root_path, class: "nav-link" %>
       </div>
+      <div id="connexion">
+        <%= link_to "CONNEXION 🍷", new_user_session_path, class: "nav-link" %>
+      </div>
     <% end %>
-  </div>
-  <div id="connexion">
-    <%= link_to "CONNEXION 🍷", new_user_session_path, class: "nav-link" %>
+    </div>
   </div>
 </div>
