@@ -3,6 +3,10 @@
   background: white;
 }
 
+.navbar-brand {
+	width: 115px;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -29,7 +33,6 @@
 .nav-item {
 	font-weight: bold;
 	font-size: 14px;
-	padding-right: 132px;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -40,5 +43,21 @@
 
 #center-nav-link {
 	display: flex;
-	margin-right: 165px;
+}
+
+
+#navbarSupportedContent {
+	justify-content: space-around;
+	margin: 0;
+}
+
+.navbar-nav {
+	margin: 0 auto !important;
+
+}
+
+#center-nav-link {
+	margin: 0;
+	justify-content: space-around;
+
 }
