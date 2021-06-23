@@ -15,18 +15,108 @@
 
 
 .container_show_wine .wine_show_card {
-  height:700px;
+  height:95%;
   width:95%;
   background: white;
-  border-radius: 10px;
+  border-radius: 1vh;
   margin:0 auto;
   display: flex;
   justify-content: space-evenly;
+  padding: 40px 0 40px 0;
 }
 
+.container_show_wine .wine_show_card .wine_show_card_photo {
+  width: 25%
+}
+
+.container_show_wine .wine_show_card .wine_show_card_infos {
+  width: 40%
+}
+
+.container_show_wine .wine_show_card .wine_show_card_infos_details {
+  margin: 15px;
+}
+
+.container_show_wine .wine_show_card .wine_show_card_infos_advices {
+  background: #EEEEEE;
+  width: 100%;
+  border-radius: 1vh;
+  padding: 3vh 4vh 3vh 4vh;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5vh;
+}
+
+.container_show_wine .wine_show_card .wine_show_card_infos_advices h5 {
+  text-align: center;
+  padding-bottom: 1vh;
+}
+
+.container_show_wine .wine_show_card .wine_show_card_infos_advices p {
+  font-size: 11px;
+}
+
+.container_show_wine .wine_show_card .wine_show_card_infos_advices_infos {
+  width: 45%
+}
+
+.container_show_wine .wine_show_card .wine_show_card_infos_advices_service {
+  width: 45%
+}
 
 .container_show_wine .wine_show_card .wine_show_card_ordering {
-  height:200px;
-  width:20%;
-  background:lightgrey;
+  width:25%;
 }
+
+.container_show_wine .wine_show_card .wine_show_card_ordering_space {
+  width:38vh;
+  background: #EEEEEE;
+  border-radius:10px;
+  height:50vh;
+  margin: 30% auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container_show_wine .wine_show_card .wine_show_card_ordering_space .quantity{
+  margin-top:4vh;
+}
+
+.container_show_wine .wine_show_card .wine_show_card_ordering_space .quantity .box_quantity {
+  background: white;
+  border-radius: 1vh;
+  margin: 2vh 0 2vh 0;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container_show_wine .wine_show_card .wine_show_card_ordering_space .ordering_buttons {
+  display:flex;
+  flex-direction: column;
+  padding-bottom: 7vh;
+}
+
+.container_show_wine .wine_show_card .wine_show_card_ordering_space button {
+  height: 10vh;
+  width:25vh;
+  background-color: #964242;
+  color: #f2f2f2;
+  float: right;
+  padding: 1vh 2vh;
+  border: solid thin #964242;
+  cursor: pointer;
+  border-radius: 1vh;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  margin-top: 4vh;
+}
+
+.container_show_wine .wine_show_card .wine_show_card_ordering_space .basket_button {
+  background-color: #000000;
+  border: solid thin #000000;
+}
+
