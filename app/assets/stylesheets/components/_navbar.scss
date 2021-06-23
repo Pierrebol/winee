@@ -1,11 +1,22 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  
+}
+
+.navbar-lewagon a {
+	color:black;
+	font-family: 'Roboto', sans-serif;
+  
 }
 
 .navbar-brand {
 	width: 115px;
+	margin-right: 50px;
 }
+
+
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
@@ -13,6 +24,7 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 115px;
+  margin-right: 50px;
 }
 
 #connexion {
@@ -21,6 +33,7 @@
 	font-weight: bold;
 	font-size: 14px;
 	padding-right: 0px;
+	margin-left: 50px;
 }
 
 #connexion .nav-link {
@@ -47,8 +60,13 @@
 
 
 #navbarSupportedContent {
-	justify-content: space-around;
-	margin: 0;
+	justify-content: space-between;
+	flex-grow: 1;
+	ul {
+		width: 100%;
+		display: flex !important;
+		justify-content: space-between !important;
+	}
 }
 
 .navbar-nav {
