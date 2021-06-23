@@ -14,10 +14,10 @@
       <%= link_to "Accueil", root_path, class: "nav-link" %>
       </div>
       <div class="nav-item">
-      <%= link_to "Ma cave", root_path, class: "nav-link" %>
+      <%= link_to "Ma cave", my_cellar_path, class: "nav-link" %>
       </div>
       <div class="nav-item <%= %>">
-      <%= link_to "Trouver une bouteille", root_path, class: "nav-link" %>
+      <%= link_to "Trouver une bouteille", wines_path, class: "nav-link" %>
       </div>
       <div class="nav-item <%= %>">
       <%= link_to "Nos conseils", root_path, class: "nav-link" %>
@@ -42,7 +42,7 @@
       </div>
     <% else %>
       <div class="nav-item">
-        <%= link_to "Trouver une bouteille", root_path, class: "nav-link" %>
+        <%= link_to "Trouver une bouteille", wines_path, class: "nav-link" %>
       </div>
       <div class="nav-item">
         <%= link_to "Nos conseils", root_path, class: "nav-link" %>
