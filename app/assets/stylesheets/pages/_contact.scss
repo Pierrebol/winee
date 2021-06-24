@@ -1,0 +1,16 @@
+.container-global {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+}
+.contact-container {
+  background-color: white;
+  width: 75%;
+  margin: auto auto;
+  border-radius: 10px;
+  padding: 15px;
+  h1 {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}
