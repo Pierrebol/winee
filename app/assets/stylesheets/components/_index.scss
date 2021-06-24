@@ -9,3 +9,21 @@
 @import "cards";
 @import "carrousel";
 @import "card-home-proposition";
+
+
+
+.stock-btn {
+  height: 8vh;
+  background-color: black;
+  color: #f2f2f2;
+  float: right;
+  padding: 1vh 1vh;
+  border: solid thin black;
+  cursor: pointer;
+  border-radius: 1vh;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  vertical-align: center;
+  margin: 0 1vh;
+  margin-left: 150px;
+}
