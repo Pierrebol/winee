@@ -21,13 +21,13 @@
       <h1><%= @wine.name %>, <%= @wine.year %></h1>
       <div class="wine_show_card_infos_details">
         <h3><%= @wine.vineyard%>, <%= @wine.country%></h3>
-        <h5> <%= @wine.category %> </h5>
         <p><%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> </p>
       </div>
       <div class="wine_show_card_infos_advices">
         <div class="wine_show_card_infos_advices_infos">
           <h5>Informations</h5>
           <p><strong>Région : </strong><%= @wine.designation.region %></p>
+          <p><strong>Catégorie : </strong><%= @wine.category %> </p>
           <p><strong>Cépages : </strong><%= @wine.grape_variety %></p>
           <p><strong>Contenance : </strong> 750 mL</p>
         </div>
