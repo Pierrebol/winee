@@ -42,7 +42,7 @@
       </div>
 
       <div class="cards">
-        <% @wines.sample(3).each do |wine| %>
+        <% @wines.sample(4).each do |wine| %>
           <div class="card">
             <%= link_to wine_path(@wines), class: "link-wine" do %>
               <div class="card-wine-img">
@@ -64,23 +64,25 @@
 
 
     <h1>Ils parlent de nous</h1>
-    <div class="carousel">
-      <div class="card-body-carousel">
-        <h5 class="card-title">Martine</h5>
-        <h6 class="card-subtitle">Amatrice de Bordeaux</h6>
-        <div class="testify">
-          <i class="fas fa-quote-left"></i>
-          <p class="card-text"><em>Grâce à Doushka et au déguisement de Samba j'ai passé un super carnaval de Dunkerque.</em></p>
-          <i class="fas fa-quote-right"></i>
+    <div class="container-carrousel">
+      <div class="carousel">
+        <div class="card-body-carousel">
+          <h5 class="card-title">Martine</h5>
+          <h6 class="card-subtitle">Amatrice de Bordeaux</h6>
+          <div class="testify">
+            <i class="fas fa-quote-left"></i>
+            <p class="card-text"><em>Grâce à Doushka et au déguisement de Samba j'ai passé un super carnaval de Dunkerque.</em></p>
+            <i class="fas fa-quote-right"></i>
+          </div>
         </div>
-      </div>
-      <div class="card-body-carousel">
-        <h5 class="card-title">Martine</h5>
-        <h6 class="card-subtitle">Fan du Brésil</h6>
-        <div class="testify">
-          <i class="fas fa-quote-left"></i>
-          <p class="card-text"><em>Grâce à Doushka et au déguisement de Samba j'ai passé un super carnaval de Dunkerque.</em></p>
-          <i class="fas fa-quote-right"></i>
+        <div class="card-body-carousel">
+          <h5 class="card-title">Martine</h5>
+          <h6 class="card-subtitle">Fan du Brésil</h6>
+          <div class="testify">
+            <i class="fas fa-quote-left"></i>
+            <p class="card-text"><em>Grâce à Doushka et au déguisement de Samba j'ai passé un super carnaval de Dunkerque.</em></p>
+            <i class="fas fa-quote-right"></i>
+          </div>
         </div>
       </div>
     </div>
@@ -93,7 +95,7 @@
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 2500,
   });
 </script>
 </body>
