@@ -24,7 +24,8 @@ require("channels")
 
 // External imports
 import "bootstrap";
-
+import {filterByType} from "../components/categoryButton"
+import {filterByTest} from "../components/filterCategory"
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 // import { initCarrousel } from "../components/carrousel";
@@ -34,4 +35,6 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   // initCarrousel();
+  filterByType();
+  filterByTest();
 });
