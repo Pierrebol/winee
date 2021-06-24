@@ -1,6 +1,6 @@
 .cards-container {
   margin: 0 auto;
-  width: 900px;
+  width: 1100px;
   height: 330px;
   background-color: white;
   border-radius: 10px;
@@ -44,5 +44,61 @@
   display: flex;
   justify-content: space-around;
   height: 20px;
+}
+
+.buttons-action p {
+  font-size:2vh;
+}
+
+
+.cards-container-all {
+  height:95%;
+  width:95%;
+  background: white;
+  border-radius: 1vh;
+  margin:0 4vh;
+}
+
+
+.cards-all {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10%;
+  margin: 5% 7%;
+}
+
+.cards-all .card {
+  width: 100%;
+  height: 110%;
+  box-shadow: 0px 1px 5px lightgrey;
+}
+
+.cards-all button {
+  height: 5.5vh;
+  background-color: #964242;
+  color: #f2f2f2;
+  float: right;
+  padding: 1vh 1vh;
+  border: solid thin #964242;
+  cursor: pointer;
+  border-radius: 1vh;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  vertical-align: center;
+  margin: 0 1vh;
+}
+
+.cards-all .add_to_basket_button {
+  height: 5.5vh;
+  background-color: #000000;
+  color: #f2f2f2;
+  float: right;
+  padding: 1vh 1vh;
+  border: solid thin #000000;
+  cursor: pointer;
+  border-radius: 1vh;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  vertical-align: center;
 }
 

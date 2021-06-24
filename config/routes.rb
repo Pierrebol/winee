@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
   get '/contact', to: 'pages#contact'
   get '/advices', to: 'pages#advices'
+  get '/wines_all', to: 'wines#all'
 
   resources :orders, only: [:create]
 end
