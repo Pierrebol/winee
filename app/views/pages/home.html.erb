@@ -1,16 +1,65 @@
 <body>
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1596142332133-327e2a0ff006?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);">
-    <div class="container">
-      <div class="search_bar">
-        <form action="#">
-          <input type="text"
-              placeholder="Rechercher une bouteille..."
-              name="search">
-          <button href="#">
-             Rechercher
-          </button>
-        </form>
+  <div class="main-container">
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1596142332133-327e2a0ff006?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);">
+      <div class="container">
+        <div class="search_bar">
+          <form action="#">
+            <input type="text"
+                placeholder="Rechercher un vin..."
+                name="search">
+            <button href="#">
+              Rechercher
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-value-container">
+      <div class="card-value">
+        <img src="CSS/img/en_ligne.png" alt="digitale"/>
+        <div class="card-value-infos">
+          <h2> Votre cave en ligne </h2>
+        </div>
+      </div>
+      <div class="card-value">
+        <img src="CSS/img/securite.png" alt="sécurité"/>
+        <div class="card-value-infos">
+          <h2> Un espace de stockage sécurisé </h2>
+        </div>
+      </div>
+      <div class="card-value">
+        <img src="CSS/img/livraison.png" alt="livraison"/>
+        <div class="card-value-infos">
+          <h2> Une livraison rapide </h2>
+        </div>
+      </div>
+    </div>
+
+    <h1>Ils parlent de nous</h1>
+    <div class="carousel">
+      <div class="card-body-carousel">
+        <h5 class="card-title">Martine</h5>
+        <h6 class="card-subtitle">Amatrice de Bordeaux</h6>
+        <div class="testify">
+          <i class="fas fa-quote-left"></i>
+          <p class="card-text"><em>Grâce à Doushka et au déguisement de Samba j'ai passé un super carnaval de Dunkerque.</em></p>
+          <i class="fas fa-quote-right"></i>
+        </div>
+      </div>
+      <div class="card-body-carousel">
+        <h5 class="card-title">Martine</h5>
+        <h6 class="card-subtitle">Fan du Brésil</h6>
+        <div class="testify">
+          <i class="fas fa-quote-left"></i>
+          <p class="card-text"><em>Grâce à Doushka et au déguisement de Samba j'ai passé un super carnaval de Dunkerque.</em></p>
+          <i class="fas fa-quote-right"></i>
+        </div>
       </div>
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+  <script src="https://code.jquery.com/jquery-migrate-3.3.2.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="JS/carousel.js"></script>
 </body>
