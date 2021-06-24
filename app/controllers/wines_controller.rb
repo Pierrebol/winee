@@ -17,6 +17,10 @@ class WinesController < ApplicationController
   end
 
   def all
-    @wines = Wine.all
+    if params[:search].present?
+      @wines = Wine.search_by_name_grapevariety_vineyard_category_country_and_year(params[:search])
+    else
+      @wines = Wine.all
+    end
   end
 end
