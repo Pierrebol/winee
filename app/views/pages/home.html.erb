@@ -25,7 +25,7 @@
       <div class="card-value">
         <%= image_tag "securite.png", alt: "alttext" %>
         <div class="card-value-infos">
-          <h2> Un espace de stockage sécurisé </h2>
+          <h2> Un stockage sécurisé </h2>
         </div>
       </div>
       <div class="card-value">
@@ -35,6 +35,33 @@
         </div>
       </div>
     </div>
+
+    <div class="cards-container">
+      <div class="container-title">
+        <p>Notre sélection de la semaine</p>
+      </div>
+
+      <div class="cards">
+        <% @wines.sample(3).each do |wine| %>
+          <div class="card">
+            <%= link_to wine_path(@wines), class: "link-wine" do %>
+              <div class="card-wine-img">
+                <%= cl_image_tag wine.photo.key, crop: :fill %>
+              </div>
+            <% end %>
+            <div class="infos-quantity-actions">
+              <div class="infos-quantity">
+                <div class="infos">
+                  <p> <%= wine.name %> </p>
+                  <p> <%= wine.vineyard %> </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
 
     <h1>Ils parlent de nous</h1>
     <div class="carousel">
@@ -58,8 +85,15 @@
       </div>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
-  <script src="https://code.jquery.com/jquery-migrate-3.3.2.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script src="JS/carousel.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript">
+  $('.carousel').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  });
+</script>
 </body>
