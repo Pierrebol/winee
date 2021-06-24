@@ -40,6 +40,10 @@
           <p><strong>Légumes : </strong><br> truffe sous la cendre, fricassée de cèpes à la bordelaise</p>
         </div>
       </div>
+      <div class="wine_show_card_designation">
+          <h8><strong>À propos de l'appellation :</strong> <%= @wine.designation.name %></h8>
+          <p><%= @wine.designation.description %></p>
+      </div>
     </div>
     <div class="wine_show_card_ordering">
       <div class="wine_show_card_ordering_space">
@@ -57,4 +61,3 @@
     </div>
   </div>
 </div>
-
