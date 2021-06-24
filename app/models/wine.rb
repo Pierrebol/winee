@@ -16,4 +16,17 @@ class Wine < ApplicationRecord
   validates :designation_id, presence: true
   validates :country, presence: true
   validates :year, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_grapevariety_vineyard_category_country_and_year,
+    against: [
+      :name,
+      :grape_variety,
+      :vineyard,
+      :category,
+      :country,
+      :year],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end

@@ -5,4 +5,7 @@ class PagesController < ApplicationController
     @wines = Wine.where("category != 'Spiritueux'")
     @spirits = Wine.where("category = 'Spiritueux'")
   end
+
+  def contact
+  end
 end

@@ -2,9 +2,10 @@
   margin: 0 auto;
   width: 1100px;
   height: 330px;
-  background-color: white;
+  background-color:white;
   border-radius: 10px;
   margin-bottom: 15px;
+  flex-grow: 1;
 }
 
 .cards {
@@ -57,6 +58,9 @@
   background: white;
   border-radius: 1vh;
   margin:0 4vh;
+  flex-grow: 1;
+  padding: 0px 0px 50px 0px;
+
 }
 
 
@@ -65,16 +69,21 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10%;
   margin: 5% 7%;
+  flex-grow: 1;
+  padding: 15px;
+
 }
 
 .cards-all .card {
   width: 100%;
   height: 110%;
   box-shadow: 0px 1px 5px lightgrey;
+  flex-grow: 1;
+
 }
 
 .cards-all button {
-  height: 5.5vh;
+  height: 4.5vh;
   background-color: #964242;
   color: #f2f2f2;
   float: right;
@@ -86,10 +95,11 @@
   transition: opacity 0.3s ease;
   vertical-align: center;
   margin: 0 1vh;
+  font-size: 10px;
 }
 
 .cards-all .add_to_basket_button {
-  height: 5.5vh;
+  height: 4.5vh;
   background-color: #000000;
   color: #f2f2f2;
   float: right;
@@ -100,5 +110,10 @@
   opacity: 1;
   transition: opacity 0.3s ease;
   vertical-align: center;
+}
+
+.cards-all button p {
+  font-size: 12px;
+  margin: 0px;
 }
 

@@ -10,24 +10,42 @@
         </i>
       </button>
     </form>
+    <button class="stock-btn">
+      Stocker une bouteille
+    </button>
   </div>
 
   <div class="filter-content">
     <div class="filters">
-      à remplir
-    </div>
-
-    <div class="cards-containers">
-
-      <div class="cards-container">
-        <div class="container-title">
-          <p>Mes vins</p>
+      <div class="choice-category">
+        <div class="category-vin">
+          Vins
         </div>
-
-        <div class="cards">
+        <div class="category-spiritueux">
+          Spiritueux
+        </div>
+      </div>
+      <div class="all-filters">
+        <div class="category ">
+          <p>Categorie</p>
+        </div>
+        <div class="category">
+          <p>Cépages</p>
+        </div>
+        <div class="category">
+          <p>France</p>
+        </div>
+        <div class="category">
+          <p>1999</p>
+        </div>
+      </div>
+    </div>
+      <div class="cards-container-all">
+        <h2> Mes vins</h2>
+        <div class="cards-all">
           <% @wineboxes.each do |winebox| %>
             <div class="card">
-              <%= link_to wine_path(Wine.find(winebox.wine_id)), class: "link-wine" do %>
+              <%= link_to wine_path(Wine.find(winebox.wine_id)), class: "link-wine" do%>
                 <div class="card-wine-img">
                   <%= cl_image_tag Wine.find(winebox.wine_id).photo.key, crop: :fill %>
                 </div>
@@ -39,11 +57,11 @@
                     <p> <%= Wine.find(winebox.wine_id).vineyard %> </p>
                   </div>
                   <div class="quantity">
-                    <p> <%= winebox.quantity_of_wine %> 🍷</p>
+                    <p> <%= winebox.quantity_of_wine %> 🍷 </p>
                   </div>
                 </div>
                 <div class="buttons-action">
-                  <button>
+                  <button class="add_to_basket_button">
                     <p>Ajouter au panier</p>
                   </button>
                   <button>
@@ -55,9 +73,7 @@
           <% end %>
         </div>
       </div>
-
-    </div>
   </div>
-</div>
 
+</div>
 

@@ -3,7 +3,7 @@
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1596142332133-327e2a0ff006?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);">
       <div class="container">
         <div class="search_bar">
-          <form action="#">
+          <form action= <%= wines_all_path %> >
             <input type="text"
                 placeholder="Rechercher un vin..."
                 name="search">
@@ -36,14 +36,14 @@
       </div>
     </div>
 
-    <div class="cards-container">
+    <div class="cards-wine-home-container">
       <div class="container-title">
-        <p>Notre sélection de la semaine</p>
+        <h2>Notre sélection de la semaine</h2>
       </div>
 
-      <div class="cards">
+      <div class="cards-wine-home">
         <% @wines.sample(4).each do |wine| %>
-          <div class="card">
+          <div class="card-wine-home">
             <%= link_to wine_path(wine), class: "link-wine" do %>
               <div class="card-wine-img">
                 <%= cl_image_tag wine.photo.key, crop: :fill %>
@@ -62,25 +62,56 @@
       </div>
     </div>
 
-
-    <h1>Ils parlent de nous</h1>
+    <div class="container-avis">
+    <h2> Ils parlent de nous 👇</h2>
+    </div>
     <div class="container-carrousel">
       <div class="carousel">
         <div class="card-body-carousel">
           <h5 class="card-title">Martine</h5>
           <h6 class="card-subtitle">Amatrice de Bordeaux</h6>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
           <div class="testify">
             <i class="fas fa-quote-left"></i>
-            <p class="card-text"><em>Grâce à Doushka et au déguisement de Samba j'ai passé un super carnaval de Dunkerque.</em></p>
+            <p class="card-text"><em> Manquant de place de mon appartement je n'avais pas de solution pour stocker mon vin, jusqu'à qu'un ami me parle de Winee.</em></p>
             <i class="fas fa-quote-right"></i>
           </div>
         </div>
         <div class="card-body-carousel">
-          <h5 class="card-title">Martine</h5>
-          <h6 class="card-subtitle">Fan du Brésil</h6>
+          <h5 class="card-title">Pierre-Louis</h5>
+          <h6 class="card-subtitle">Gérant de la page Vivant de nature</h6>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
           <div class="testify">
             <i class="fas fa-quote-left"></i>
-            <p class="card-text"><em>Grâce à Doushka et au déguisement de Samba j'ai passé un super carnaval de Dunkerque.</em></p>
+            <p class="card-text"><em> Winee me permets de commander des supers bouteilles de vin nature et de les stocker dans les meilleurs conditions.</em></p>
+            <i class="fas fa-quote-right"></i>
+          </div>
+        </div>
+        <div class="card-body-carousel">
+          <h5 class="card-title">Ben</h5>
+          <h6 class="card-subtitle">Bon Vivant</h6>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <div class="testify">
+            <i class="fas fa-quote-left"></i>
+            <p class="card-text"><em> Winee est la solution pour se faire livrer une bouteille de sa cave pour un diner à l'improviste avec des amis.</em></p>
             <i class="fas fa-quote-right"></i>
           </div>
         </div>
@@ -91,11 +122,37 @@
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript">
+  $('.cards-wine-home').slick({
+  centerMode: true,
+  centerPadding: '60px',
+  slidesToShow: 3,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
+  });
+
   $('.carousel').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 5000,
   });
 </script>
 </body>
