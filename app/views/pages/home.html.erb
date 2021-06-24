@@ -44,7 +44,7 @@
       <div class="cards">
         <% @wines.sample(4).each do |wine| %>
           <div class="card">
-            <%= link_to wine_path(@wines), class: "link-wine" do %>
+            <%= link_to wine_path(wine), class: "link-wine" do %>
               <div class="card-wine-img">
                 <%= cl_image_tag wine.photo.key, crop: :fill %>
               </div>
