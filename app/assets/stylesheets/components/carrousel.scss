@@ -1,14 +1,38 @@
-h1 {
+.container-title {
+  margin-bottom: 15px;
+  h2 {
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+  }
+}
+
+.card-wine-home > .infos-quantity {
+  text-align: center;
+}
+
+.card-home {
+  width: 220px;
+  height: 250px;
+  box-shadow: 0px 1px 5px lightgrey;
+}
+
+.container-avis > h2 {
   font-weight: bold;
-  font-size: 40px;
-  font-family: 'Indie Flower', cursive;
-  margin-top: 20px;
+  margin-top: 100px;
   margin-bottom: 20px;
+  text-align: center;
+}
+
+.container-carrousel {
+  background-color: #964242;
+  padding: 80px;
+  text-align: center;
 }
 
 .carousel {
-    width: 500px;
-    margin: 0 auto;
+  width: 500px;
+  margin: 0 auto;
 }
 
 .card-body-carousel {
@@ -16,4 +40,12 @@ h1 {
   height: 150px;
   padding-top: 10px;
   border-radius: 30px;
+}
+
+.card-body-carousel > .stars {
+  display:flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 8px;
+  color: $my-yellow;
 }
