@@ -1,1 +1,22 @@
 // Specific CSS for your home-page
+.main-container {
+  background-color: white !important;
+}
+
+body {
+  text-align: center;
+}
+
+.container-title {
+  margin-bottom: 20px;
+  p {
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+  }
+}
+
+.container-carrousel {
+  background-color: #964242;
+  padding: 20px;
+}
