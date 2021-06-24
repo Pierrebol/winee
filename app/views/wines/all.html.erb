@@ -1,0 +1,78 @@
+<div class="container-index">
+  <div class="search-bar-container">
+    <form class="search_bar" action="#">
+      <input type="text"
+          placeholder="Rechercher un vin..."
+          name="search">
+      <button>
+        <i class="fa fa-search"
+            style="font-size: 18px;">
+        </i>
+      </button>
+    </form>
+  </div>
+
+  <div class="filter-content">
+    <div class="filters">
+      <div class="choice-category">
+        <div class="category-vin">
+          Vins
+        </div>
+        <div class="category-spiritueux">
+          Spiritueux
+        </div>
+      </div>
+      <div class="all-filters">
+        <div class="category ">
+          <p>Categorie</p>
+        </div>
+        <div class="category">
+          <p>Cépages</p>
+        </div>
+        <div class="category">
+          <p>France</p>
+        </div>
+        <div class="category">
+          <p>1999</p>
+        </div>
+      </div>
+    </div>
+
+      <div class="cards-container-all">
+        <div class="cards-all">
+          <% @wines.each do |wine| %>
+            <div class="card">
+              <%= link_to wine_path(wine), class: "link-wine" do%>
+                <div class="card-wine-img">
+                  <%= cl_image_tag wine.photo.key, crop: :fill %>
+                </div>
+              <% end %>
+              <div class="infos-quantity-actions">
+                <div class="infos-quantity">
+                  <div class="infos">
+                    <p> <%= wine.name %> </p>
+                    <p> <%= wine.vineyard %> </p>
+                  </div>
+                  <div class="quantity">
+                    <p> <%= wine.price %> € </p>
+                  </div>
+                </div>
+                <div class="buttons-action">
+                  <button class="add_to_basket_button">
+                    <p>Ajouter au panier</p>
+                  </button>
+                  <button>
+                    <p>Se faire livrer</p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+  </div>
+
+</div>
+
+
+
