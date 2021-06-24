@@ -48,7 +48,7 @@
         <div class="cards">
           <% @wines.sample(3).each do |wine| %>
             <div class="card">
-              <%= link_to wine_path(@wines), class: "link-wine" do %>
+              <%= link_to wine_path(wine), class: "link-wine" do%>
                 <div class="card-wine-img">
                   <%= cl_image_tag wine.photo.key, crop: :fill %>
                 </div>
@@ -85,7 +85,7 @@
         <div class="cards">
           <% @wines.sample(3).each do |wine| %>
             <div class="card">
-              <%= link_to wine_path(@wines), class: "link-wine" do %>
+              <%= link_to wine_path(wine), class: "link-wine" do %>
                 <div class="card-wine-img">
                   <%= cl_image_tag wine.photo.key, crop: :fill %>
                 </div>
@@ -112,7 +112,7 @@
         <div class="cards">
           <% @spirits.sample(3).each do |spirit| %>
             <div class="card">
-              <%= link_to wine_path(@wines), class: "link-wine" do %>
+              <%= link_to wine_path(spirit), class: "link-wine" do %>
                 <div class="card-wine-img">
                   <%= cl_image_tag spirit.photo.key, crop: :fill %>
                 </div>
