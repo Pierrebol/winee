@@ -16,6 +16,9 @@
 	font-family: 'Roboto', sans-serif;
 }
 
+a {
+  text-decoration: none !important;
+}
 
 #page-container {
 	min-height: calc(100vh - 180px);
