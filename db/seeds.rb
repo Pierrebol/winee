@@ -8,13 +8,13 @@
 require "open-uri"
 
 puts "Cleaning database..."
-Designation.destroy_all
-Wine.destroy_all
-User.destroy_all
 Winebox.destroy_all
+Wine.destroy_all
+Designation.destroy_all
+User.destroy_all
 
 puts "Creating a designation..."
-designation_1 = Designation.create!(description: 'Le saint-estèphe, ou appellation saint-estèphe contrôlée, est un vin rouge français d appellation d origine contrôlée produit sur la commune de Saint-Estèphe dans le Médoc, une des subdivisions du vignoble de Bordeaux.', region: 'Bordeaux')
+designation_1 = Designation.create!(name: "Saint-Estèphe", description: 'Le saint-estèphe, ou appellation saint-estèphe contrôlée, est un vin rouge français d appellation d origine contrôlée produit sur la commune de Saint-Estèphe dans le Médoc, une des subdivisions du vignoble de Bordeaux.', region: 'Bordeaux')
 
 puts "Creating Users..."
 user1 = User.create!(email: "bollack@edhec.com", password: "azerty")
