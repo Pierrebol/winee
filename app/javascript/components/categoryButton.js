@@ -3,6 +3,11 @@ const filterByType = () => {
 
   btnsType.forEach((btn) => {
     btn.addEventListener('click', (event) => {
+      if(event.currentTarget.classList.contains('active')){
+        event.currentTarget.classList.remove('active');
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => card.style.display = null)
+      } else {
       const type = event.currentTarget.dataset.btncategory;
       event.currentTarget.classList.toggle('active');
       const cards = document.querySelectorAll('.card')
@@ -14,6 +19,7 @@ const filterByType = () => {
         cards.forEach(card => card.style.display = null)
         cardsSpirit.forEach(card => card.style.display = 'none')
       }
+    }
     })
   })
 }

@@ -24,9 +24,10 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import {filterByType} from "../components/categoryButton"
-import {filterByTest} from "../components/filterCategory"
+
 // Internal imports, e.g:
+import {filterByType} from "../components/categoryButton"
+import {filterDropdown} from "../components/filterCategory"
 // import { initSelect2 } from '../components/init_select2';
 // import { initCarrousel } from "../components/carrousel";
 
@@ -36,5 +37,10 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   // initCarrousel();
   filterByType();
-  filterByTest();
+  if (document.getElementById('list1')) {
+    filterDropdown('list1');
+    filterDropdown('list2');
+    filterDropdown('list3');
+    filterDropdown('list4');
+  }
 });
