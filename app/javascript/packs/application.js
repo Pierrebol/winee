@@ -24,9 +24,11 @@ require("channels")
 
 // External imports
 import "bootstrap";
+// Internal imports, e.g:
 import {filterByType} from "../components/categoryButton"
 import {filterByTest} from "../components/filterCategory"
-// Internal imports, e.g:
+import { initSweetalert } from '../plugins/init_sweetalert';
+import { initSelect2 } from '../components/init_select2';
 // import { initSelect2 } from '../components/init_select2';
 // import { initCarrousel } from "../components/carrousel";
 
@@ -36,15 +38,20 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   // initCarrousel();
   filterByType();
-  filterByTest();
+  if (document.getElementById('list1')) {
+    filterByTest();
+  }
+  initSweetalert('#sweet-alert-demo', {
+    title: "A nice alert",
+    text: "This is a great alert, isn't it?",
+    icon: "success"
+  });
+  initSelect2();
+  	
 });
 
 
-import { initSweetalert } from '../plugins/init_sweetalert';
 
-initSweetalert('#sweet-alert-demo', {
-  title: "A nice alert",
-  text: "This is a great alert, isn't it?",
-  icon: "success"
-});
-	
+
+
+
