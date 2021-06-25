@@ -5,6 +5,7 @@ class WinesController < ApplicationController
   end
 
   def user_index
+    @winebox = Winebox.new
     if params[:search].present?
       @wineboxes = Winebox.search_by_title_and_description(params[:search]).where(user: current_user)
     else
@@ -23,4 +24,9 @@ class WinesController < ApplicationController
       @wines = Wine.all
     end
   end
+
+  def create_winebox
+    @winebox = current_user
+  end
 end
+  
