@@ -26,3 +26,7 @@ a {
 	background: $my-primary;
 	font-family: 'Roboto', sans-serif;
 }
+
+.slick-prev:before, .slick-arrow:before {
+	color: #964242 !important;
+}
