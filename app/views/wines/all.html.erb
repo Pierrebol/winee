@@ -28,14 +28,14 @@
             <div id="list1" class="dropdown-check-list" tabindex="100">
               <span class="anchor">Choix :</span>
               <ul class="items">
-                <li><input type="checkbox" /> Rouge </li>
-                <li><input type="checkbox" /> Blanc </li>
-                <li><input type="checkbox" /> Rosé </li>
-                <li><input type="checkbox" /> Champagne </li>
+                <li class="checkbox-cat" data-categoryselect="Rouge"><input type="checkbox" /> Rouge </li>
+                <li class="checkbox-cat" data-categoryselect="Blanc"><input type="checkbox" /> Blanc </li>
+                <li class="checkbox-cat" data-categoryselect="Rosé"><input type="checkbox" /> Rosé </li>
+                <li class="checkbox-cat" data-categoryselect="Champagne"><input type="checkbox" /> Champagne </li>
               </ul>
             </div>
         </div>
-        <div class="filter_cepage">
+        <!-- <div class="filter_cepage">
           <label for="cepage-select"><strong>Cépage :</strong></label><br>
             <div id="list2" class="dropdown-check-list" tabindex="100">
               <span class="anchor">Choix :</span>
@@ -48,14 +48,15 @@
                 <li><input type="checkbox" /> Roussanne </li>
               </ul>
             </div>
-        </div>
+        </div> -->
         <div class="filter_country">
           <label for="country-select"><strong>Pays :</strong></label><br>
             <div id="list3" class="dropdown-check-list" tabindex="100">
               <span class="anchor">Choix :</span>
               <ul class="items">
-                <li><input type="checkbox" />France </li>
-                <li><input type="checkbox" />Italie </li>
+                <li class="checkbox-country" data-countryselect="France"><input type="checkbox" />France </li>
+                <li class="checkbox-country" data-countryselect="Italie"><input type="checkbox" />Italie </li>
+                <li class="checkbox-country" data-countryselect="Espagne"><input type="checkbox" />Espagne </li>
               </ul>
             </div>
         </div>
@@ -66,7 +67,7 @@
             <span class="anchor">Choix :</span>
             <ul class="items">
               <%= years.each do |year| %>
-                <li><input type="checkbox" /><%= year %> </li>
+                <li class="checkbox-year" data-yearselect="<%=year%>"><input type="checkbox" /><%= year %> </li>
               <% end %>
             </ul>
           </div>
@@ -77,7 +78,7 @@
       <div class="cards-container-all">
         <div class="cards-all">
           <% @wines.each do |wine| %>
-            <div class="card" data-category="<%= wine.category %>">
+            <div class="card" data-category="<%= wine.category %>" data-country="<%= wine.country %>" data-year="<%= wine.year%>">
               <%= link_to wine_path(wine), class: "link-wine" do%>
                 <div class="card-wine-img">
                   <%= cl_image_tag wine.photo.key, crop: :fill %>
