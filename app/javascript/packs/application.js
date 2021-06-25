@@ -46,6 +46,9 @@ document.addEventListener('turbolinks:load', () => {
     filterDropdown('list3');
     filterDropdown('list4');
   }
+  filterByCategory();
+  filterByCountry();
+  filterByYear();
   filterByType();
   if (document.getElementById('list1')) {
     filterByTest();
@@ -56,9 +59,6 @@ document.addEventListener('turbolinks:load', () => {
     icon: "success"
   });
   initSelect2();
-  filterByCategory();
-  filterByCountry();
-  filterByYear();
 });
 
 initSweetalert('#sweet-alert-demo', {
