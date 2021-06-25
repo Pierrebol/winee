@@ -65,7 +65,7 @@
                 </div>
                 <div class="buttons-action">
                   <button>
-                    <p data-toggle="modal" data-target="#exampleModal" data-wine=" <%= @wine_id = wine.id %> ">Ajouter au panier</p>
+                    <p class="btn-add-cart" data-wine=" <%= wine.id %> ">Ajouter au panier</p>
                   </button>
                   <button>
                     <p>Se faire livrer</p>
@@ -135,8 +135,32 @@
   </div>
 
 </div>
-<%= render 'shared/modal_buy_wines', order: @order, order_wine: @order_wine %>
-<% console %>
+
+<%#= render 'shared/modal_buy_wines', order: @order, order_wine: @order_wine %>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for ([@order, @order_wine]) do |f|%>
+          <%= f.input :quantity_of_wine %>
+          <%= f.input :wine_id %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+        <%= f.submit 'Ajouter au panier', class: "btn btn-primary" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 
 
 

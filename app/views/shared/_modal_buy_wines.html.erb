@@ -10,10 +10,11 @@
       <div class="modal-body">
         <%= simple_form_for ([order, order_wine]) do |f|%>
           <%= f.input :quantity_of_wine %>
+          <%= f.input :wine_id, id: 'wine-id-field' %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-        <%= f.submit class: "btn btn-primary" %>
+        <%= f.submit 'Ajouter au panier', class: "btn btn-primary" %>
       </div>
       <% end %>
     </div>
