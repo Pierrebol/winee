@@ -45,7 +45,7 @@
         </div>
         <div class="cards-container">
 
-          <div class="cards">
+          <div class="cards-all">
             <% @wines.sample(3).each do |wine| %>
               <div class="card">
                 <%= link_to wine_path(wine), class: "link-wine" do%>
@@ -64,7 +64,7 @@
                     </div>
                   </div>
                   <div class="buttons-action">
-                    <button>
+                    <button class="add_to_basket_button">
                       <p>Ajouter au panier</p>
                     </button>
                     <button>
@@ -83,7 +83,7 @@
         </div>
         <div class="cards-container">
 
-          <div class="cards">
+          <div class="cards-all">
             <% @wines.sample(3).each do |wine| %>
               <div class="card">
                 <%= link_to wine_path(wine), class: "link-wine" do %>
@@ -100,6 +100,14 @@
                     <p> <%= wine.price %> € </p>
                   </div>
                 </div>
+                <div class="buttons-action">
+                    <button class="add_to_basket_button">
+                      <p>Ajouter au panier</p>
+                    </button>
+                    <button>
+                      <p>Se faire livrer</p>
+                    </button>
+                </div>
               </div>
             <% end %>
           </div>
@@ -112,7 +120,7 @@
         </div>
         <div class="cards-container">
 
-          <div class="cards">
+          <div class="cards-all">
             <% @spirits.sample(3).each do |spirit| %>
               <div class="card">
                 <%= link_to wine_path(spirit), class: "link-wine" do %>
@@ -128,6 +136,14 @@
                   <div class="quantity">
                     <p> <%= spirit.price %> € </p>
                   </div>
+                </div>
+                <div class="buttons-action">
+                    <button class="add_to_basket_button">
+                      <p>Ajouter au panier</p>
+                    </button>
+                    <button>
+                      <p>Se faire livrer</p>
+                    </button>
                 </div>
               </div>
             <% end %>
