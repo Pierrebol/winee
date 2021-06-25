@@ -1,13 +1,13 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  
+
 }
 
 .navbar-lewagon a {
 	color:black;
 	font-family: 'Roboto', sans-serif;
-  
+
 }
 
 .navbar-brand {
@@ -63,4 +63,8 @@
 .navbar-nav {
 	margin: 0 auto !important;
 
+}
+
+.navbar-cart img {
+  width: 40px;
 }
