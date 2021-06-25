@@ -60,15 +60,17 @@
   margin:0 4vh;
   flex-grow: 1;
   padding: 0px 0px 50px 0px;
-
 }
 
+.cards-container-all h2{
+  margin: 2% 0 0 3%
+}
 
 .cards-all {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10%;
-  margin: 5% 7%;
+  margin: 3% 7%;
   flex-grow: 1;
   padding: 15px;
 
