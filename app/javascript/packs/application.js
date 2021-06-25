@@ -27,7 +27,10 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import {filterByType} from "../components/categoryButton"
-import {filterDropdown} from "../components/filterCategory"
+import {filterDropdown} from "../components/filterDropdown"
+import {filterByCategory} from "../components/filterCategories"
+import {filterByCountry} from "../components/filterCountry"
+import {filterByYear} from "../components/filterYear"
 // import { initSelect2 } from '../components/init_select2';
 // import { initCarrousel } from "../components/carrousel";
 
@@ -36,13 +39,15 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   // initCarrousel();
-  filterByType();
   if (document.getElementById('list1')) {
     filterDropdown('list1');
-    filterDropdown('list2');
     filterDropdown('list3');
     filterDropdown('list4');
   }
+  filterByType();
+  filterByCategory();
+  filterByCountry();
+  filterByYear();
 });
 
 
@@ -53,4 +58,3 @@ initSweetalert('#sweet-alert-demo', {
   text: "This is a great alert, isn't it?",
   icon: "success"
 });
-	

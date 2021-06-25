@@ -1,17 +1,18 @@
-const filterByYear = () => {
-  const checkboxesYear = document.querySelectorAll('.checkbox-year');
+const filterByCategory = () => {
+  const checkboxesCat = document.querySelectorAll('.checkbox-cat');
+  console.log(checkboxesCat)
 
-  checkboxesYear.forEach((checkbox) => {
+  checkboxesCat.forEach((checkbox) => {
     checkbox.addEventListener('click', (event) => {
       if(event.currentTarget.classList.contains('active')){
         event.currentTarget.classList.remove('active');
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => card.style.display = null)
       } else {
-      const type = event.currentTarget.dataset.yearselect;
+      const type = event.currentTarget.dataset.categoryselect;
       event.currentTarget.classList.toggle('active');
       const cards = document.querySelectorAll('.card')
-      const cardsType = document.querySelectorAll(`[data-year="${type}"]`)
+      const cardsType = document.querySelectorAll(`[data-category="${type}"]`)
       cards.forEach(card => card.style.display = 'none')
       cardsType.forEach(card => card.style.display = null)
     }
@@ -19,4 +20,4 @@ const filterByYear = () => {
   })
 }
 
-export {filterByYear};
+export {filterByCategory};
