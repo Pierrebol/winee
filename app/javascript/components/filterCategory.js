@@ -1,5 +1,5 @@
-const filterByTest = () => {
-  var checkList = document.getElementById('list1');
+const filterDropdown = (selector) => {
+  var checkList = document.getElementById(selector);
   checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
     if (checkList.classList.contains('visible'))
       checkList.classList.remove('visible');
@@ -9,4 +9,5 @@ const filterByTest = () => {
 }
 
 
-export {filterByTest};
+export {filterDropdown};
+
