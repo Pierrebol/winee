@@ -26,3 +26,21 @@
   margin: 0 1vh;
   margin-left: 150px;
 }
+
+
+.modal-button {
+  height: 8vh;
+  background-color: $my-primary;
+  color: #f2f2f2;
+  float: right;
+  padding: 1vh 1vh;
+  border: solid thin $my-primary;
+  cursor: pointer;
+  border-radius: 1vh;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  vertical-align: center;
+  margin: 0 1vh;
+  margin-left: 150px;
+
+}
