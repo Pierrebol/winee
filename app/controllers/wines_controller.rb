@@ -2,6 +2,7 @@ class WinesController < ApplicationController
   def index
     @wines = Wine.where("category != 'Spiritueux'")
     @spirits = Wine.where("category = 'Spiritueux'")
+    @order_wine = OrderWine.new
   end
 
   def user_index
@@ -29,4 +30,3 @@ class WinesController < ApplicationController
     @winebox = current_user
   end
 end
-  

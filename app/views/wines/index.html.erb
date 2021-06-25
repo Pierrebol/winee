@@ -65,7 +65,7 @@
                 </div>
                 <div class="buttons-action">
                   <button>
-                    <p>Ajouter au panier</p>
+                    <p data-toggle="modal" data-target="#exampleModal" data-wine=" <%= @wine_id = wine.id %> ">Ajouter au panier</p>
                   </button>
                   <button>
                     <p>Se faire livrer</p>
@@ -135,6 +135,9 @@
   </div>
 
 </div>
+<%= render 'shared/modal_buy_wines', order: @order, order_wine: @order_wine %>
+<% console %>
+
 
 
 

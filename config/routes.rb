@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   get '/advices', to: 'pages#advices'
   get '/wines_all', to: 'wines#all'
 
-  resources :orders, only: [:create]
+  resources :orders, only: [:create] do
+    resources :order_wines, only: [:create]
+  end
 end
