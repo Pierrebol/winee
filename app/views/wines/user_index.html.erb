@@ -10,9 +10,33 @@
         </i>
       </button>
     </form>
-    <button id="sweet-alert-demo" class="stock-btn">
+    <button id="" class="stock-btn" data-toggle="modal" data-target="#exampleModal">
       Stocker une bouteille
     </button>
+
+    <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Stocker une bouteille</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= simple_form_for(@winebox) do |f| %>
+              <%= f.association :wine, class: 'select2' %>
+              <%= f.input :quantity_of_wine %>
+              <div class="modal-footer">
+                <button type="button" class="stock-btn" data-dismiss="modal">Annuler</button>
+                <%= f.submit class: 'stock-btn' %>
+              </div>
+            <% end %>
+          </div>
+       
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="filter-content">
