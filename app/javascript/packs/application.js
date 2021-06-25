@@ -24,11 +24,15 @@ require("channels")
 
 // External imports
 import "bootstrap";
+
+
 // Internal imports, e.g:
 import {filterByType} from "../components/categoryButton"
-import {filterByTest} from "../components/filterCategory"
-import { initSweetalert } from '../plugins/init_sweetalert';
-import { initSelect2 } from '../components/init_select2';
+import {filterDropdown} from "../components/filterDropdown"
+import {filterByCategory} from "../components/filterCategories"
+import {filterByCountry} from "../components/filterCountry"
+import {filterByYear} from "../components/filterYear"
+
 // import { initSelect2 } from '../components/init_select2';
 // import { initCarrousel } from "../components/carrousel";
 
@@ -37,6 +41,11 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   // initCarrousel();
+  if (document.getElementById('list1')) {
+    filterDropdown('list1');
+    filterDropdown('list3');
+    filterDropdown('list4');
+  }
   filterByType();
   if (document.getElementById('list1')) {
     filterByTest();
@@ -47,11 +56,14 @@ document.addEventListener('turbolinks:load', () => {
     icon: "success"
   });
   initSelect2();
-  	
+  filterByCategory();
+  filterByCountry();
+  filterByYear();
 });
 
-
-
-
-
+initSweetalert('#sweet-alert-demo', {
+  title: "A nice alert",
+  text: "This is a great alert, isn't it?",
+  icon: "success"
+});
 

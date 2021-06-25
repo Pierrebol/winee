@@ -25,32 +25,53 @@
       <div class="all-filters">
         <div class="filter_category">
           <label for="category-select"><strong>Catégorie :</strong></label><br>
-            <select name="categories" id="category-select">
-                <option value="Rouge">Rouge</option>
-                <option value="Blanc">Blanc</option>
-                <option value="Rosé">Rosé</option>
-                <option value="Champagne">Champagne</option>
-            </select>
+            <div id="list1" class="dropdown-check-list" tabindex="100">
+              <span class="anchor">Choix :</span>
+              <ul class="items">
+                <li class="checkbox-cat" data-categoryselect="Rouge"><input type="checkbox" /> Rouge </li>
+                <li class="checkbox-cat" data-categoryselect="Blanc"><input type="checkbox" /> Blanc </li>
+                <li class="checkbox-cat" data-categoryselect="Rosé"><input type="checkbox" /> Rosé </li>
+                <li class="checkbox-cat" data-categoryselect="Champagne"><input type="checkbox" /> Champagne </li>
+              </ul>
+            </div>
         </div>
-        <div class="filter_cepage">
+        <!-- <div class="filter_cepage">
           <label for="cepage-select"><strong>Cépage :</strong></label><br>
-            <select name="cepages" id="cepage-select">
-                <option value="Viognier">Viognier</option>
-                <option value="Grenache blanc">Grenache blanc</option>
-                <option value="clairette">Clairette</option>
-                <option value="roussanne">Roussanne</option>
-                <option value="marsanne">Marsanne</option>
-                <option value="marsanne">Syrah</option>
-            </select>
+
+            <div id="list2" class="dropdown-check-list" tabindex="100">
+              <span class="anchor">Choix :</span>
+              <ul class="items">
+                <li><input type="checkbox" /> Syrah </li>
+                <li><input type="checkbox" /> Roussanne </li>
+                <li><input type="checkbox" /> Viognier </li>
+                <li><input type="checkbox" /> Grenache blanc </li>
+                <li><input type="checkbox" /> Marsanne </li>
+                <li><input type="checkbox" /> Roussanne </li>
+              </ul>
+            </div>
+        </div> -->
+        <div class="filter_country">
+          <label for="country-select"><strong>Pays :</strong></label><br>
+            <div id="list3" class="dropdown-check-list" tabindex="100">
+              <span class="anchor">Choix :</span>
+              <ul class="items">
+                <li class="checkbox-country" data-countryselect="France"><input type="checkbox" /> France </li>
+                <li class="checkbox-country" data-countryselect="Italie"><input type="checkbox" /> Italie </li>
+                <li class="checkbox-country" data-countryselect="Espagne"><input type="checkbox" /> Espagne </li>
+              </ul>
+            </div>
         </div>
         <div class="filter_year">
-          <% years=(1900..2021)%>
           <label for="year-select"><strong>Millésime :</strong></label><br>
-            <select name="years" id="year-select">
+          <div id="list4" class="dropdown-check-list" tabindex="100">
+            <% years=(1900..2021)%>
+            <span class="anchor">Choix :</span>
+            <ul class="items">
               <%= years.each do |year| %>
-                    <option value="France"><%= year %></option>
+                <li class="checkbox-year" data-yearselect="<%=year%>"><input type="checkbox" /> <%= year %> </li>
               <% end %>
-            </select>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -58,7 +79,7 @@
       <div class="cards-container-all">
         <div class="cards-all">
           <% @wines.each do |wine| %>
-            <div class="card" data-category="<%= wine.category %>">
+            <div class="card" data-category="<%= wine.category %>" data-country="<%= wine.country %>" data-year="<%= wine.year%>">
               <%= link_to wine_path(wine), class: "link-wine" do%>
                 <div class="card-wine-img">
                   <%= cl_image_tag wine.photo.key, crop: :fill %>
