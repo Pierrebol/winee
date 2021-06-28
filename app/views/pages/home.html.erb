@@ -1,6 +1,6 @@
 <body>
   <div class="main-container">
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1596142332133-327e2a0ff006?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);">
+     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1491924778227-f225b115dd5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1650&q=80)">
       <div class="container">
         <div class="search_bar">
           <form action= <%= wines_all_path %> >
@@ -36,13 +36,13 @@
       </div>
     </div>
 
-    <div class="cards-wine-home-container">
+    <div class="cards-container">
       <div class="container-title">
         <h2>Notre sélection de la semaine</h2>
       </div>
 
       <div class="cards-wine-home">
-        <% @wines.sample(4).each do |wine| %>
+        <% @wines.sample(6).each do |wine| %>
           <div class="card-wine-home">
             <%= link_to wine_path(wine), class: "link-wine" do %>
               <div class="card-wine-img">
@@ -52,8 +52,8 @@
             <div class="infos-quantity-actions">
               <div class="infos-quantity">
                 <div class="infos">
-                  <p> <%= wine.name %> </p>
-                  <p> <%= wine.vineyard %> </p>
+                  <p class="wine-home"> <%= wine.name %> </p>
+                  <p class="vineyard-home"> <%= wine.vineyard %> </p>
                 </div>
               </div>
             </div>
@@ -95,7 +95,7 @@
           </div>
           <div class="testify">
             <i class="fas fa-quote-left"></i>
-            <p class="card-text"><em> Winee me permets de commander des supers bouteilles de vin nature et de les stocker dans les meilleurs conditions.</em></p>
+            <p class="card-text"><em> Winee me permets de commander des supers bouteilles de vin nature et de les stocker dans les meilleures conditions.</em></p>
             <i class="fas fa-quote-right"></i>
           </div>
         </div>
@@ -156,3 +156,4 @@
   });
 </script>
 </body>
+

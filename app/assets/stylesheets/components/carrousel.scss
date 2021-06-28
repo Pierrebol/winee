@@ -2,19 +2,23 @@
   margin-bottom: 15px;
   h2 {
     font-weight: bold;
-    text-decoration: underline;
     text-align: center;
   }
+}
+.cards-wine-home {
+  padding: 15px 0px;
+}
+
+.card-wine-home {
+  margin: 0 10px;
+  width: 220px;
+  height: 250px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  margin: 10px;
 }
 
 .card-wine-home > .infos-quantity {
   text-align: center;
-}
-
-.card-wine-home {
-  width: 220px;
-  height: 250px;
-  box-shadow: 0px 1px 5px lightgrey;
 }
 
 .container-avis > h2 {
@@ -48,4 +52,12 @@
   margin-top: 5px;
   margin-bottom: 8px;
   color: $my-yellow;
+}
+
+.wine-home {
+  font-weight: bold;
+}
+
+.vineyard-home {
+  opacity: 0.5
 }
