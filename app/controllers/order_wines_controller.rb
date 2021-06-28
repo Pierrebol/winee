@@ -12,6 +12,18 @@ class OrderWinesController < ApplicationController
     end
   end
 
+  def update
+
+  end
+
+  def destroy
+    @order = Order.find(params[:order_id])
+    @order_wine = OrderWine.find(params[:id])
+    @order_wine.destroy
+
+    redirect_to order_path(@order)
+  end
+
   private
 
   def orderwine_params

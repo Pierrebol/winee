@@ -1,9 +1,10 @@
 <div class="cart-container-global">
   <% @order_wines.each do |order_wine| %>
     <div class="cart-detailed-infos">
-      <p><%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, order_path(@order), method: :delete, data: { confirm: "Are you sure ?"}, class:"delete-disguise" %></p>
+      <p><%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, order_order_wine_path(@order, order_wine), method: :delete, data: { confirm: "Are you sure ?"}, class:"delete-disguise" %></p>
       <div class="cart-product">
         <h5>Product</h5>
+        <p> <%= cl_image_tag Wine.find(order_wine.wine_id).photo.key, height: 150, width: 100, crop: :fill %> </p>
       </div>
       <div class="cart-product-name">
         <p> <%= Wine.find(order_wine.wine_id).name %> </p>

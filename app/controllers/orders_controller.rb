@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @order_wines = OrderWine.where(order_id: @order.id)
-    raise
   end
 
   def update
@@ -13,12 +12,12 @@ class OrdersController < ApplicationController
   end
 
   def destroy
-    @order = Order.find(params[:id])
-    @order_wine = OrderWine.find(order_id: @order.id)
-    raise
-    @order_wine.destroy
+    # @order = Order.find(params[:id])
+    # @order_wine = OrderWine.find(order_id: @order.id)
+    # raise
+    # @order_wine.destroy
 
-    redirect_to order_path(@order)
+    # redirect_to order_path(@order)
   end
 
   private
