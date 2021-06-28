@@ -3,6 +3,15 @@ class WinesController < ApplicationController
     @wines = Wine.where("category != 'Spiritueux'")
     @spirits = Wine.where("category = 'Spiritueux'")
     @order_wine = OrderWine.new
+    @delivery_product = DeliveryProduct.new
+    @user = User.where(id: current_user.id)
+    @markers = @user.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        image_url: helpers.asset_url('')
+      }
+    end
   end
 
   def user_index
