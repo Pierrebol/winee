@@ -27,7 +27,7 @@
 
         <div class="filter_category">
           <label for="category-select"><strong>Catégorie :</strong></label><br>
-            <div id="list1" class="dropdown-check-list" tabindex="100">
+            <div data-category="" id="list1" class="dropdown-check-list" tabindex="100">
               <span class="anchor">Choix :</span>
               <ul class="items">
                 <li class="checkbox-cat dropdown-item p-0" data-categoryselect="Rouge"><input type="checkbox" hidden=true /> Rouge </li>
@@ -40,7 +40,7 @@
 
         <div class="filter_country">
           <label for="country-select"><strong>Pays :</strong></label><br>
-            <div id="list3" class="dropdown-check-list" tabindex="100">
+            <div data-country="" id="list3" class="dropdown-check-list" tabindex="100">
               <span class="anchor">Choix :</span>
               <ul class="items">
                 <li class="checkbox-country dropdown-item p-0" data-countryselect="France"><input type="checkbox" hidden=true/> France </li>
@@ -52,7 +52,7 @@
 
         <div class="filter_year">
           <label for="year-select"><strong>Millésime :</strong></label><br>
-          <div id="list4" class="dropdown-check-list" tabindex="100">
+          <div data-year="" id="list4" class="dropdown-check-list" tabindex="100">
             <% years=(1900..2021) %>
             <span class="anchor">Choix :</span>
             <ul class="items">
