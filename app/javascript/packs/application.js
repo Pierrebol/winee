@@ -33,7 +33,7 @@ import {filterByCategory} from "../components/filterCategories"
 import {filterByCountry} from "../components/filterCountry"
 import {filterByYear} from "../components/filterYear"
 import { initSelect2 } from '../components/init_select2';
-import {filterAll} from "../components/tryingConnecting"
+import { filterAll } from "../components/connectedFilters"
 
 // import { initSelect2 } from '../components/init_select2';
 // import { initCarrousel } from "../components/carrousel";
@@ -49,11 +49,11 @@ document.addEventListener('turbolinks:load', () => {
     filterDropdown('list3');
     filterDropdown('list4');
   }
-  filterByCategory();
-  filterByCountry();
-  filterByYear();
+  // filterByCategory();
+  // filterByCountry();
+  // filterByYear();
   filterByType();
-  // filterAll();
+  filterAll();
 
  // if (document.getElementById('list1')) {
  //   filterByTest();

@@ -30,10 +30,10 @@
             <div data-category="" id="list1" class="dropdown-check-list" tabindex="100">
               <span class="anchor">Choix :</span>
               <ul class="items">
-                <li class="checkbox-cat dropdown-item p-0" data-categoryselect="Rouge"><input type="checkbox" hidden=true /> Rouge </li>
-                <li class="checkbox-cat dropdown-item p-0" data-categoryselect="Blanc"><input type="checkbox" hidden=true /> Blanc </li>
-                <li class="checkbox-cat dropdown-item p-0" data-categoryselect="Rosé"><input type="checkbox" hidden=true /> Rosé </li>
-                <li class="checkbox-cat dropdown-item p-0" data-categoryselect="Champagne"><input type="checkbox" hidden=true /> Champagne </li>
+                <li class="checkbox-cat dropdown-item p-0" data-select="Rouge"><input type="checkbox" hidden=true /> Rouge </li>
+                <li class="checkbox-cat dropdown-item p-0" data-select="Blanc"><input type="checkbox" hidden=true /> Blanc </li>
+                <li class="checkbox-cat dropdown-item p-0" data-select="Rosé"><input type="checkbox" hidden=true /> Rosé </li>
+                <li class="checkbox-cat dropdown-item p-0" data-select="Champagne"><input type="checkbox" hidden=true /> Champagne </li>
               </ul>
             </div>
         </div>
@@ -43,9 +43,9 @@
             <div data-country="" id="list3" class="dropdown-check-list" tabindex="100">
               <span class="anchor">Choix :</span>
               <ul class="items">
-                <li class="checkbox-country dropdown-item p-0" data-countryselect="France"><input type="checkbox" hidden=true/> France </li>
-                <li class="checkbox-country dropdown-item p-0" data-countryselect="Italie"><input type="checkbox" hidden=true/> Italie </li>
-                <li class="checkbox-country dropdown-item p-0" data-countryselect="Espagne"><input type="checkbox" hidden=true/> Espagne </li>
+                <li class="checkbox-country dropdown-item p-0" data-select="France"><input type="checkbox" hidden=true/> France </li>
+                <li class="checkbox-country dropdown-item p-0" data-select="Italie"><input type="checkbox" hidden=true/> Italie </li>
+                <li class="checkbox-country dropdown-item p-0" data-select="Espagne"><input type="checkbox" hidden=true/> Espagne </li>
               </ul>
             </div>
         </div>
@@ -57,7 +57,7 @@
             <span class="anchor">Choix :</span>
             <ul class="items">
               <%= years.reverse_each do |year| %>
-                <li class="checkbox-year dropdown-item p-0" data-yearselect="<%=year%>"><input type="checkbox" hidden=true/> <%= year %> </li>
+                <li class="checkbox-year dropdown-item p-0" data-select="<%=year%>"><input type="checkbox" hidden=true/> <%= year %> </li>
               <% end %>
             </ul>
           </div>
