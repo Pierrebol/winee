@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/my_cellar', to: 'wines#user_index'
 
 
-  resources :orders, only: [:create] do
+  resources :orders, only: [:show, :create, :destroy] do
     resources :order_wines, only: [:create]
   end
 
