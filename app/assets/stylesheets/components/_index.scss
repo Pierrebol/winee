@@ -24,9 +24,14 @@
   transition: opacity 0.3s ease;
   vertical-align: center;
   margin: 0 1vh;
-  margin-left: 150px;
+  margin-left: 100px;
+  display:flex;
+  align-items:center;
 }
 
+.stock-btn:hover{
+  color:white;
+}
 
 .modal-button {
   height: 8vh;

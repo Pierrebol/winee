@@ -38,21 +38,6 @@
             </div>
         </div>
 
-<!--         <div class="filter_cepage">
-          <label for="cepage-select"><strong>Cépage :</strong></label><br>
-            <div id="list2" class="dropdown-check-list" tabindex="100">
-              <span class="anchor">Choix :</span>
-              <ul class="items">
-                <li><input type="checkbox" /> Syrah </li>
-                <li><input type="checkbox" /> Roussanne </li>
-                <li><input type="checkbox" /> Viognier </li>
-                <li><input type="checkbox" /> Grenache blanc </li>
-                <li><input type="checkbox" /> Marsanne </li>
-                <li><input type="checkbox" /> Roussanne </li>
-              </ul>
-            </div>
-        </div> -->
-
         <div class="filter_country">
           <label for="country-select"><strong>Pays :</strong></label><br>
             <div id="list3" class="dropdown-check-list" tabindex="100">
@@ -64,18 +49,6 @@
               </ul>
             </div>
         </div>
-
-<!--         <div class="pretty p-icon p-toggle p-plain">
-            <input type="checkbox" />
-            <div class="state p-on checkbox-cat" data-categoryselect="Rouge">
-                <i class="fas fa-wine-glass-alt"></i>
-                <label>Rouge</label>
-            </div>
-            <div class="state p-off">
-
-                <label>Rouge</label>
-            </div>
-        </div> -->
 
         <div class="filter_year">
           <label for="year-select"><strong>Millésime :</strong></label><br>
@@ -94,6 +67,7 @@
 
 
       <div class="cards-container-all">
+        <h2> Toutes nos références</h2>
         <div class="cards-all">
           <% @wines.each do |wine| %>
             <div class="card" data-category="<%= wine.category %>" data-country="<%= wine.country %>" data-year="<%= wine.year%>">
