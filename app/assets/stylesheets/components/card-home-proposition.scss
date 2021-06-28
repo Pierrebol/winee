@@ -1,12 +1,12 @@
 .card-value-container {
     height: 120px;
-    width: 90%;
+    width: 80%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: white;
     border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    box-shadow: 11px 2px 16px rgba(0, 0, 0, 0.2);
     margin: 0 auto;
     margin-top: -60px;
     margin-bottom: 60px;
@@ -18,10 +18,11 @@
     height: 70%;
     width: 20%;
     background: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
     display: flex;
     align-items: center;
     text-align: center;
+    padding: 10px;
 }
 
 .card-value img {
@@ -31,7 +32,7 @@
 }
 
 .card-value h2 {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     margin: 0;
 }
