@@ -1,6 +1,6 @@
 <body>
   <div class="main-container">
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1596142332133-327e2a0ff006?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);">
+     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1491924778227-f225b115dd5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1650&q=80)">
       <div class="container">
         <div class="search_bar">
           <form action= <%= wines_all_path %> >
@@ -52,8 +52,8 @@
             <div class="infos-quantity-actions">
               <div class="infos-quantity">
                 <div class="infos">
-                  <p> <%= wine.name %> </p>
-                  <p> <%= wine.vineyard %> </p>
+                  <p class="wine-home"> <%= wine.name %> </p>
+                  <p class="vineyard-home"> <%= wine.vineyard %> </p>
                 </div>
               </div>
             </div>
@@ -156,3 +156,4 @@
   });
 </script>
 </body>
+
