@@ -55,13 +55,11 @@ document.addEventListener('turbolinks:load', () => {
   filterByType();
   filterAll();
 
- // if (document.getElementById('list1')) {
- //   filterByTest();
- // }
-  initSweetalert('#sweet-alert-demo', {
-    title: "A nice alert",
-    text: "This is a great alert, isn't it?",
-    icon: "success"
-  });
+  // initSweetalert('#sweet-alert-demo', {
+  //   title: "A nice alert",
+  //   text: "This is a great alert, isn't it?",
+  //   icon: "success"
+  // });
+
   initSelect2();
 });
