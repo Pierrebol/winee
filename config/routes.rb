@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :wines do
     resources :reviews, only: [:new, :create, :update, :edit]
   end
-  
+
   resources :wineboxes, only: [:create]
 
   get '/my_cellar', to: 'wines#user_index'
@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   get '/my_cellar', to: 'wines#user_index'
 
 
-  resources :orders, only: [:create]
+  resources :orders, only: [:create] do
+    resources :order_wines, only: [:create]
+  end
 
 
 end

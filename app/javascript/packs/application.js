@@ -42,6 +42,7 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   // initCarrousel();
+
   if (document.getElementById('list1')) {
     filterDropdown('list1');
     filterDropdown('list3');
@@ -62,4 +63,3 @@ document.addEventListener('turbolinks:load', () => {
   });
   initSelect2();
 });
-

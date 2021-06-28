@@ -45,73 +45,27 @@
         </div>
         <div class="cards-container">
 
-          <div class="cards-all">
-            <% @wines.sample(3).each do |wine| %>
-              <div class="card">
-                <%= link_to wine_path(wine), class: "link-wine" do%>
-                  <div class="card-wine-img">
-                    <%= cl_image_tag wine.photo.key, crop: :fill %>
-                  </div>
-                <% end %>
-                <div class="infos-quantity-actions">
-                  <div class="infos-quantity">
-                    <div class="infos">
-                      <p> <%= wine.name %> </p>
-                      <p> <%= wine.vineyard %> </p>
-                    </div>
-                    <div class="quantity">
-                      <p> <%= wine.price %> € </p>
-                    </div>
-                  </div>
-                  <div class="buttons-action">
-                    <button class="add_to_basket_button">
-                      <p>Ajouter au panier</p>
-                    </button>
-                    <button>
-                      <p>Se faire livrer</p>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          </div>
+        <div class="cards-all">
+          <% @wines.sample(3).each do |wine| %>
+            <%= render '/shared/wine_card', order: @order, order_wine: @order_wine, wine: wine %>
+          <% end %>
         </div>
       </div>
+    </div>
+
       <div class="recommandation-container">
         <div class="container-title">
           <p>Parce que vous aimez ...</p>
         </div>
         <div class="cards-container">
 
-          <div class="cards-all">
-            <% @wines.sample(3).each do |wine| %>
-              <div class="card">
-                <%= link_to wine_path(wine), class: "link-wine" do %>
-                  <div class="card-wine-img">
-                    <%= cl_image_tag wine.photo.key, crop: :fill %>
-                  </div>
-                <% end %>
-                <div class="infos-quantity">
-                  <div class="infos">
-                    <p> <%= wine.name %> </p>
-                    <p> <%= wine.vineyard %> </p>
-                  </div>
-                  <div class="quantity">
-                    <p> <%= wine.price %> € </p>
-                  </div>
-                </div>
-                <div class="buttons-action">
-                    <button class="add_to_basket_button">
-                      <p>Ajouter au panier</p>
-                    </button>
-                    <button>
-                      <p>Se faire livrer</p>
-                    </button>
-                </div>
-              </div>
-            <% end %>
-          </div>
+
+        <div class="cards-all">
+          <% @wines.sample(3).each do |wine| %>
+            <%= render '/shared/wine_card', order: @order, order_wine: @order_wine, wine: wine %>
+          <% end %>
         </div>
+      </div>
       </div>
 
       <div class="recommandation-container">
@@ -120,39 +74,18 @@
         </div>
         <div class="cards-container">
 
-          <div class="cards-all">
-            <% @spirits.sample(3).each do |spirit| %>
-              <div class="card">
-                <%= link_to wine_path(spirit), class: "link-wine" do %>
-                  <div class="card-wine-img">
-                    <%= cl_image_tag spirit.photo.key, crop: :fill %>
-                  </div>
-                <% end %>
-                <div class="infos-quantity">
-                  <div class="infos">
-                    <p> <%= spirit.name %> </p>
-                    <p> <%= spirit.vineyard %> </p>
-                  </div>
-                  <div class="quantity">
-                    <p> <%= spirit.price %> € </p>
-                  </div>
-                </div>
-                <div class="buttons-action">
-                    <button class="add_to_basket_button">
-                      <p>Ajouter au panier</p>
-                    </button>
-                    <button>
-                      <p>Se faire livrer</p>
-                    </button>
-                </div>
-              </div>
-            <% end %>
-          </div>
+        <div class="cards-all">
+          <% @spirits.sample(3).each do |wine| %>
+            <%= render '/shared/wine_card', order: @order, order_wine: @order_wine, wine: wine %>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
+</div>
+
+
 
 
 
