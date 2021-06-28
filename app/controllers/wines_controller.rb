@@ -25,8 +25,4 @@ class WinesController < ApplicationController
       @wines = Wine.all
     end
   end
-
-  def create_winebox
-    @winebox = current_user
-  end
 end

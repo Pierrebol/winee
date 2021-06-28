@@ -36,13 +36,13 @@
       </div>
     </div>
 
-    <div class="cards-wine-home-container">
+    <div class="cards-container">
       <div class="container-title">
         <h2>Notre sélection de la semaine</h2>
       </div>
 
       <div class="cards-wine-home">
-        <% @wines.sample(4).each do |wine| %>
+        <% @wines.sample(6).each do |wine| %>
           <div class="card-wine-home">
             <%= link_to wine_path(wine), class: "link-wine" do %>
               <div class="card-wine-img">
@@ -95,7 +95,7 @@
           </div>
           <div class="testify">
             <i class="fas fa-quote-left"></i>
-            <p class="card-text"><em> Winee me permets de commander des supers bouteilles de vin nature et de les stocker dans les meilleurs conditions.</em></p>
+            <p class="card-text"><em> Winee me permets de commander des supers bouteilles de vin nature et de les stocker dans les meilleures conditions.</em></p>
             <i class="fas fa-quote-right"></i>
           </div>
         </div>

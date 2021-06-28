@@ -4,7 +4,6 @@
       <%= cl_image_tag wine.photo.key, crop: :fill %>
     </div>
   <% end %>
-  <div class="infos-quantity-actions">
     <div class="infos-quantity">
       <div class="infos">
         <p> <%= wine.name %> </p>
@@ -15,13 +14,10 @@
       </div>
     </div>
     <div class="buttons-action">
-      <button>
-        <p class="btn-add-cart" data-toggle="modal" data-target="#wine-modal-<%= wine.id %>">Ajouter au panier</p>
-      </button>
+        <p class="add_to_basket_button" data-toggle="modal" data-target="#wine-modal-<%= wine.id %>">Ajouter au panier</p>
       <button>
         <p>Se faire livrer</p>
       </button>
-    </div>
   </div>
 </div>
 <div class="modal fade" id="wine-modal-<%= wine.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

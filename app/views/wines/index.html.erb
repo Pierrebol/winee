@@ -38,47 +38,51 @@
       </div>
     </div>
 
-    <div class="cards-containers">
-
-      <div class="cards-container">
+    <div class="recommandations-containers">
+      <div class="recommandation-container">
         <div class="container-title">
           <p>Recommandations de la semaine</p>
         </div>
+        <div class="cards-container">
 
-        <div class="cards">
+        <div class="cards-all">
           <% @wines.sample(3).each do |wine| %>
             <%= render '/shared/wine_card', order: @order, order_wine: @order_wine, wine: wine %>
           <% end %>
         </div>
       </div>
+    </div>
 
-      <div class="cards-container">
+      <div class="recommandation-container">
         <div class="container-title">
           <p>Parce que vous aimez ...</p>
         </div>
+        <div class="cards-container">
 
-        <div class="cards">
+
+        <div class="cards-all">
           <% @wines.sample(3).each do |wine| %>
             <%= render '/shared/wine_card', order: @order, order_wine: @order_wine, wine: wine %>
           <% end %>
         </div>
       </div>
+      </div>
 
-      <div class="cards-container">
+      <div class="recommandation-container">
         <div class="container-title">
           <p>Quelques spiritueux</p>
         </div>
+        <div class="cards-container">
 
-        <div class="cards">
+        <div class="cards-all">
           <% @spirits.sample(3).each do |wine| %>
             <%= render '/shared/wine_card', order: @order, order_wine: @order_wine, wine: wine %>
           <% end %>
         </div>
       </div>
-
     </div>
   </div>
-
+</div>
 </div>
 
 
