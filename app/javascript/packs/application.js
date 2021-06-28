@@ -26,7 +26,6 @@ require("channels")
 import "bootstrap";
 import {filterByType} from "../components/categoryButton"
 import {filterByTest} from "../components/filterCategory"
-import {initOpenModal} from "../components/open_wine_modal"
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 // import { initCarrousel } from "../components/carrousel";
@@ -38,7 +37,6 @@ document.addEventListener('turbolinks:load', () => {
   // initCarrousel();
   // filterByType();
   // filterByTest();
-  initOpenModal();
 });
 
 
