@@ -1,8 +1,5 @@
 const filterAll = () => {
   const allFilters = document.querySelectorAll('.checkbox-cat, .checkbox-country, .checkbox-year');
-  const categoryList = document.getElementById('list1')
-  const countryList = document.getElementById('list3')
-  const yearList = document.getElementById('list4')
   const filters = []
   allFilters.forEach((filter) => {
     filter.addEventListener('click', (event) => {
