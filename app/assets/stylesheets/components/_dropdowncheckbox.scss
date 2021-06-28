@@ -39,6 +39,7 @@
   margin: 0;
   border: 1px solid #ccc;
   border-top: none;
+  text-align:center;
 }
 
 .dropdown-check-list ul.items li {
@@ -46,10 +47,28 @@
 }
 
 .dropdown-check-list.visible .anchor {
-  color: #0094ff;
+  color: #974242;
 }
 
 .dropdown-check-list.visible .items {
   display: block;
 }
 
+.dropdown-item.active, .dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #974242;
+}
+
+.filter_category {
+  text-align: center;
+}
+
+.filter_country {
+  text-align: center;
+  margin: 10% 0px 10% 0px;
+}
+
+.filter_year {
+  text-align: center;
+}
