@@ -62,9 +62,9 @@
                 </button>
               </div>
               <div class="modal-body">
-                <%= simple_form_for(@review) do |f| %>
-                  <%= f.association :wine, class: 'select2' %>
-                  <%= f.input :quantity_of_wine %>
+                <%= simple_form_for(@review.wine) do |f| %>
+                  <%= f.input :comment %>
+                  <%= f.input :rating %>
                   <div class="modal-footer">
                     <button type="button" class="stock-btn" data-dismiss="modal">Annuler</button>
                     <%= f.submit class: 'modal-button' %>
