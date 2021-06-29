@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_28_154156) do
+ActiveRecord::Schema.define(version: 2021_06_29_153454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,13 +125,13 @@ ActiveRecord::Schema.define(version: 2021_06_28_154156) do
     t.string "vineyard"
     t.text "description"
     t.string "category"
-    t.integer "price"
     t.string "photo"
     t.string "country"
     t.integer "year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "designation_id", null: false
+    t.integer "price_cents", default: 0, null: false
     t.index ["designation_id"], name: "index_wines_on_designation_id"
   end
 

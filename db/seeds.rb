@@ -10,12 +10,12 @@ require "open-uri"
 puts "Cleaning database..."
 Delivery.destroy_all
 OrderWine.destroy_all
+Review.destroy_all
 Winebox.destroy_all
 Wine.destroy_all
 Order.destroy_all
 Designation.destroy_all
 User.destroy_all
-Review.destroy_all
 
 puts "Creating a designation..."
 designation_1 = Designation.create!(name: "Saint-Estèphe", description: 'Le saint-estèphe, ou appellation saint-estèphe contrôlée, est un vin rouge français d appellation d origine contrôlée produit sur la commune de Saint-Estèphe dans le Médoc, une des subdivisions du vignoble de Bordeaux.', region: 'Bordeaux')
@@ -32,7 +32,7 @@ wine_1 = Wine.new(name: 'Les sables fauves',
                   vineyard: 'Domaine de Laballe',
                   description: 'Des parfums exotiques du nez à la bouche !',
                   category: 'Blanc',
-                  price: 7.70,
+                  price_cents: 770,
                   designation: designation_1,
                   country: 'France',
                   year: '2020',
@@ -47,7 +47,7 @@ wine_2 = Wine.new(name: 'Batti Batti',
                   vineyard: 'Saint-Esprit',
                   description: 'Le rosé qui fait battre notre cœur et nos papilles !',
                   category: 'Rosé',
-                  price: 9.50,
+                  price_cents: 950,
                   designation: designation_1,
                   country: 'France',
                   year: '2020'
@@ -63,7 +63,7 @@ wine_3 = Wine.new(name: 'Syrah',
                   vineyard: 'Domaine Musita',
                   description: 'La syrah se plie aux charmes maritimes de la Sicile !',
                   category: 'Rouge',
-                  price: 9.90,
+                  price_cents: 990,
                   designation: designation_1,
                   country: 'Italie',
                   year: '2019'
@@ -78,7 +78,7 @@ wine_4 = Wine.new(name: 'Rosso Fuoco',
                   vineyard: 'Vite Colte',
                   description: 'Tout est bon dans le Piémont ',
                   category: 'Rouge',
-                  price: 12.90,
+                  price_cents: 1290,
                   designation: designation_1,
                   country: 'Italie',
                   year: '2019'
@@ -94,7 +94,7 @@ wine_5 = Wine.new(name: 'Saint-Joseph',
                   vineyard: 'Domaine Courbis',
                   description: 'Un incontournable dans le Rhône !',
                   category: 'Rouge',
-                  price: 24.50,
+                  price_cents: 2450,
                   designation: designation_1,
                   country: 'France',
                   year: '2019'
@@ -110,7 +110,7 @@ wine_6 = Wine.new(name: 'Grand Vernet',
                   vineyard: 'Domaine Pélaquié',
                   description: 'Une partition de cépages sur un air parfumé !',
                   category: 'Rouge',
-                  price: 10.50,
+                  price_cents: 1050,
                   designation: designation_1,
                   country: 'France',
                   year: '2020'
@@ -125,7 +125,7 @@ wine_7 = Wine.new(name: 'El picaro',
                   vineyard: 'Matsu',
                   description: 'Charnu, généreux et ensoleillé, un vin typique d Espagne !',
                   category: 'Rouge',
-                  price: 9.50,
+                  price_cents: 950,
                   designation: designation_1,
                   country: 'Espagne',
                   year: '2020'
@@ -141,7 +141,7 @@ wine_8 = Wine.new(name: 'Brastis pastis breton',
                   vineyard: 'Brastis',
                   description: 'Avec sa bouteille en forme de phare, ce pastis breton fera sensation auprès de vos convives lors de vos apéros, vos barbecues d été et vos parties de pétanque !',
                   category: 'Spiritueux',
-                  price: 32.90,
+                  price_cents: 3290,
                   designation: designation_1,
                   country: 'Bretagne',
                   year: '2020'
@@ -152,7 +152,7 @@ wine_8.save
 
 
 
-wine_9 = Wine.new(name: 'Rhum Clément - Vieux VO',
+wine_9 = Wine.new(name: 'Rhum Clément - XO',
                   grape_variety: 'Rhum agricole',
                   vineyard: 'Rhum Clément',
                   description: 'Bien équilibré',
@@ -209,45 +209,45 @@ Winebox.create!(user: user4, wine: wine_10, quantity_of_wine: 50)
 
 
 puts "Creating reviews, should take less time, please be patient again zebi^^"
-Review.create!(user: user1, wine: wine_1, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user1, wine: wine_2, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user1, wine: wine_3, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user1, wine: wine_4, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user1, wine: wine_5, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user1, wine: wine_6, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user1, wine: wine_7, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user1, wine: wine_8, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user1, wine: wine_9, comment: "ça casse la gorge", rating: 5)
+Review.create!(user: user1, wine: wine_1, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user1, wine: wine_2, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user1, wine: wine_3, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user1, wine: wine_4, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user1, wine: wine_5, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user1, wine: wine_6, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user1, wine: wine_7, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user1, wine: wine_8, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user1, wine: wine_9, comment: "ça casse la gorge cet excellent vin !", rating: 5)
 
-Review.create!(user: user2, wine: wine_1, comment: "ça casse la gorge", rating: 2)
-Review.create!(user: user2, wine: wine_2, comment: "ça casse la gorge", rating: 2)
-Review.create!(user: user2, wine: wine_3, comment: "ça casse la gorge", rating: 2)
-Review.create!(user: user2, wine: wine_4, comment: "ça casse la gorge", rating: 2)
-Review.create!(user: user2, wine: wine_5, comment: "ça casse la gorge", rating: 2)
-Review.create!(user: user2, wine: wine_6, comment: "ça casse la gorge", rating: 2)
-Review.create!(user: user2, wine: wine_7, comment: "ça casse la gorge", rating: 2)
-Review.create!(user: user2, wine: wine_8, comment: "ça casse la gorge", rating: 2)
-Review.create!(user: user2, wine: wine_9, comment: "ça casse la gorge", rating: 2)
+Review.create!(user: user2, wine: wine_1, comment: "ça casse la gorge cet excellent vin !", rating: 2)
+Review.create!(user: user2, wine: wine_2, comment: "ça casse la gorge cet excellent vin !", rating: 2)
+Review.create!(user: user2, wine: wine_3, comment: "ça casse la gorge cet excellent vin !", rating: 2)
+Review.create!(user: user2, wine: wine_4, comment: "ça casse la gorge cet excellent vin !", rating: 2)
+Review.create!(user: user2, wine: wine_5, comment: "ça casse la gorge cet excellent vin !", rating: 2)
+Review.create!(user: user2, wine: wine_6, comment: "ça casse la gorge cet excellent vin !", rating: 2)
+Review.create!(user: user2, wine: wine_7, comment: "ça casse la gorge cet excellent vin !", rating: 2)
+Review.create!(user: user2, wine: wine_8, comment: "ça casse la gorge cet excellent vin !", rating: 2)
+Review.create!(user: user2, wine: wine_9, comment: "ça casse la gorge cet excellent vin !", rating: 2)
 
-Review.create!(user: user3, wine: wine_1, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user3, wine: wine_2, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user3, wine: wine_3, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user3, wine: wine_4, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user3, wine: wine_5, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user3, wine: wine_6, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user3, wine: wine_7, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user3, wine: wine_8, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user3, wine: wine_9, comment: "ça casse la gorge", rating: 5)
+Review.create!(user: user3, wine: wine_1, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user3, wine: wine_2, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user3, wine: wine_3, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user3, wine: wine_4, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user3, wine: wine_5, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user3, wine: wine_6, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user3, wine: wine_7, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user3, wine: wine_8, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user3, wine: wine_9, comment: "ça casse la gorge cet excellent vin !", rating: 5)
 
-Review.create!(user: user4, wine: wine_1, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user4, wine: wine_2, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user4, wine: wine_3, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user4, wine: wine_4, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user4, wine: wine_5, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user4, wine: wine_6, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user4, wine: wine_7, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user4, wine: wine_8, comment: "ça casse la gorge", rating: 5)
-Review.create!(user: user4, wine: wine_9, comment: "ça casse la gorge", rating: 5)
+Review.create!(user: user4, wine: wine_1, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user4, wine: wine_2, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user4, wine: wine_3, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user4, wine: wine_4, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user4, wine: wine_5, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user4, wine: wine_6, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user4, wine: wine_7, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user4, wine: wine_8, comment: "ça casse la gorge cet excellent vin !", rating: 5)
+Review.create!(user: user4, wine: wine_9, comment: "ça casse la gorge cet excellent vin !", rating: 5)
 
 
 

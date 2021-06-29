@@ -5,6 +5,7 @@ class Wine < ApplicationRecord
   has_many :delivery_products
   has_many :wineboxes
   has_many :reviews
+  monetize :price_cents
 
   validates :name, presence: true
   validates :grape_variety, presence: true
