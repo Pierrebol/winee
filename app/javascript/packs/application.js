@@ -33,8 +33,10 @@ import {filterByCategory} from "../components/filterCategories"
 import {filterByCountry} from "../components/filterCountry"
 import {filterByYear} from "../components/filterYear"
 import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initSelect2 } from '../components/init_select2';
-import { filterAll } from "../components/connectedFilters"
+import { filterAll } from "../components/connectedFilters";
+import { changeDeliveryAddress } from "../components/connectedAddress"
 
 
 // import { initSelect2 } from '../components/init_select2';
@@ -64,4 +66,6 @@ document.addEventListener('turbolinks:load', () => {
   // });
   initSelect2();
   initMapbox();
+  initAutocomplete();
+  changeDeliveryAddress();
 });

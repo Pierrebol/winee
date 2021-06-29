@@ -9,7 +9,7 @@ class WinesController < ApplicationController
       {
         lat: user.latitude,
         lng: user.longitude,
-        image_url: helpers.asset_url('')
+        image_url: helpers.asset_url('corkscrew.png')
       }
     end
   end
