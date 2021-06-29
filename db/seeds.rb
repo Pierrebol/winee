@@ -10,6 +10,7 @@ require "open-uri"
 puts "Cleaning database..."
 Winebox.destroy_all
 Wine.destroy_all
+Order.destroy_all
 Designation.destroy_all
 User.destroy_all
 
@@ -17,10 +18,10 @@ puts "Creating a designation..."
 designation_1 = Designation.create!(name: "Saint-Estèphe", description: 'Le saint-estèphe, ou appellation saint-estèphe contrôlée, est un vin rouge français d appellation d origine contrôlée produit sur la commune de Saint-Estèphe dans le Médoc, une des subdivisions du vignoble de Bordeaux.', region: 'Bordeaux')
 
 puts "Creating Users..."
-user1 = User.create!(email: "bollack@edhec.com", password: "azerty")
-user2 = User.create(email: "gasp@edhec.com", password: "azerty")
-user3 = User.create!(email: "dubet@edhec.com", password: "azerty")
-user4 = User.create!(email: "dez@edhec.com", password: "azerty")
+user1 = User.create!(email: "bollack@edhec.com", password: "azerty", address:"33 rue Bonaparte Paris")
+user2 = User.create!(email: "gasp@edhec.com", password: "azerty", address: "15 Rue de Lille Paris")
+user3 = User.create!(email: "dubet@edhec.com", password: "azerty", address:"204 rue Saint-Maur Paris")
+user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place de la République Paris")
 
 puts "Creating Wines (can take some time please wait and dance) ^^... AAAANNNNNNDYYYYYYYYY"
 wine_1 = Wine.new(name: 'Les sables fauves',

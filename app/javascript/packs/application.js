@@ -32,8 +32,10 @@ import {filterDropdown} from "../components/filterDropdown"
 import {filterByCategory} from "../components/filterCategories"
 import {filterByCountry} from "../components/filterCountry"
 import {filterByYear} from "../components/filterYear"
+import { initMapbox } from '../plugins/init_mapbox';
 import { initSelect2 } from '../components/init_select2';
 import { filterAll } from "../components/connectedFilters"
+
 
 // import { initSelect2 } from '../components/init_select2';
 // import { initCarrousel } from "../components/carrousel";
@@ -60,6 +62,6 @@ document.addEventListener('turbolinks:load', () => {
   //   text: "This is a great alert, isn't it?",
   //   icon: "success"
   // });
-
   initSelect2();
+  initMapbox();
 });

@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_many :wineboxes
   has_many :reviews
   has_many :wines, through: :wineboxes
+  
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/, message: "Veuillez utilisez un format correct" }
 end

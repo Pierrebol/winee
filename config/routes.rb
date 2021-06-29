@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   resources :orders, only: [:show, :create, :destroy] do
     resources :order_wines, only: [:create, :destroy, :update]
   end
-
+  
+  resources :deliveries, only: [:show, :create] do
+    resources :delivery_products, only: [:create]
+  end
 
 end

@@ -23,7 +23,7 @@
 
         <div class="cards-all">
           <% @wines.sample(3).each do |wine| %>
-            <%= render '/shared/wine_card', order: @order, order_wine: @order_wine, wine: wine %>
+            <%= render '/shared/wine_card', order: @order, order_wine: @order_wine, delivery: @delivery, delivery_product: @delivery_product, wine: wine %>
           <% end %>
         </div>
       </div>
@@ -60,8 +60,3 @@
   </div>
 </div>
 </div>
-
-
-
-
-
