@@ -71,7 +71,7 @@
           <p> <%= @shipping_fees %> € </p>
           <p> <%= @total_price %> € </p>
           <div class="btn-valider-payer">
-            <%= link_to "Valider et payer", "#", class:"btn btn-info" %>
+            <%= link_to "Valider et payer", validate_order_path(@order), method: :patch, class:"btn btn-info" %>
           </div>
         </div>
       </div>
