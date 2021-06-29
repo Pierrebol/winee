@@ -24,14 +24,23 @@
 .container-avis > h2 {
   font-weight: bold;
   margin-top: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   text-align: center;
+  padding-bottom: 20px;
+  padding-top: 50px;
+  color: white;
+}
+
+.container-avis {
+  background-color: $my-primary;
 }
 
 .container-carrousel {
   background-color: #964242;
   padding: 80px;
   text-align: center;
+  padding-top: 40px;
+  padding-bottom: 110px;
 }
 
 .carousel {
