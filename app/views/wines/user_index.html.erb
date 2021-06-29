@@ -13,7 +13,6 @@
     <button id="" class="stock-btn" data-toggle="modal" data-target="#exampleModal">
       Stocker une bouteille
     </button>
-
     <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -33,6 +32,12 @@
               </div>
             <% end %>
           </div>
+
+          <script>
+            $('#.select2').select2({
+                dropdownParent: $('#exampleModal')
+            });
+          </script>
 
         </div>
       </div>
@@ -55,10 +60,10 @@
                 <div class="infos-quantity">
                   <div class="infos">
                     <p> <%= Wine.find(winebox.wine_id).name %> </p>
-                    <p> <%= Wine.find(winebox.wine_id).vineyard %> </p>
+                    <p id='vineyard-infos' > <%= Wine.find(winebox.wine_id).vineyard %> </p>
                   </div>
                   <div class="quantity">
-                    <p> <%= winebox.quantity_of_wine %> 🍷 </p>
+                    <p> <%= winebox.quantity_of_wine %> <i id="bottlewine" class="fas fa-wine-bottle"></i> </p>
                   </div>
                 </div>
                 <div class="buttons-action">

@@ -45,7 +45,36 @@
           <p><%= @wine.designation.description %></p>
       </div>
     </div>
+
+
     <div class="wine_show_card_ordering">
+      <button href="#" id="review_btn" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">Laisser un avis</button>
+      <button id="" class="stock-btn" data-toggle="modal" data-target="#ReviewModal">
+            Laisser un avis
+      </button>
+        <div class="modal fade " id="ReviewModal" tabindex="-1" role="dialog" aria-labelledby="ReviewModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="ReviewModalLabel">Stocker une bouteille</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <%= simple_form_for(@review) do |f| %>
+                  <%= f.association :wine, class: 'select2' %>
+                  <%= f.input :quantity_of_wine %>
+                  <div class="modal-footer">
+                    <button type="button" class="stock-btn" data-dismiss="modal">Annuler</button>
+                    <%= f.submit class: 'modal-button' %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      
       <div class="wine_show_card_ordering_space">
         <div class="quantity">
           <h5>Quantité en stock :</h5>
@@ -61,3 +90,6 @@
     </div>
   </div>
 </div>
+
+
+

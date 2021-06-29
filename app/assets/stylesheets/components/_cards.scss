@@ -18,6 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   img {
     width: 25%;
     height: 75%;
@@ -113,5 +114,31 @@
 .cards-all button p {
   font-size: 12px;
   margin: 0px;
+}
+
+
+#vineyard-infos {
+  opacity:0.5 !important;
+}
+
+#ratingstar {
+  color: $my-yellow;
+}
+
+.ratings {
+  display: flex;  
+  position: absolute;
+  top: -5px;
+  margin-top: 20px;
+  margin-left: 180px;
+  align-items: baseline;  
+
+}
+
+.ratings p {
+  color: black;
+  font-weight: bold;
+  padding-left: 3px;
+  margin-bottom: 10px;
 }
 
