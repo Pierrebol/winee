@@ -25,8 +25,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :deliveries, only: [:show, :create] do
-    resources :delivery_products, only: [:create]
+  resources :deliveries, only: [:show, :create, :destroy] do
+    resources :delivery_products, only: [:create, :destroy, :update] do
+      member do
+        patch '/add', to: 'delivery_product#add'
+        patch '/remove', to: 'delivery_product#remove'
+      end
+    end
   end
-
 end

@@ -1,0 +1,59 @@
+<% if @delivery_product.count == 0 %>
+
+  <div class="mess-no-wine-in-cart">
+    <div class="container-global">
+      <div class="contact-container">
+        <h1>Votre panier de livraison Winee est vide</h1>
+        <p>
+          <%= link_to "Trouver un vin qui vous plait !", wines_path %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+<% else %>
+
+  <div class="cart-container-global">
+    <% @delivery_products.each do |delivery_product| %>
+      <div class="cart-detailed-infos">
+        <p><%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, delivery_delivery_products_path(@delivery, delivery_product), method: :delete, data: { confirm: "Are you sure ?"}, class:"delete-disguise" %></p>
+        <div class="cart-product">
+          <h5>Product</h5>
+          <p> <%= cl_image_tag Wine.find(delivery_product.wine_id).photo.key, height: 150, width: 100, crop: :fill %> </p>
+        </div>
+        <div class="cart-product-name">
+          <p> <%= Wine.find(delivery_product.wine_id).name %> </p>
+        </div>
+        <div class="cart-product-quantity">
+          <h5>Quantité</h5>
+          <p>
+            <%= link_to "-", remove_delivery_delivery_products_path(@delivery, delivery_product), method: :patch, remote: true %>
+            <%= delivery_product.quantity_of_wine %>
+            <%= link_to "+", add_delivery_delivery_products_path(@delivery, delivery_product), method: :patch, remote: true %>
+          </p>
+        </div>
+      </div>
+      <div class="trait_dessus"></div>
+    <% end %>
+
+    <div class="cart-validation-options">
+      <div class="add-or-delivery-options">
+        <div class="choice-category-cart">
+          <div class="livraison btn-category" data-btncategory="livraison">
+            Se faire livrer
+          </div>
+        </div>
+      </div>
+      <div class="all-detailed-info-order">
+        <div class=" detailed-info-titles">
+          <div class="trait_dessous"></div>
+          <p>Frais de livraison</p>
+        </div>
+        <div class="detailed-info-content">
+          <p> <%= @shipping_fees %> € </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>

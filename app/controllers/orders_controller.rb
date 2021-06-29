@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
     @prices = @order_wines.map do |order_wine|
       order_wine.quantity_of_wine * Wine.find(order_wine.wine_id).price
     end
+    raise
     @subtotal = @prices.reduce(0, :+)
     @taxes = (@subtotal * 0.2).round(2)
     @shipping_fees = (@subtotal * 0.1).round(2)
