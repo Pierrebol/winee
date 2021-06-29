@@ -17,9 +17,14 @@ Rails.application.routes.draw do
 
 
   resources :orders, only: [:show, :create, :destroy] do
-    resources :order_wines, only: [:create, :destroy, :update]
+    resources :order_wines, only: [:create, :destroy, :update] do
+      member do
+        patch '/add', to: 'order_wines#add'
+        patch '/remove', to: 'order_wines#remove'
+      end
+    end
   end
-  
+
   resources :deliveries, only: [:show, :create] do
     resources :delivery_products, only: [:create]
   end

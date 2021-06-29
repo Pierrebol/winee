@@ -12,14 +12,27 @@ class OrderWinesController < ApplicationController
     end
   end
 
-  def update
-  end
-
   def destroy
     @order = Order.find(params[:order_id])
     @order_wine = OrderWine.find(params[:id])
     @order_wine.destroy
 
+    redirect_to order_path(@order)
+  end
+
+  def add
+    @order = Order.find(params[:order_id])
+    @order_wine = OrderWine.find(params[:id])
+    @order_wine.quantity_of_wine += 1
+    @order_wine.save
+    redirect_to order_path(@order)
+  end
+
+  def remove
+    @order = Order.find(params[:order_id])
+    @order_wine = OrderWine.find(params[:id])
+    @order_wine.quantity_of_wine -= 1
+    @order_wine.save
     redirect_to order_path(@order)
   end
 

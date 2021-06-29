@@ -1,4 +1,5 @@
 <% if @order_wines.count == 0 %>
+
   <div class="mess-no-wine-in-cart">
     <div class="container-global">
       <div class="contact-container">
@@ -9,7 +10,9 @@
       </div>
     </div>
   </div>
+
 <% else %>
+
   <div class="cart-container-global">
     <% @order_wines.each do |order_wine| %>
       <div class="cart-detailed-infos">
@@ -23,7 +26,11 @@
         </div>
         <div class="cart-product-quantity">
           <h5>Quantité</h5>
-          <p> <%= order_wine.quantity_of_wine %> </p>
+          <p>
+            <%= link_to "-", remove_order_order_wine_path(@order, order_wine), method: :patch, remote: true %>
+            <%= order_wine.quantity_of_wine %>
+            <%= link_to "+", add_order_order_wine_path(@order, order_wine), method: :patch, remote: true %>
+          </p>
         </div>
         <div class="cart-product-price-per-unit">
           <h5>Price</h5>
@@ -67,4 +74,5 @@
       </div>
     </div>
   </div>
+
 <% end %>
