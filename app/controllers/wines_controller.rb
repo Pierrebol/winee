@@ -1,4 +1,5 @@
 class WinesController < ApplicationController
+  
   def index
     @wines = Wine.where("category != 'Spiritueux'")
     @spirits = Wine.where("category = 'Spiritueux'")
@@ -25,6 +26,7 @@ class WinesController < ApplicationController
 
   def show
     @wine = Wine.find(params[:id])
+    @review = Review.new
   end
 
   def all
@@ -35,3 +37,4 @@ class WinesController < ApplicationController
     end
   end
 end
+
