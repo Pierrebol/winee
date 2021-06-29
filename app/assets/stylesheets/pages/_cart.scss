@@ -1,3 +1,7 @@
+.cart-container-global {
+  padding: 20px;
+}
+
 .cart-detailed-infos {
   padding: 20px;
   display: flex;
@@ -81,4 +85,16 @@ margin: 0 auto;
 
 .detailed-info-content p {
   margin-bottom: 30px;
+}
+
+.delete-wine-order {
+  color: white;
+}
+
+.add-remove-quantity-btn {
+  background-color: white;
+  color: $my-primary;
+  border-radius: 50vh;
+  font-size: 19px;
+  margin: 10px;
 }

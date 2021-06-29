@@ -16,7 +16,7 @@
   <div class="cart-container-global">
     <% @order_wines.each do |order_wine| %>
       <div class="cart-detailed-infos">
-        <p><%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, order_order_wine_path(@order, order_wine), method: :delete, data: { confirm: "Are you sure ?"}, class:"delete-disguise" %></p>
+        <p><%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, order_order_wine_path(@order, order_wine), method: :delete, data: { confirm: "Are you sure ?"}, class:"delete-wine-order" %></p>
         <div class="cart-product">
           <h5>Product</h5>
           <p> <%= cl_image_tag Wine.find(order_wine.wine_id).photo.key, height: 150, width: 100, crop: :fill %> </p>
@@ -27,9 +27,9 @@
         <div class="cart-product-quantity">
           <h5>Quantité</h5>
           <p>
-            <%= link_to "-", remove_order_order_wine_path(@order, order_wine), method: :patch, remote: true %>
+            <%= link_to "-", remove_order_order_wine_path(@order, order_wine), method: :patch, remote: true, class:"add-remove-quantity-btn" %>
             <%= order_wine.quantity_of_wine %>
-            <%= link_to "+", add_order_order_wine_path(@order, order_wine), method: :patch, remote: true %>
+            <%= link_to "+", add_order_order_wine_path(@order, order_wine), method: :patch, remote: true, class:"add-remove-quantity-btn" %>
           </p>
         </div>
         <div class="cart-product-price-per-unit">
@@ -70,6 +70,9 @@
           <p> <%= @taxes %> € </p>
           <p> <%= @shipping_fees %> € </p>
           <p> <%= @total_price %> € </p>
+          <div class="btn-valider-payer">
+            <%= link_to "Valider et payer", "#", class:"btn btn-info" %>
+          </div>
         </div>
       </div>
     </div>
