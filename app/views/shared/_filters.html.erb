@@ -1,0 +1,51 @@
+<div class="filters">
+      <div class="choice-category">
+        <div class="category-vin btn-category" data-btncategory="Vin">
+          Vins
+        </div>
+        <div class="category-spiritueux btn-category" data-btncategory="Spiritueux">
+          Spiritueux
+        </div>
+      </div>
+
+      <div class="all-filters">
+
+        <div class="filter_category">
+          <label for="category-select"><strong>Catégorie :</strong></label><br>
+            <div data-category="" id="list1" class="dropdown-check-list" tabindex="100">
+              <span class="anchor">Choix :</span>
+              <ul class="items">
+                <li class="checkbox-cat dropdown-item p-0" data-select="Rouge"><input type="checkbox" hidden=true /> Rouge </li>
+                <li class="checkbox-cat dropdown-item p-0" data-select="Blanc"><input type="checkbox" hidden=true /> Blanc </li>
+                <li class="checkbox-cat dropdown-item p-0" data-select="Rosé"><input type="checkbox" hidden=true /> Rosé </li>
+                <li class="checkbox-cat dropdown-item p-0" data-select="Champagne"><input type="checkbox" hidden=true /> Champagne </li>
+              </ul>
+            </div>
+        </div>
+
+        <div class="filter_country">
+          <label for="country-select"><strong>Pays :</strong></label><br>
+            <div data-country="" id="list3" class="dropdown-check-list" tabindex="100">
+              <span class="anchor">Choix :</span>
+              <ul class="items">
+                <li class="checkbox-country dropdown-item p-0" data-select="France"><input type="checkbox" hidden=true/> France </li>
+                <li class="checkbox-country dropdown-item p-0" data-select="Italie"><input type="checkbox" hidden=true/> Italie </li>
+                <li class="checkbox-country dropdown-item p-0" data-select="Espagne"><input type="checkbox" hidden=true/> Espagne </li>
+              </ul>
+            </div>
+        </div>
+
+        <div class="filter_year">
+          <label for="year-select"><strong>Millésime :</strong></label><br>
+          <div data-year="" id="list4" class="dropdown-check-list" tabindex="100">
+            <% years=(1900..2021) %>
+            <span class="anchor">Choix :</span>
+            <ul class="items">
+              <%= years.reverse_each do |year| %>
+                <li class="checkbox-year dropdown-item p-0" data-select="<%=year%>"><input type="checkbox" hidden=true/> <%= year %> </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+    </div>
+  </div>
