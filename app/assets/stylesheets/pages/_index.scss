@@ -2,6 +2,7 @@
 @import "home";
 @import "show";
 @import "contact";
+@import "cart";
 
 .container-index {
   background-color: #964242;
@@ -21,6 +22,14 @@
   }
 }
 
+.filter-content-reco {
+  display: flex;
+  justify-content: center;
+  .filters {
+    width: 300px;
+  }
+}
+
 .container-title {
   padding: 15px 0;
   margin-bottom: 0;
@@ -28,7 +37,10 @@
   p {
     height: 25px;
     margin: 0;
-    text-align:center;
+    text-align:left;
+    padding: 10px;
+    margin-left: 80px;
+    font-size: 20px;
   }
 }
 

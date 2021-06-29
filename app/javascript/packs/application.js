@@ -32,8 +32,10 @@ import {filterDropdown} from "../components/filterDropdown"
 import {filterByCategory} from "../components/filterCategories"
 import {filterByCountry} from "../components/filterCountry"
 import {filterByYear} from "../components/filterYear"
-import { initSelect2 } from '../components/init_select2'
 import { initMapbox } from '../plugins/init_mapbox';
+import { initSelect2 } from '../components/init_select2';
+import { filterAll } from "../components/connectedFilters"
+
 
 // import { initSelect2 } from '../components/init_select2';
 // import { initCarrousel } from "../components/carrousel";
@@ -49,14 +51,12 @@ document.addEventListener('turbolinks:load', () => {
     filterDropdown('list3');
     filterDropdown('list4');
   }
-  filterByCategory();
-  filterByCountry();
-  filterByYear();
+  // filterByCategory();
+  // filterByCountry();
+  // filterByYear();
   filterByType();
+  filterAll();
 
- if (document.getElementById('list1')) {
-   filterByTest();
- }
   // initSweetalert('#sweet-alert-demo', {
   //   title: "A nice alert",
   //   text: "This is a great alert, isn't it?",

@@ -1,5 +1,5 @@
 <div class="container-index">
-  <div class="search-bar-container">
+  <div class="search-bar-container" id="search-bar-second">
     <form class="search_bar" action= <%= wines_all_path %>>
       <input type="text"
           placeholder="Rechercher un vin..."
@@ -42,33 +42,75 @@
   <div class="filter-content">
     <div class="filters">
       <div class="choice-category">
-        <div class="category-vin">
+        <div class="category-vin btn-category" data-btncategory="Vin">
           Vins
         </div>
-        <div class="category-spiritueux">
+        <div class="category-spiritueux btn-category" data-btncategory="Spiritueux">
           Spiritueux
         </div>
       </div>
+
       <div class="all-filters">
-        <div class="category ">
-          <p>Categorie</p>
+
+        <div class="filter_category">
+          <label for="category-select"><strong>Catégorie :</strong></label><br>
+            <div id="list1" class="dropdown-check-list" tabindex="100">
+              <span class="anchor">Choix :</span>
+              <ul class="items">
+                <li class="checkbox-cat dropdown-item p-0" data-categoryselect="Rouge"><input type="checkbox" hidden=true /> Rouge </li>
+                <li class="checkbox-cat dropdown-item p-0" data-categoryselect="Blanc"><input type="checkbox" hidden=true /> Blanc </li>
+                <li class="checkbox-cat dropdown-item p-0" data-categoryselect="Rosé"><input type="checkbox" hidden=true /> Rosé </li>
+                <li class="checkbox-cat dropdown-item p-0" data-categoryselect="Champagne"><input type="checkbox" hidden=true /> Champagne </li>
+              </ul>
+            </div>
         </div>
-        <div class="category">
-          <p>Cépages</p>
+
+<!--         <div class="filter_cepage">
+          <label for="cepage-select"><strong>Cépage :</strong></label><br>
+            <div id="list2" class="dropdown-check-list" tabindex="100">
+              <span class="anchor">Choix :</span>
+              <ul class="items">
+                <li><input type="checkbox" /> Syrah </li>
+                <li><input type="checkbox" /> Roussanne </li>
+                <li><input type="checkbox" /> Viognier </li>
+                <li><input type="checkbox" /> Grenache blanc </li>
+                <li><input type="checkbox" /> Marsanne </li>
+                <li><input type="checkbox" /> Roussanne </li>
+              </ul>
+            </div>
+        </div> -->
+
+        <div class="filter_country">
+          <label for="country-select"><strong>Pays :</strong></label><br>
+            <div id="list3" class="dropdown-check-list" tabindex="100">
+              <span class="anchor">Choix :</span>
+              <ul class="items">
+                <li class="checkbox-country dropdown-item p-0" data-countryselect="France"><input type="checkbox" hidden=true/> France </li>
+                <li class="checkbox-country dropdown-item p-0" data-countryselect="Italie"><input type="checkbox" hidden=true/> Italie </li>
+                <li class="checkbox-country dropdown-item p-0" data-countryselect="Espagne"><input type="checkbox" hidden=true/> Espagne </li>
+              </ul>
+            </div>
         </div>
-        <div class="category">
-          <p>France</p>
-        </div>
-        <div class="category">
-          <p>1999</p>
+
+        <div class="filter_year">
+          <label for="year-select"><strong>Millésime :</strong></label><br>
+          <div id="list4" class="dropdown-check-list" tabindex="100">
+            <% years=(1900..2021) %>
+            <span class="anchor">Choix :</span>
+            <ul class="items">
+              <%= years.reverse_each do |year| %>
+                <li class="checkbox-year dropdown-item p-0" data-yearselect="<%=year%>"><input type="checkbox" hidden=true/> <%= year %> </li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
       <div class="cards-container-all">
-        <h2> Mes vins</h2>
+        <h2> Mes bouteilles </h2>
         <div class="cards-all">
-          <% @wineboxes.each do |winebox| %>
-            <div class="card">
+            <% @wineboxes.each do |winebox| %>
+            <div class="card" data-category="<%= winebox.wine.category %>" data-country="<%= winebox.wine.country %>" data-year="<%= winebox.wine.year%>">
               <%= link_to wine_path(Wine.find(winebox.wine_id)), class: "link-wine" do%>
                 <div class="card-wine-img">
                   <%= cl_image_tag Wine.find(winebox.wine_id).photo.key, crop: :fill %>
