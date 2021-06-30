@@ -65,8 +65,13 @@
 
 .wine-home {
   font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .vineyard-home {
-  opacity: 0.5  
+  opacity: 0.5
 }
