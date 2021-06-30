@@ -93,20 +93,35 @@
       <h2> <strong>Ils donnent leurs avis</strong> </h2>
       <div class="list-group">
         <% @wine.reviews.each do |review| %>
-          <li class="list-group-item">
-            <small>
-              <% count = 0 %>
-              <% 5.times do %>
-                <% if review.rating > count %>
-                  <i class="fas fa-star"></i>
-                <% else %>
-                  <i class="far fa-star"></i>
-                <% end %>
-                <% count += 1 %>
+          <div class="total-review">
+            <div class="usersinfos">
+              <div class= "photouser">
+              <% if review.user.photo.attached? %>
+                <%= cl_image_tag review.user.photo.key, class: "avatar-review" %>
+              <% else %>
+                <%= image_tag "gaspou.png", class: "avatar-review" %>
               <% end %>
-            </small>
-            <p><%= review.comment %></p>
-          </li>
+              </div>
+              <div class="username">
+                <%= review.user.username %>
+              </div>
+
+            </div>
+            <li class="list-group-item">
+              <small>
+                <% count = 0 %>
+                <% 5.times do %>
+                  <% if review.rating > count %>
+                    <i id="starscolor" class="fas fa-star"></i>
+                  <% else %>
+                    <i id="starscolor" class="far fa-star"></i>
+                  <% end %>
+                  <% count += 1 %>
+                <% end %>
+              </small>
+              <p><%= review.comment %></p>
+            </li>
+          </div>
         <% end %>
       </div>
     </div>
