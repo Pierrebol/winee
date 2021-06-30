@@ -1,9 +1,12 @@
 <div class="container">
   <div class="row py-4">
     <!-- <div class="col-md-3"><%#= image_tag @order.teddy.photo_url, width: '100%' %></div> -->
-    <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= @order.wines[0].name %></strong> for <strong><%= humanized_money_with_symbol @order.total_price_cents %></strong></p>
+    <div class="col confirmation-content-container">
+      <h1>Confirmation de votre panier</h1>
+      <div class="content-confirmation">
+        <p>Votre commande contient <%= @order.order_wines.count %> types de bouteilles différentes </p>
+        <p>Vous en avez pour un total de <strong><%= humanized_money_with_symbol @order.total_price %></strong></p>
+      </div>
       <button id="pay" class="btn btn-primary">Payer</button>
       <script src="https://js.stripe.com/v3/"></script>
       <script>

@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
       currency: 'eur',
       quantity: 1
     }],
-    success_url: order_url(@order),
+    success_url: 'http://winee.space/confirmation',
     cancel_url: order_url(@order)
   )
 
@@ -36,6 +36,7 @@ class OrdersController < ApplicationController
   end
 
   def user_index
+    # @user_orders = current_user.orders.where(status: "paid")
   end
 
   def destroy
