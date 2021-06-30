@@ -11,8 +11,12 @@ class OrdersController < ApplicationController
     @total_price = (@subtotal.to_f + @taxes.to_f + @shipping.to_f).round(2)
   end
 
-  def update
+  def validate
     # changer le statut du cart
+    @order = Order.find(params[:id])
+    @order.status = "pre-payment"
+    @order.save
+    redirect_to order_path(@order)
   end
 
   def user_index

@@ -23,6 +23,9 @@ Rails.application.routes.draw do
         patch '/remove', to: 'order_wines#remove'
       end
     end
+    member do
+      patch '/validate', to: 'orders#validate'
+    end
   end
 
   resources :deliveries, only: [:show, :create, :destroy] do

@@ -2,7 +2,7 @@ class WineboxesController < ApplicationController
 def create
   if Winebox.find_by(wine_id: params[:winebox][:wine_id], user_id: current_user).nil?
     @winebox = Winebox.new(winebox_params)
-	@winebox.user = current_user
+	  @winebox.user = current_user
     if @winebox.save!
       redirect_to my_cellar_path, notice: "#{@winebox.quantity_of_wine} bouteilles de \"#{@winebox.wine.name}\" ajoutées"
     else
