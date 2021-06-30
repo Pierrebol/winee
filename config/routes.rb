@@ -33,4 +33,6 @@ Rails.application.routes.draw do
     resources :delivery_products, only: [:create]
   end
 
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
+
 end
