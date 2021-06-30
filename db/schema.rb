@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2021_06_30_104236) do
 
 
@@ -69,11 +68,12 @@ ActiveRecord::Schema.define(version: 2021_06_30_104236) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "total_price"
     t.string "status", default: "cart"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "total_price_cents", default: 0, null: false
+    t.string "checkout_session_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -120,12 +120,12 @@ ActiveRecord::Schema.define(version: 2021_06_30_104236) do
     t.string "vineyard"
     t.text "description"
     t.string "category"
-    t.integer "price"
     t.string "photo"
     t.string "country"
     t.integer "year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "price_cents", default: 0, null: false
     t.string "hachette_description"
     t.string "designation"
     t.string "service"

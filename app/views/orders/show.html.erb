@@ -69,6 +69,9 @@
           <p> <%= @subtotal %> € </p>
           <p> <%= @taxes %> € </p>
           <p> <%= @shipping_fees %> € </p>
+          <div class="btn-valider-payer">
+            <%= link_to "Valider et payer", validate_order_path(@order, total_price_cents: @total_price_cents), method: :patch, class:"btn btn-info" %>
+          </div>
           <p id="totalofcart"> <%= @total_price %> € </p>
         </div>
       </div>

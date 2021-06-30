@@ -17,6 +17,7 @@ DeliveryProduct.destroy_all
 Review.destroy_all
 Delivery.destroy_all
 OrderWine.destroy_all
+Review.destroy_all
 Winebox.destroy_all
 Wine.destroy_all
 Order.destroy_all
@@ -24,6 +25,7 @@ User.destroy_all
 
 
 puts "Creating Users..."
+
 user1 = User.create!(email: "bollack@edhec.com", password: "azerty", address:"33 rue Bonaparte Paris", username: 'Bobolalackiki')
 user2 = User.create!(email: "gasp@edhec.com", password: "azerty", address: "15 Rue de Lille Paris", username: 'Leplusbg')
 user3 = User.create!(email: "dubet@edhec.com", password: "azerty", address:"204 rue Saint-Maur Paris", username: 'chienhaineux78')
