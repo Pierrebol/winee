@@ -58,14 +58,6 @@ ActiveRecord::Schema.define(version: 2021_06_30_104236) do
     t.index ["wine_id"], name: "index_delivery_products_on_wine_id"
   end
 
-  create_table "designations", force: :cascade do |t|
-    t.text "description"
-    t.string "region"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
-  end
-
   create_table "order_wines", force: :cascade do |t|
     t.integer "quantity_of_wine"
     t.bigint "order_id", null: false
@@ -134,8 +126,10 @@ ActiveRecord::Schema.define(version: 2021_06_30_104236) do
     t.integer "year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "designation_id", null: false
-    t.index ["designation_id"], name: "index_wines_on_designation_id"
+    t.string "hachette_description"
+    t.string "designation"
+    t.string "service"
+    t.string "designation_description"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -149,5 +143,4 @@ ActiveRecord::Schema.define(version: 2021_06_30_104236) do
   add_foreign_key "reviews", "wines"
   add_foreign_key "wineboxes", "users"
   add_foreign_key "wineboxes", "wines"
-  add_foreign_key "wines", "designations"
 end
