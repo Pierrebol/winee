@@ -12,7 +12,7 @@
   </div>
 
 <% else %>
-
+  <h1 class="title-panier"> <strong>Votre panier d'achat</strong></h1>
   <div class="cart-container-global">
     <% @order_wines.each do |order_wine| %>
       <div class="cart-detailed-infos">
@@ -69,12 +69,12 @@
           <p> <%= @subtotal %> € </p>
           <p> <%= @taxes %> € </p>
           <p> <%= @shipping_fees %> € </p>
-          <p> <%= @total_price %> € </p>
-          <div class="btn-valider-payer">
-            <%= link_to "Valider et payer", validate_order_path(@order), method: :patch, class:"btn btn-info" %>
-          </div>
+          <p id="totalofcart"> <%= @total_price %> € </p>
         </div>
       </div>
+    </div>
+    <div class="btn-valider-payer">
+      <%= link_to "Valider et payer", validate_order_path(@order), method: :patch %>
     </div>
   </div>
 
