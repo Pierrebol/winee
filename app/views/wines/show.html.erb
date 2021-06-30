@@ -12,7 +12,7 @@
   <div class="wine_show_card">
     <div class="wine_show_card_photo">
      <% if @wine.photo.attached? %>
-        <%= cl_image_tag @wine.photo.key, height: 600, width: 400, :gravity=>"faces", crop: :fill %>
+        <%= cl_image_tag @wine.photo.key, crop: :fill %>
       <% else %>
         <img src="https://source.unsplash.com/z1C4U9-zeVs" alt="" id="photo-default">
       <% end %>

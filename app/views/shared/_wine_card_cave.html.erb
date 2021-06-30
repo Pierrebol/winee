@@ -36,21 +36,27 @@
     <div class="modal fade" id="wine-modal-<%= winebox.wine_id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-        <div class="modal-body d-flex">
+            <div class="modal-header">
+                <h5 class="modal-title">Récapitulatif livraison</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <div class="modal-body">
             <div class="wine-img">
-            <div class="card-wine-img">
-                <%= cl_image_tag winebox.wine.photo.key, crop: :fill %>
+                <div class="card-wine-img">
+                    <%= cl_image_tag winebox.wine.photo.key, crop: :fill %>
+                </div>
             </div>
-            </div>
-            <div class="form-quantity">
+            <div class="form-order">
             <%= simple_form_for ([@order, @order_wine]) do |f|%>
                 <%= f.input :quantity_of_wine %>
                 <%= f.input :wine_id, input_html: { value: winebox.wine_id }, as: :hidden %>
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-            <%= f.submit 'Ajouter au panier', class: "btn btn-primary" %>
+            <button type="button" class="stock-btn" data-dismiss="modal">Annuler</button>
+            <%= f.submit 'Ajouter au panier', class: "modal-button" %>
         </div>
         <% end %>
         </div>
@@ -60,17 +66,17 @@
     <div class="modal fade" id="delivery-modal-<%= winebox.wine_id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title">Récapitulatif livraison</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
+            <div class="modal-header">
+                <h5 class="modal-title">Récapitulatif livraison</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
         <div class="modal-body">
             <div class="wine-img">
-            <div class="card-wine-img">
-                <%= cl_image_tag winebox.wine.photo.key, crop: :fill %>
-            </div>
+                <div class="card-wine-img">
+                    <%= cl_image_tag winebox.wine.photo.key, crop: :fill %>
+                </div>
             </div>
             <div class="form-delivery">
             <%= simple_form_for ([@delivery, @delivery_product]) do |f|%>
@@ -83,8 +89,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-            <%= f.submit 'Se faire livrer', class: "btn btn-primary" %>
+            <button type="button" class="stock-btn" data-dismiss="modal">Annuler</button>
+            <%= f.submit 'Se faire livrer', class: "modal-button" %>
         </div>
         <% end %>
         </div>
