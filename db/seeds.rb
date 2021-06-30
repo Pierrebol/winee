@@ -8,6 +8,7 @@
 require "open-uri"
 
 puts "Cleaning database..."
+DeliveryProduct.destroy_all
 Review.destroy_all
 Delivery.destroy_all
 OrderWine.destroy_all
