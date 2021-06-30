@@ -24,7 +24,7 @@ class DeliveryProductsController < ApplicationController
     @delivery = Delivery.find(params[:delivery_id])
     @delivery_product = DeliveryProduct.find(params[:id])
     @delivery_product.quantity_of_wine += 1
-    @delivery_product.save
+    @delivery_product.save!
     redirect_to delivery_path(@delivery)
   end
 
@@ -32,7 +32,7 @@ class DeliveryProductsController < ApplicationController
     @delivery = Delivery.find(params[:delivery_id])
     @delivery_product = DeliveryProduct.find(params[:id])
     @delivery_product.quantity_of_wine -= 1
-    @delivery_product.save
+    @delivery_product.save!
     redirect_to delivery_path(@delivery)
   end
 

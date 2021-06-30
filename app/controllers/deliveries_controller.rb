@@ -7,6 +7,14 @@ class DeliveriesController < ApplicationController
     end
     @subtotal = @prices.reduce(0, :+)
     @shipping_fees = (@subtotal * 0.1).round(2)
+    @user = User.where(id: current_user.id)
+    @markers = @user.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        image_url: helpers.asset_url('corkscrew.png')
+      }
+    end
   end
 
   def update
