@@ -29,8 +29,13 @@ Rails.application.routes.draw do
     resources :payments, only: :new
   end
 
-  resources :deliveries, only: [:show, :create] do
-    resources :delivery_products, only: [:create]
+  resources :deliveries, only: [:show, :create, :destroy] do
+    resources :delivery_products, only: [:create, :destroy, :update] do
+      member do
+        patch '/add', to: 'delivery_products#add'
+        patch '/remove', to: 'delivery_products#remove'
+      end
+    end
   end
 
   mount StripeEvent::Engine, at: '/stripe-webhooks'

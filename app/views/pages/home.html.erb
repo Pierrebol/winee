@@ -55,6 +55,10 @@
                   <p class="wine-home"> <%= wine.name %> </p>
                   <p class="vineyard-home"> <%= wine.vineyard %> </p>
                 </div>
+                <div class="ratings-carroussel">
+                  <i id="ratingstar"class="fas fa-star"></i>
+                  <p id="notation"> <%= wine.reviews.average(:rating) %> </p>
+                </div>
               </div>
             </div>
           </div>

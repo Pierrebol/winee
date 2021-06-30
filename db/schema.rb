@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_30_083259) do
+ActiveRecord::Schema.define(version: 2021_06_30_104236) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,21 +48,13 @@ ActiveRecord::Schema.define(version: 2021_06_30_083259) do
   end
 
   create_table "delivery_products", force: :cascade do |t|
-    t.string "quantity_of_wine"
     t.bigint "delivery_id", null: false
     t.bigint "wine_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "quantity_of_wine"
     t.index ["delivery_id"], name: "index_delivery_products_on_delivery_id"
     t.index ["wine_id"], name: "index_delivery_products_on_wine_id"
-  end
-
-  create_table "designations", force: :cascade do |t|
-    t.text "description"
-    t.string "region"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
   end
 
   create_table "order_wines", force: :cascade do |t|
@@ -106,6 +99,7 @@ ActiveRecord::Schema.define(version: 2021_06_30_083259) do
     t.float "latitude"
     t.float "longitude"
     t.string "address"
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -131,9 +125,11 @@ ActiveRecord::Schema.define(version: 2021_06_30_083259) do
     t.integer "year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "designation_id", null: false
     t.integer "price_cents", default: 0, null: false
-    t.index ["designation_id"], name: "index_wines_on_designation_id"
+    t.string "hachette_description"
+    t.string "designation"
+    t.string "service"
+    t.string "designation_description"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -147,5 +143,4 @@ ActiveRecord::Schema.define(version: 2021_06_30_083259) do
   add_foreign_key "reviews", "wines"
   add_foreign_key "wineboxes", "users"
   add_foreign_key "wineboxes", "wines"
-  add_foreign_key "wines", "designations"
 end

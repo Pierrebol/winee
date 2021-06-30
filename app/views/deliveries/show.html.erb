@@ -1,0 +1,90 @@
+<% if @delivery_products.count == 0 %>
+
+  <div class="mess-no-wine-in-cart">
+    <div class="container-global">
+      <div class="contact-container">
+        <h1>Votre panier de livraison Winee est vide</h1>
+        <p>
+          <%= link_to "Trouver un vin qui vous plait !", wines_path %>
+        </p>
+      </div>
+    </div>
+  </div>
+<% else %>
+
+  <h1 class="title-panier"> <strong>Votre panier de livraison</strong></h1>
+  <div class="cart-container-global">
+    <% @delivery_products.each do |delivery_product| %>
+      <div class="cart-detailed-infos">
+        <p><%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, delivery_delivery_products_path(@delivery, delivery_product), method: :delete, data: { confirm: "Are you sure ?"}, class:"delete-wine-order" %></p>
+        <div class="cart-product">
+          <h5>Product</h5>
+          <p> <%= cl_image_tag Wine.find(delivery_product.wine_id).photo.key, height: 150, width: 100, crop: :fill %> </p>
+        </div>
+        <div class="cart-product-name">
+          <p> <%= Wine.find(delivery_product.wine_id).name %> </p>
+        </div>
+        <div class="cart-product-quantity">
+          <h5>Quantité</h5>
+          <p>
+            <%= link_to "-", remove_delivery_delivery_product_path(@delivery, delivery_product), method: :patch, remote: true, class:"add-remove-quantity-btn" %>
+            <%= delivery_product.quantity_of_wine %>
+            <%= link_to "+", add_delivery_delivery_product_path(@delivery, delivery_product), method: :patch, remote: true,class:"add-remove-quantity-btn" %>
+          </p>
+        </div>
+      </div>
+      <div class="trait_dessus"></div>
+    <% end %>
+
+    <div class="cart-validation-options">
+      <div class="all-detailed-info-order">
+        <div class=" detailed-info-titles">
+          <div class="trait_dessous"></div>
+          <p>Frais de livraison</p>
+        </div>
+        <div class="detailed-info-content">
+          <p id="totalofcart">  <strong><%= @shipping_fees %> € </strong> </p>
+        </div>
+      </div>
+    </div>
+      <button class="btn-valider-payer" data-toggle="modal" data-target="#delivery-modal-<%= @delivery.id %>">
+        Se faire livrer
+      </button>
+  </div>
+
+  
+
+
+<% end %>
+
+<div class="modal fade" id="delivery-modal-<%= @delivery.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Récapitulatif livraison</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-delivery">
+          <%= simple_form_for (@delivery) do |f|%>
+            <%= f.input :date, label: "Date de livraison", as: :string, required: false, input_html: {id: "delivery_date"} %>
+          <%# end %>
+          <%#= f.input :delivery_address, input_html: { value: current_user.address }, as: :hidden%>
+          <%#= f.input :delivery_id, input_html: { value: @delivery.id }, as: :hidden %>
+        </div>
+        <div id="map"
+          style="width: 100%; height: 400px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+        <%= f.submit 'Se faire livrer', class: "btn btn-primary" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

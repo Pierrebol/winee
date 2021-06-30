@@ -33,11 +33,11 @@
             <% end %>
           </div>
 
-          <script>
+          <%# <script>
             $('#.select2').select2({
                 dropdownParent: $('#exampleModal')
             });
-          </script>
+          </script> %>
 
         </div>
       </div>
@@ -46,39 +46,8 @@
 
   <div class="filter-content">
     <%= render '/shared/filters' %>
-      <div class="cards-container-all">
-        <h2> Mes bouteilles </h2>
-        <div class="cards-all">
-            <% @wineboxes.each do |winebox| %>
-            <div class="card" data-category="<%= winebox.wine.category %>" data-country="<%= winebox.wine.country %>" data-year="<%= winebox.wine.year%>">
-              <%= link_to wine_path(Wine.find(winebox.wine_id)), class: "link-wine" do%>
-                <div class="card-wine-img">
-                  <%= cl_image_tag Wine.find(winebox.wine_id).photo.key, crop: :fill %>
-                </div>
-              <% end %>
-              <div class="infos-quantity-actions">
-                <div class="infos-quantity">
-                  <div class="infos">
-                    <p> <%= Wine.find(winebox.wine_id).name %> </p>
-                    <p id='vineyard-infos' > <%= Wine.find(winebox.wine_id).vineyard %> </p>
-                  </div>
-                  <div class="quantity">
-                    <p> <%= winebox.quantity_of_wine %> <i id="bottlewine" class="fas fa-wine-bottle"></i> </p>
-                  </div>
-                </div>
-                <div class="buttons-action">
-                  <button class="add_to_basket_button">
-                    <p>Ajouter au panier</p>
-                  </button>
-                  <button class="delivery_button">
-                    <p>Se faire livrer</p>
-                  </button>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </div>
+    <%= render '/shared/wine_card_cave', order: @order, order_wine: @order_wine,  delivery: @delivery, delivery_product: @delivery_product, wine:  @wine, winebox: @winebox %>
+
   </div>
 
 </div>

@@ -18,53 +18,48 @@
       <% end %>
     </div>
     <div class="wine_show_card_infos">
-      <h1><%= @wine.name %>, <%= @wine.year %></h1>
+      <h2><%= @wine.name %>, <%= @wine.year %></h2>
       <div class="wine_show_card_infos_details">
         <h3><%= @wine.vineyard%>, <%= @wine.country%></h3>
-        <p><%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> </p>
+        <p><%= @wine.description %></p>
       </div>
       <div class="wine_show_card_infos_advices">
         <div class="wine_show_card_infos_advices_infos">
           <h5>Informations</h5>
-          <p><strong>Région : </strong><%= @wine.designation.region %></p>
-          <p><strong>Appellation : </strong><%= @wine.designation.name %></p>
+          <!-- <p><strong>Région : </strong></p> -->
+          <p><strong>Appellation : </strong><%= @wine.designation %></p>
           <p><strong>Catégorie : </strong><%= @wine.category %> </p>
           <p><strong>Cépages : </strong><%= @wine.grape_variety %></p>
           <p><strong>Contenance : </strong> 750 mL</p>
         </div>
         <div class="wine_show_card_infos_advices_service">
-          <h5>Comment le servir ?</h5>
-          <p><strong>Viande : </strong><br>viandes rouges grillées, rôties ou en sauce, boeuf, agneau magret, gibier, confit de canard</p>
-          <p><strong>Fromage : </strong><br>livarot, maroilles, epoisses, salers, camembert</p>
-          <p><strong>Poisson : </strong><br>lamproie à la bordelaise</p>
-          <p><strong>Légumes : </strong><br> truffe sous la cendre, fricassée de cèpes à la bordelaise</p>
+          <p><%= @wine.service %></p>
         </div>
       </div>
       <div class="wine_show_card_designation">
-          <h8><strong>À propos de l'appellation :</strong> <%= @wine.designation.name %></h8>
-          <p><%= @wine.designation.description %></p>
+          <h8><strong>À propos de l'appellation :</strong> <%= @wine.designation %></h8>
+          <p><%= @wine.designation_description %></p>
       </div>
     </div>
 
 
     <div class="wine_show_card_ordering">
-      <button href="#" id="review_btn" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">Laisser un avis</button>
-      <button id="" class="stock-btn" data-toggle="modal" data-target="#ReviewModal">
+      <button id="avis-btn" data-toggle="modal" data-target="#ReviewModal">
             Laisser un avis
       </button>
         <div class="modal fade " id="ReviewModal" tabindex="-1" role="dialog" aria-labelledby="ReviewModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="ReviewModalLabel">Stocker une bouteille</h5>
+                <h5 class="modal-title" id="ReviewModalLabel"> <strong>Commenter et noter ce vin</strong></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
-                <%= simple_form_for(@review) do |f| %>
-                  <%= f.association :wine, class: 'select2' %>
-                  <%= f.input :quantity_of_wine %>
+                <%= simple_form_for [@wine, @review] do |f| %>
+                  <%= f.input :comment %>
+                  <%= f.input :rating, collection: 0..5 %>
                   <div class="modal-footer">
                     <button type="button" class="stock-btn" data-dismiss="modal">Annuler</button>
                     <%= f.submit class: 'modal-button' %>
@@ -74,21 +69,80 @@
             </div>
           </div>
         </div>
-      
+
       <div class="wine_show_card_ordering_space">
         <div class="quantity">
-          <h5>Quantité en stock :</h5>
+          <h5>Prix :</h5>
           <div class="box_quantity">
-            <strong>18</strong>
+            <strong><%= @wine.price %>€</strong>
           </div>
         </div>
         <div class="ordering_buttons">
-          <button class="basket_button" href="#">Ajouter à mon panier</button>
-          <button class="delivery_button" href="#">Se faire livrer</button>
+          <p class="delivery_button" data-toggle="modal" data-target="#wine-modal-<%= @wine.id %>">Ajouter au panier</p>
         </div>
       </div>
     </div>
   </div>
+
+    <div class="review_show_card">
+      <h2> <strong>Ils donnent leurs avis</strong> </h2>
+      <div class="list-group">
+        <% @wine.reviews.each do |review| %>
+          <div class="total-review">
+            <div class="usersinfos">
+              <div class= "photouser">
+              <% if review.user.photo.attached? %>
+                <%= cl_image_tag review.user.photo.key, class: "avatar-review" %>
+              <% else %>
+                <%= image_tag "gaspou.png", class: "avatar-review" %>
+              <% end %>
+              </div>
+              <div class="username">
+                <%= review.user.username %>
+              </div>
+
+            </div>
+            <li class="list-group-item">
+              <small>
+                <% count = 0 %>
+                <% 5.times do %>
+                  <% if review.rating > count %>
+                    <i id="starscolor" class="fas fa-star"></i>
+                  <% else %>
+                    <i id="starscolor" class="far fa-star"></i>
+                  <% end %>
+                  <% count += 1 %>
+                <% end %>
+              </small>
+              <p><%= review.comment %></p>
+            </li>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <div class="modal fade" id="wine-modal-<%= @wine.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body d-flex">
+          <div class="wine-img">
+            <div class="card-wine-img">
+              <%= cl_image_tag @wine.photo.key, crop: :fill %>
+            </div>
+          </div>
+          <div class="form-quantity">
+            <%= simple_form_for ([@order, @order_wine]) do |f|%>
+              <%= f.input :quantity_of_wine %>
+              <%= f.input :wine_id, input_html: { value: @wine.id }, as: :hidden %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          <%= f.submit 'Ajouter au panier', class: "btn btn-primary" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    </div>
 </div>
 
 
