@@ -21,10 +21,10 @@ puts "Creating a designation..."
 designation_1 = Designation.create!(name: "Saint-Estèphe", description: 'Le saint-estèphe, ou appellation saint-estèphe contrôlée, est un vin rouge français d appellation d origine contrôlée produit sur la commune de Saint-Estèphe dans le Médoc, une des subdivisions du vignoble de Bordeaux.', region: 'Bordeaux')
 
 puts "Creating Users..."
-user1 = User.create!(email: "bollack@edhec.com", password: "azerty", address:"33 rue Bonaparte Paris")
-user2 = User.create!(email: "gasp@edhec.com", password: "azerty", address: "15 Rue de Lille Paris")
-user3 = User.create!(email: "dubet@edhec.com", password: "azerty", address:"204 rue Saint-Maur Paris")
-user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place de la République Paris")
+user1 = User.create!(email: "bollack@edhec.com", password: "azerty", address:"33 rue Bonaparte Paris", username: 'Bobolalackiki')
+user2 = User.create!(email: "gasp@edhec.com", password: "azerty", address: "15 Rue de Lille Paris", username: 'Leplusbg')
+user3 = User.create!(email: "dubet@edhec.com", password: "azerty", address:"204 rue Saint-Maur Paris", username: 'chienhaineux78')
+user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place de la République Paris", username: 'Zuuuubi')
 
 puts "Creating Wines (can take some time please wait and dance) ^^... AAAANNNNNNDYYYYYYYYY"
 wine_1 = Wine.new(name: 'Les sables fauves',
