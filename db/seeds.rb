@@ -32,7 +32,6 @@ user3 = User.create!(email: "dubet@edhec.com", password: "azerty", address:"204 
 user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place de la République Paris", username: 'Zuuuubi')
 
 
-
 # puts "Creating Wines (can take some time please wait and dance) ^^... AAAANNNNNNDYYYYYYYYY"
 # wine_1 = Wine.new(name: 'Les sables fauves',
 #                   grape_variety: 'Sauvignon, colombard, chardonnay et gros manseng',
@@ -245,7 +244,6 @@ user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place 
 # Review.create!(user: user4, wine: wine_7, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
 # Review.create!(user: user4, wine: wine_8, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
 # Review.create!(user: user4, wine: wine_9, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-
 
 puts "Fetching URLs"
 urls = fetch_wine_urls
