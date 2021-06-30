@@ -3,14 +3,14 @@
     <div class="card-wine-img">
       <%= cl_image_tag wine.photo.key, crop: :fill %>
     </div>
-    <div class="ratings">  
-      <i id="ratingstar"class="fas fa-star"></i> 
-      <p id="notation"> <%= wine.reviews.average(:rating) %> </p>   
+    <div class="ratings">
+      <i id="ratingstar"class="fas fa-star"></i>
+      <p id="notation"> <%= wine.reviews.average(:rating) %> </p>
     </div>
   <% end %>
     <div class="infos-quantity">
       <div class="infos">
-        <p> <%= wine.name %> </p>
+        <p id="wine_name"> <%= wine.name %> </p>
         <p id='vineyard-infos'> <%= wine.vineyard %> </p>
       </div>
       <div class="quantity">

@@ -18,31 +18,27 @@
       <% end %>
     </div>
     <div class="wine_show_card_infos">
-      <h1><%= @wine.name %>, <%= @wine.year %></h1>
+      <h2><%= @wine.name %>, <%= @wine.year %></h2>
       <div class="wine_show_card_infos_details">
         <h3><%= @wine.vineyard%>, <%= @wine.country%></h3>
-        <p><%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> <%= @wine.description %> </p>
+        <p><%= @wine.description %></p>
       </div>
       <div class="wine_show_card_infos_advices">
         <div class="wine_show_card_infos_advices_infos">
           <h5>Informations</h5>
-          <p><strong>Région : </strong><%= @wine.designation.region %></p>
-          <p><strong>Appellation : </strong><%= @wine.designation.name %></p>
+          <!-- <p><strong>Région : </strong></p> -->
+          <p><strong>Appellation : </strong><%= @wine.designation %></p>
           <p><strong>Catégorie : </strong><%= @wine.category %> </p>
           <p><strong>Cépages : </strong><%= @wine.grape_variety %></p>
           <p><strong>Contenance : </strong> 750 mL</p>
         </div>
         <div class="wine_show_card_infos_advices_service">
-          <h5>Comment le servir ?</h5>
-          <p><strong>Viande : </strong><br>viandes rouges grillées, rôties ou en sauce, boeuf, agneau magret, gibier, confit de canard</p>
-          <p><strong>Fromage : </strong><br>livarot, maroilles, epoisses, salers, camembert</p>
-          <p><strong>Poisson : </strong><br>lamproie à la bordelaise</p>
-          <p><strong>Légumes : </strong><br> truffe sous la cendre, fricassée de cèpes à la bordelaise</p>
+          <p><%= @wine.service %></p>
         </div>
       </div>
       <div class="wine_show_card_designation">
-          <h8><strong>À propos de l'appellation :</strong> <%= @wine.designation.name %></h8>
-          <p><%= @wine.designation.description %></p>
+          <h8><strong>À propos de l'appellation :</strong> <%= @wine.designation %></h8>
+          <p><%= @wine.designation_description %></p>
       </div>
     </div>
 
@@ -73,12 +69,12 @@
             </div>
           </div>
         </div>
-      
+
       <div class="wine_show_card_ordering_space">
         <div class="quantity">
-          <h5>Quantité en stock :</h5>
+          <h5>Prix :</h5>
           <div class="box_quantity">
-            <strong>18</strong>
+            <strong><%= @wine.price %>€</strong>
           </div>
         </div>
         <div class="ordering_buttons">
@@ -92,20 +88,35 @@
       <h2> <strong>Ils donnent leurs avis</strong> </h2>
       <div class="list-group">
         <% @wine.reviews.each do |review| %>
-          <li class="list-group-item">
-            <small>
-              <% count = 0 %>
-              <% 5.times do %>
-                <% if review.rating > count %>
-                  <i class="fas fa-star"></i>
-                <% else %>
-                  <i class="far fa-star"></i>
-                <% end %>
-                <% count += 1 %>
+          <div class="total-review">
+            <div class="usersinfos">
+              <div class= "photouser">
+              <% if review.user.photo.attached? %>
+                <%= cl_image_tag review.user.photo.key, class: "avatar-review" %>
+              <% else %>
+                <%= image_tag "gaspou.png", class: "avatar-review" %>
               <% end %>
-            </small>
-            <p><%= review.comment %></p>
-          </li>
+              </div>
+              <div class="username">
+                <%= review.user.username %>
+              </div>
+
+            </div>
+            <li class="list-group-item">
+              <small>
+                <% count = 0 %>
+                <% 5.times do %>
+                  <% if review.rating > count %>
+                    <i id="starscolor" class="fas fa-star"></i>
+                  <% else %>
+                    <i id="starscolor" class="far fa-star"></i>
+                  <% end %>
+                  <% count += 1 %>
+                <% end %>
+              </small>
+              <p><%= review.comment %></p>
+            </li>
+          </div>
         <% end %>
       </div>
     </div>

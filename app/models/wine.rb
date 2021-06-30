@@ -1,5 +1,5 @@
 class Wine < ApplicationRecord
-  belongs_to :designation
+  # belongs_to :designation
   has_one_attached :photo
   has_many :order_wines
   has_many :delivery_products
@@ -13,7 +13,7 @@ class Wine < ApplicationRecord
   validates :category, presence: true
   validates :price, presence: true
   validates :photo, presence: true
-  validates :designation_id, presence: true
+  # validates :designation_id, presence: true
   validates :country, presence: true
   validates :year, presence: true
 
