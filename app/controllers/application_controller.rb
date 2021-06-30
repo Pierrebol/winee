@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
       @order = Order.find_by(user: current_user, status: "cart")
       unless @order
         @order = Order.new(user: current_user)
-        @order.save!
+        @order.save
       end
     end
   end
@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
       @delivery = Delivery.find_by(user: current_user, status: "delivery")
       unless @delivery
         @delivery = Delivery.new(user: current_user)
-        @delivery.save!
+        @delivery.save
       end
     end
   end

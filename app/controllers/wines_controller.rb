@@ -1,5 +1,5 @@
 class WinesController < ApplicationController
-  
+    skip_before_action :authenticate_user!, only: [ :index, :show, :all ]
   def index
     @wines = Wine.where("category != 'Spiritueux'")
     @spirits = Wine.where("category = 'Spiritueux'")
