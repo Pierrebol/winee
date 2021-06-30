@@ -30,6 +30,7 @@ user3 = User.create!(email: "dubet@edhec.com", password: "azerty", address:"204 
 user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place de la République Paris", username: 'Zuuuubi')
 
 
+
 # puts "Creating Wines (can take some time please wait and dance) ^^... AAAANNNNNNDYYYYYYYYY"
 # wine_1 = Wine.new(name: 'Les sables fauves',
 #                   grape_variety: 'Sauvignon, colombard, chardonnay et gros manseng',
@@ -37,7 +38,6 @@ user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place 
 #                   description: 'Des parfums exotiques du nez à la bouche !',
 #                   category: 'Blanc',
 #                   price: 7.70,
-#                   designation: designation_1,
 #                   country: 'France',
 #                   year: '2020',
 #                   )
@@ -51,8 +51,7 @@ user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place 
 #                   vineyard: 'Saint-Esprit',
 #                   description: 'Le rosé qui fait battre notre cœur et nos papilles !',
 #                   category: 'Rosé',
-#                   price: 9.50,
-#                   designation: designation_1,
+#                   price: 9.50,,
 #                   country: 'France',
 #                   year: '2020'
 #                   )
@@ -68,7 +67,6 @@ user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place 
 #                   description: 'La syrah se plie aux charmes maritimes de la Sicile !',
 #                   category: 'Rouge',
 #                   price: 9.90,
-#                   designation: designation_1,
 #                   country: 'Italie',
 #                   year: '2019'
 #                   )
@@ -83,7 +81,6 @@ user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place 
 #                   description: 'Tout est bon dans le Piémont ',
 #                   category: 'Rouge',
 #                   price: 12.90,
-#                   designation: designation_1,
 #                   country: 'Italie',
 #                   year: '2019'
 #                   )
@@ -99,7 +96,6 @@ user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place 
 #                   description: 'Un incontournable dans le Rhône !',
 #                   category: 'Rouge',
 #                   price: 24.50,
-#                   designation: designation_1,
 #                   country: 'France',
 #                   year: '2019'
 #                   )
@@ -115,7 +111,6 @@ user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place 
 #                   description: 'Une partition de cépages sur un air parfumé !',
 #                   category: 'Rouge',
 #                   price: 10.50,
-#                   designation: designation_1,
 #                   country: 'France',
 #                   year: '2020'
 #                   )
@@ -130,7 +125,6 @@ user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place 
 #                   description: 'Charnu, généreux et ensoleillé, un vin typique d Espagne !',
 #                   category: 'Rouge',
 #                   price: 9.50,
-#                   designation: designation_1,
 #                   country: 'Espagne',
 #                   year: '2020'
 #                   )
@@ -146,7 +140,6 @@ user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place 
 #                   description: 'Avec sa bouteille en forme de phare, ce pastis breton fera sensation auprès de vos convives lors de vos apéros, vos barbecues d été et vos parties de pétanque !',
 #                   category: 'Spiritueux',
 #                   price: 32.90,
-#                   designation: designation_1,
 #                   country: 'Bretagne',
 #                   year: '2020'
 #                   )
@@ -162,7 +155,6 @@ user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place 
 #                   description: 'Bien équilibré',
 #                   category: 'Spiritueux',
 #                   price: 34,
-#                   designation: designation_1,
 #                   country: 'Martinique',
 #                   year: '2020'
 #                   )
@@ -177,7 +169,6 @@ user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place 
 #                    description: 'Une merveille qui va même sans son tonic !',
 #                    category: 'Spiritueux',
 #                    price: 31,
-#                    designation: designation_1,
 #                    country: 'France',
 #                    year: '2020'
 #                   )
