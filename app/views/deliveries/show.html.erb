@@ -16,7 +16,7 @@
   <div class="cart-container-global">
     <% @delivery_products.each do |delivery_product| %>
       <div class="cart-detailed-infos">
-        <p><%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, delivery_delivery_products_path(@delivery, delivery_product), method: :delete, data: { confirm: "Are you sure ?"}, class:"delete-wine-order" %></p>
+        <p><%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, delivery_delivery_product_path(@delivery, delivery_product), method: :delete, data: { confirm: "Are you sure ?"}, class:"delete-wine-order" %></p>
         <div class="cart-product">
           <h5>Product</h5>
           <p> <%= cl_image_tag Wine.find(delivery_product.wine_id).photo.key, height: 150, width: 100, crop: :fill %> </p>
@@ -71,7 +71,7 @@
           <%= simple_form_for (@delivery) do |f|%>
             <%= f.input :date, label: "Date de livraison", as: :string, required: false, input_html: {id: "delivery_date"} %>
           <%# end %>
-          <%#= f.input :delivery_address, input_html: { value: current_user.address }, as: :hidden%>
+          <%= f.input :delivery_address, input_html: { value: current_user.address }, as: :hidden %>
           <%#= f.input :delivery_id, input_html: { value: @delivery.id }, as: :hidden %>
         </div>
         <div id="map"
