@@ -14,6 +14,7 @@
 }
 
 
+
 .container_show_wine .wine_show_card {
   height:95%;
   width:95%;
@@ -23,12 +24,25 @@
   display: flex;
   justify-content: space-evenly;
   padding: 40px 0 40px 0;
+  align-items:center;
 }
 
 
 .container_show_wine .wine_show_card .wine_show_card_photo {
-  width: 25%
+  width: 25%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.container_show_wine .wine_show_card .wine_show_card_photo img{
+  object-fit: fill;
+  width: 60%;
+}
+
+
+
 
 .container_show_wine .wine_show_card .wine_show_card_infos {
   width: 40%
