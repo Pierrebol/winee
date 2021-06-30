@@ -8,6 +8,7 @@
 require "open-uri"
 
 puts "Cleaning database..."
+Review.destroy_all
 Delivery.destroy_all
 OrderWine.destroy_all
 Winebox.destroy_all
@@ -15,7 +16,6 @@ Wine.destroy_all
 Order.destroy_all
 Designation.destroy_all
 User.destroy_all
-Review.destroy_all
 
 puts "Creating a designation..."
 designation_1 = Designation.create!(name: "Saint-Estèphe", description: 'Le saint-estèphe, ou appellation saint-estèphe contrôlée, est un vin rouge français d appellation d origine contrôlée produit sur la commune de Saint-Estèphe dans le Médoc, une des subdivisions du vignoble de Bordeaux.', region: 'Bordeaux')
@@ -209,7 +209,7 @@ Winebox.create!(user: user4, wine: wine_10, quantity_of_wine: 50)
 
 
 puts "Creating reviews, should take less time, please be patient again zebi^^"
-Review.create!(user: user1, wine: wine_1, comment: "ça casse la gorge et blablablablablablablablablabla", rating: 5)
+Review.create!(user: user1, wine: wine_1, comment: "ça casse la gorge et blablablablablablablablablabla", rating: 1)
 Review.create!(user: user1, wine: wine_2, comment: "ça casse la gorge et blablablablablablablablablabla", rating: 5)
 Review.create!(user: user1, wine: wine_3, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
 Review.create!(user: user1, wine: wine_4, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
@@ -219,7 +219,7 @@ Review.create!(user: user1, wine: wine_7, comment: "ça casse la gorge blablabla
 Review.create!(user: user1, wine: wine_8, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
 Review.create!(user: user1, wine: wine_9, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
 
-Review.create!(user: user2, wine: wine_1, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
+Review.create!(user: user2, wine: wine_1, comment: "ça casse la gorge blablablablablablablablablabla", rating: 1)
 Review.create!(user: user2, wine: wine_2, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
 Review.create!(user: user2, wine: wine_3, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
 Review.create!(user: user2, wine: wine_4, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
@@ -229,7 +229,7 @@ Review.create!(user: user2, wine: wine_7, comment: "ça casse la gorge blablabla
 Review.create!(user: user2, wine: wine_8, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
 Review.create!(user: user2, wine: wine_9, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
 
-Review.create!(user: user3, wine: wine_1, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+Review.create!(user: user3, wine: wine_1, comment: "ça casse la gorge blablablablablablablablablabla", rating: 1)
 Review.create!(user: user3, wine: wine_2, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
 Review.create!(user: user3, wine: wine_3, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
 Review.create!(user: user3, wine: wine_4, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
@@ -239,7 +239,7 @@ Review.create!(user: user3, wine: wine_7, comment: "ça casse la gorge blablabla
 Review.create!(user: user3, wine: wine_8, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
 Review.create!(user: user3, wine: wine_9, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
 
-Review.create!(user: user4, wine: wine_1, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+Review.create!(user: user4, wine: wine_1, comment: "ça casse la gorge blablablablablablablablablabla", rating: 3)
 Review.create!(user: user4, wine: wine_2, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
 Review.create!(user: user4, wine: wine_3, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
 Review.create!(user: user4, wine: wine_4, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
