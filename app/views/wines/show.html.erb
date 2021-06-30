@@ -82,8 +82,7 @@
           </div>
         </div>
         <div class="ordering_buttons">
-          <button class="basket_button" href="#">Ajouter à mon panier</button>
-          <button class="delivery_button" href="#">Se faire livrer</button>
+          <p class="delivery_button" data-toggle="modal" data-target="#wine-modal-<%= @wine.id %>">Ajouter au panier</p>
         </div>
       </div>
     </div>
@@ -109,6 +108,29 @@
           </li>
         <% end %>
       </div>
+    </div>
+  <div class="modal fade" id="wine-modal-<%= @wine.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body d-flex">
+          <div class="wine-img">
+            <div class="card-wine-img">
+              <%= cl_image_tag @wine.photo.key, crop: :fill %>
+            </div>
+          </div>
+          <div class="form-quantity">
+            <%= simple_form_for ([@order, @order_wine]) do |f|%>
+              <%= f.input :quantity_of_wine %>
+              <%= f.input :wine_id, input_html: { value: @wine.id }, as: :hidden %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          <%= f.submit 'Ajouter au panier', class: "btn btn-primary" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
     </div>
 </div>
 

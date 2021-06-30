@@ -17,6 +17,10 @@ class WinesController < ApplicationController
   end
 
   def user_index
+    @wines = Wine.where("category != 'Spiritueux'")
+    @spirits = Wine.where("category = 'Spiritueux'")
+    @order_wine = OrderWine.new
+    @user = User.where(id: current_user.id)
     @winebox = Winebox.new
     if params[:search].present?
       @wineboxes = Winebox.search_by_title_and_description(params[:search]).where(user: current_user)
@@ -27,10 +31,16 @@ class WinesController < ApplicationController
 
   def show
     @wine = Wine.find(params[:id])
+    @order_wine = OrderWine.new
     @review = Review.new
   end
 
   def all
+    @wines = Wine.where("category != 'Spiritueux'")
+    @spirits = Wine.where("category = 'Spiritueux'")
+    @order_wine = OrderWine.new
+    @user = User.where(id: current_user.id)
+    @winebox = Winebox.new
     if params[:search].present?
       @wines = Wine.search_by_name_grapevariety_vineyard_category_country_and_year(params[:search])
     else

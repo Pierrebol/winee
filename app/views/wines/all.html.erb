@@ -20,36 +20,7 @@
         <h2> Toutes nos références</h2>
         <div class="cards-all">
           <% @wines.each do |wine| %>
-            <div class="card" data-category="<%= wine.category %>" data-country="<%= wine.country %>" data-year="<%= wine.year%>">
-              <%= link_to wine_path(wine), class: "link-wine" do%>
-                <div class="card-wine-img">
-                  <%= cl_image_tag wine.photo.key, crop: :fill %>
-                </div>
-                <div class="ratings">  
-                  <i id="ratingstar"class="fas fa-star"></i> 
-                  <p id="notation"> <%= wine.reviews.average(:rating) %> </p>   
-                </div>
-              <% end %>
-              <div class="infos-quantity-actions">
-                <div class="infos-quantity">
-                  <div class="infos">
-                    <p> <%= wine.name %> </p>
-                    <p> <%= wine.vineyard %> </p>
-                  </div>
-                  <div class="quantity">
-                    <p> <%= wine.price %> € </p>
-                  </div>
-                </div>
-                <div class="buttons-action">
-                  <button class="add_to_basket_button">
-                    <p>Ajouter au panier</p>
-                  </button>
-                  <button class="delivery_button">
-                    <p>Se faire livrer</p>
-                  </button>
-                </div>
-              </div>
-            </div>
+            <%= render '/shared/wine_card', order: @order, order_wine: @order_wine, delivery: @delivery, delivery_product: @delivery_product, wine: wine %>
           <% end %>
         </div>
       </div>
