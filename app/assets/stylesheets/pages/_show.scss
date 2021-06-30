@@ -163,4 +163,21 @@
 }
 
 
+.total-review {
+  display: flex;
+  align-items: center;
+}
 
+.usersinfos {
+  width: 105px;
+  text-align: center;
+}
+
+.usersinfos .username {
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+#starscolor {
+  color: $my-yellow;
+}

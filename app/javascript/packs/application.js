@@ -36,7 +36,8 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initSelect2 } from '../components/init_select2';
 import { filterAll } from "../components/connectedFilters";
-import { changeDeliveryAddress } from "../components/connectedAddress"
+import { changeDeliveryAddress } from "../components/connectedAddress";
+import { initFlatpickr } from "../plugins/flatpickr";
 
 
 // import { initSelect2 } from '../components/init_select2';
@@ -67,5 +68,6 @@ document.addEventListener('turbolinks:load', () => {
   initSelect2();
   initMapbox();
   initAutocomplete();
-  changeDeliveryAddress();
+  // changeDeliveryAddress();
+  initFlatpickr();
 });

@@ -12,6 +12,7 @@ class WinesController < ApplicationController
         lng: user.longitude,
         image_url: helpers.asset_url('corkscrew.png')
       }
+    @reviews = Review.all
     end
   end
 

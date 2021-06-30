@@ -24,6 +24,10 @@
                 <div class="card-wine-img">
                   <%= cl_image_tag wine.photo.key, crop: :fill %>
                 </div>
+                <div class="ratings">  
+                  <i id="ratingstar"class="fas fa-star"></i> 
+                  <p id="notation"> <%= wine.reviews.average(:rating) %> </p>   
+                </div>
               <% end %>
               <div class="infos-quantity-actions">
                 <div class="infos-quantity">

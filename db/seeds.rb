@@ -13,20 +13,22 @@ require "open-uri"
 # #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Cleaning database..."
+DeliveryProduct.destroy_all
+Review.destroy_all
 Delivery.destroy_all
 OrderWine.destroy_all
 Winebox.destroy_all
 Wine.destroy_all
 Order.destroy_all
 User.destroy_all
-Review.destroy_all
 
 
 puts "Creating Users..."
-user1 = User.create!(email: "bollack@edhec.com", password: "azerty", address:"33 rue Bonaparte Paris")
-user2 = User.create!(email: "gasp@edhec.com", password: "azerty", address: "15 Rue de Lille Paris")
-user3 = User.create!(email: "dubet@edhec.com", password: "azerty", address:"204 rue Saint-Maur Paris")
-user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place de la République Paris")
+user1 = User.create!(email: "bollack@edhec.com", password: "azerty", address:"33 rue Bonaparte Paris", username: 'Bobolalackiki')
+user2 = User.create!(email: "gasp@edhec.com", password: "azerty", address: "15 Rue de Lille Paris", username: 'Leplusbg')
+user3 = User.create!(email: "dubet@edhec.com", password: "azerty", address:"204 rue Saint-Maur Paris", username: 'chienhaineux78')
+user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place de la République Paris", username: 'Zuuuubi')
+
 
 # puts "Creating Wines (can take some time please wait and dance) ^^... AAAANNNNNNDYYYYYYYYY"
 # wine_1 = Wine.new(name: 'Les sables fauves',

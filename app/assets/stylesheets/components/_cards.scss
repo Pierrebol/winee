@@ -12,6 +12,7 @@
   margin: 0 7%;
 }
 
+
 .card-wine-img {
   width: 100%;
   height: 175px;
@@ -125,6 +126,13 @@
   color: $my-yellow;
 }
 
+
+.ratings-carroussel {
+    display: flex; 
+    align-items: baseline;  
+
+}
+
 .ratings {
   display: flex;  
   position: absolute;
@@ -140,5 +148,10 @@
   font-weight: bold;
   padding-left: 3px;
   margin-bottom: 10px;
+}
+
+
+#notation {
+  color: black; 
 }
 
