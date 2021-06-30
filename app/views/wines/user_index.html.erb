@@ -55,6 +55,10 @@
                 <div class="card-wine-img">
                   <%= cl_image_tag Wine.find(winebox.wine_id).photo.key, crop: :fill %>
                 </div>
+                <div class="ratings">  
+                  <i id="ratingstar"class="fas fa-star"></i> 
+                  <p id="notation"> <%= Wine.find(winebox.wine_id).reviews.average(:rating) %> </p>   
+                </div>
               <% end %>
               <div class="infos-quantity-actions">
                 <div class="infos-quantity">
