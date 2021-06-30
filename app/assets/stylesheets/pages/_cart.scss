@@ -1,5 +1,11 @@
 .cart-container-global {
   padding: 20px;
+  background-color: white;
+  margin: 70px;
+  color: white;
+  margin-top: 35px;
+  border-radius: 5px;
+  position: relative;
 }
 
 .cart-detailed-infos {
@@ -11,10 +17,10 @@
   align-items: center;
   text-align: center;
   p {
-    color: white;
+    color: black;
   }
   h5 {
-    color: white;
+    color: black;
     font-weight: bold;
     margin-bottom: 30px;
   }
@@ -22,7 +28,7 @@
 
 .trait_dessus
 {
-border-top: 1px solid white;
+border-top: 1px solid black;
 width : 80%;
 margin: 0 auto;
 }
@@ -34,67 +40,100 @@ margin: 0 auto;
   margin: 0 auto;
   margin-top: 40px;
   align-items: center;
+  margin-bottom: 150px;
 }
 
 .choice-category-cart {
   display: flex;
-  justify-content: center;
   margin-bottom: 30px;
   margin-bottom: 30px;
   width: 80vh;
   align-items: center;
   .livraison {
     background-color: white;
+    color:black;
+    border: solid 1px black;
     border-radius: 5px 0px 0px 5px;
-    width:40%;
+    width:30%;
     padding: 3vh 0;
     border-right: solid grey 1px;
     text-align:center;
   }
   .ajout-cave {
     background-color: white;
+    border: solid 1px black;
+    color: black;
     border-radius: 0px 5px 5px 0px;
-    width:40%;
+    width:30%;
     padding: 3vh 0;
     border-left: solid grey 1px;
     text-align:center;
   }
   .active {
-    background-color:lightgrey;
-    width:40%;
+    background-color:black;
+    color:white;
+    width:30%;
     padding: 3vh 0;
   }
 }
 
-.trait_dessous {
-  border-top: 2px solid white;
-  width : 335%;
-  margin: 0 auto;
-  margin-bottom: 10px;
-}
-
 .all-detailed-info-order {
   display: flex;
-  justify-content: space-between;
-  width: 400px;
+  justify-content: space-around;
+  width: 600px;
   margin: 0 auto;
   p {
-    color: white;
+    color: black;
   }
 }
 
+
+.detailed-info-titles {
+  border-right: solid 1px lightgrey;
+  padding-right: 30px;
+  font-weight: bold;
+}
+
 .detailed-info-content p {
-  margin-bottom: 30px;
+  margin-bottom: 16px;
 }
 
 .delete-wine-order {
-  color: white;
+  color: black;
 }
 
 .add-remove-quantity-btn {
-  background-color: white;
-  color: $my-primary;
+  color: black;
   border-radius: 50vh;
-  font-size: 19px;
+  font-size: 23 px;
   margin: 10px;
 }
+
+.title-panier {
+  color: white;
+  padding-top: 20px;
+  text-align: center;
+}
+
+#totalofcart {
+  margin-bottom:0;
+  font-weight: bolder; 
+  color: $my-primary;
+}
+
+
+.btn-valider-payer {
+  position: absolute;
+  bottom: 70px;
+  right: 90px;
+  border-radius: 10px;
+  padding: 15px;
+  color: white;
+  background: black;
+  border: black;
+}
+
+.btn-valider-payer a {
+  color: white;
+}
+
