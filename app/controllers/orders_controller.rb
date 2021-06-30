@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.total_price_cents = params[:total_price_cents].to_i
     @order.status = "pre-payment"
-    @order.save!
+    @order.save
 
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
