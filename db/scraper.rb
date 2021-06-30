@@ -8,7 +8,7 @@ def fetch_wine_urls
   wines = doc.search(".no-text-decoration.no_focus")
   urls = []
 
-  wines.take(10).map do |wine|
+  wines.take(2).map do |wine|
     urls << wine.attributes["href"].value
     # scrape_wine(url)
   end
