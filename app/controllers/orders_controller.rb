@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
       currency: 'eur',
       quantity: 1
     }],
-    success_url: 'http://winee.space/confirmation',
+    success_url: 'http://www.winee.space/confirmation',
     cancel_url: order_url(@order)
   )
 
