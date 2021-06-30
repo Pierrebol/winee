@@ -7,6 +7,7 @@ def fetch_wine_urls
   doc = Nokogiri::HTML(open(top_url).read)
   wines = doc.search(".no-text-decoration.no_focus")
   urls = []
+
   wines.take(10).map do |wine|
     urls << wine.attributes["href"].value
     # scrape_wine(url)
@@ -98,7 +99,7 @@ def scrape_wine(url)
     vineyard: vineyard,
     year: vintage,
     designation: designation,
-    price: price,
+    price_cents: price,
     country: country,
     service: service,
     designation_description: designation_description,
