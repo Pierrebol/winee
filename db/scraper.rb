@@ -8,21 +8,21 @@ def fetch_wine_urls
   wines = doc.search(".no-text-decoration.no_focus")
   urls = []
 
-  wines.take(2).map do |wine|
+  wines.take(36).map do |wine|
     urls << wine.attributes["href"].value
     # scrape_wine(url)
   end
-#   counter = 2
-#   while counter < 4
-#     url_general = "https://www.twil.fr/france.html?limit=36&p=#{counter}"
-#     doc = Nokogiri::HTML(open(top_url).read)
-#     wines = doc.search(".no-text-decoration.no_focus")
-#     wines.take(36).map do |wine|
-#       urls << wine.attributes["href"].value
-#       # scrape_wine(url)
-#     end
-#     counter += 1
-#   end
+  counter = 2
+  while counter < 100
+    url_general = "https://www.twil.fr/france.html?limit=36&p=#{counter}"
+    doc = Nokogiri::HTML(open(top_url).read)
+    wines = doc.search(".no-text-decoration.no_focus")
+    wines.take(36).map do |wine|
+      urls << wine.attributes["href"].value
+       # scrape_wine(url)
+    end
+    counter += 1
+  end
    return urls
 end
 
