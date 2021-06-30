@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     member do
       patch '/validate', to: 'orders#validate'
     end
+    resources :payments, only: :new
   end
 
   resources :deliveries, only: [:show, :create, :destroy] do
@@ -36,4 +37,9 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
+
+  get '/confirmation', to: 'pages#confirmation'
+
 end

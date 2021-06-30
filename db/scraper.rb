@@ -98,7 +98,7 @@ def scrape_wine(url)
     vineyard: vineyard,
     year: vintage,
     designation: designation,
-    price: price,
+    price_cents: price,
     country: country,
     service: service,
     designation_description: designation_description,
