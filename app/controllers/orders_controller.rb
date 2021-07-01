@@ -7,8 +7,8 @@ class OrdersController < ApplicationController
     end
     @subtotal = @prices.reduce(0, :+)
     @taxes = (@subtotal * 0.2).round(2)
-    @shipping_fees = (@subtotal * 0.1).round(2)
-    @total_price = (@subtotal.to_f + @taxes.to_f + @shipping.to_f).round(2)
+    # @shipping_fees = (@subtotal * 0.1).round(2)
+    @total_price = (@subtotal.to_f + @taxes.to_f).round(2)
     @total_price_cents = (@total_price * 100).to_i
   end
 
@@ -22,12 +22,13 @@ class OrdersController < ApplicationController
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
+      type: "order",
       name: @order.wines[0].name,
       amount: @order.total_price_cents,
       currency: 'eur',
       quantity: 1
     }],
-    success_url: 'http://www.winee.space/confirmation',
+    success_url: 'http://2c422d7462fd.ngrok.io/confirmation',
     cancel_url: order_url(@order)
   )
 

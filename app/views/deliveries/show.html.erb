@@ -54,7 +54,7 @@
       </button>
   </div>
 
-  
+
 
 
 <% end %>
@@ -84,7 +84,10 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-        <%= f.submit 'Se faire livrer', class: "btn btn-primary" %>
+        <%= f.submit 'Se faire livrer', class: "btn btn-primary", hidden: true %>
+      </div>
+      <div class="btn-valider-payer">
+        <%= link_to "Valider et payer", update_delivery_path(@delivery, total_price_cents: @total_price_cents), method: :patch %>
       </div>
       <% end %>
     </div>

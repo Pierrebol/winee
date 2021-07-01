@@ -8,7 +8,8 @@ class User < ApplicationRecord
   has_many :wineboxes
   has_many :reviews
   has_many :wines, through: :wineboxes
-  
+  has_many :deliveries
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 

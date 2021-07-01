@@ -53,14 +53,14 @@
           <div class="trait_dessous"></div>
           <p>Taxes</p>
           <div class="trait_dessous"></div>
-          <p>Frais de livraison</p>
-          <div class="trait_dessous"></div>
+<!--           <p>Frais de livraison</p>
+          <div class="trait_dessous"></div> -->
           <p>Total</p>
         </div>
         <div class="detailed-info-content">
           <p> <%= @subtotal %> € </p>
           <p> <%= @taxes %> € </p>
-          <p> <%= @shipping_fees %> € </p>
+          <!-- <p> <%#= @shipping_fees %> € </p> -->
           <div class="btn-valider-payer">
             <%= link_to "Valider et payer", validate_order_path(@order, total_price_cents: @total_price_cents), method: :patch %>
           </div>
