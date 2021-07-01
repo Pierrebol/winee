@@ -34,16 +34,13 @@ class OrdersController < ApplicationController
     @order.update(checkout_session_id: session.id)
     redirect_to new_order_payment_path(@order), status: 303
   end
-  
+
   def index
     @orders = Order.all
+    @order_wine = OrderWine.where(order_id: @order.id)
     @my_orders = Order.where(user: current_user)
   end
 
-  def user_index
-    # @user_orders = current_user.orders.where(status: "paid")
-  end
-  
   def destroy
   end
 

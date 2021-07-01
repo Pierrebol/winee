@@ -45,7 +45,7 @@ class DeliveriesController < ApplicationController
   def index
     @deliveries = Delivery.all
     @my_deliveries = Delivery.where(user: current_user)
-    @my_delivery_products = DeliveryProduct.where(user: current_user)
+    @delivery_product = DeliveryProduct.where(delivery_id: @delivery.id)
   end
 
   def destroy
