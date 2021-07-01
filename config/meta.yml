@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "Winee"
+meta_title: "Winee | votre cave à vin digitale"
+meta_description: "Gérer votre cave de manière ludique grâce à Winee. Stockez votre vin en tout sécurité et faites vous livrer en 15min !"
+meta_image: "bouchons.jpeg" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
