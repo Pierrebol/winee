@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_07_01_104159) do
 
   # These are extensions that must be enabled in order to support this database
@@ -111,6 +112,8 @@ ActiveRecord::Schema.define(version: 2021_07_01_104159) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "pick_up_address"
+    t.datetime "pick_up_date"
     t.index ["user_id"], name: "index_wineboxes_on_user_id"
     t.index ["wine_id"], name: "index_wineboxes_on_wine_id"
   end

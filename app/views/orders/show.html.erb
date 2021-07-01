@@ -19,8 +19,10 @@
         <p><%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, order_order_wine_path(@order, order_wine), method: :delete, data: { confirm: "Are you sure ?"}, class:"delete-wine-order" %></p>
         <div class="cart-product">
           <h5>Product</h5>
-          <p> <%= cl_image_tag Wine.find(order_wine.wine_id).photo.key, height: 150, width: 100, crop: :fill %> </p>
-        </div>
+          <div class='image-size-wine'>
+           <%= cl_image_tag Wine.find(order_wine.wine_id).photo.key, crop: :fill %> 
+          </div>   
+         </div>
         <div class="cart-product-name">
           <p> <%= Wine.find(order_wine.wine_id).name %> </p>
         </div>
@@ -45,16 +47,6 @@
     <% end %>
 
     <div class="cart-validation-options">
-      <div class="add-or-delivery-options">
-        <div class="choice-category-cart">
-          <div class="livraison btn-category" data-btncategory="livraison">
-            Se faire livrer
-          </div>
-          <div class="ajout-cave btn-category" data-btncategory="ajout">
-            Ajouter à ma cave
-          </div>
-        </div>
-      </div>
       <div class="all-detailed-info-order">
         <div class=" detailed-info-titles">
           <p>Sous-Total</p>
@@ -70,7 +62,7 @@
           <p> <%= @taxes %> € </p>
           <!-- <p> <%#= @shipping_fees %> € </p> -->
           <div class="btn-valider-payer">
-            <%= link_to "Valider et payer", validate_order_path(@order, total_price_cents: @total_price_cents), method: :patch, class:"btn btn-info" %>
+            <%= link_to "Valider et payer", validate_order_path(@order, total_price_cents: @total_price_cents), method: :patch %>
           </div>
           <p id="totalofcart"> <%= @total_price %> € </p>
         </div>

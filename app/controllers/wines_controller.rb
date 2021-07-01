@@ -21,10 +21,18 @@ class WinesController < ApplicationController
     @spirits = Wine.where("category = 'Spiritueux'")
     @order_wine = OrderWine.new
     @delivery_product = DeliveryProduct.new
-    @user = User.where(id: current_user.id)
+    @appellations = Wine.all.map {|wine| wine.designation}.uniq
     @winebox = Winebox.new
+    @user = User.where(id: current_user.id)
+    @markers = @user.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        image_url: helpers.asset_url('corkscrew.png')
+      }
+    end
     if params[:search].present?
-      @wineboxes = Winebox.search_by_title_and_description(params[:search]).where(user: current_user)
+      @wineboxes = Winebox.where(wine:Wine.search_by_name_grapevariety_vineyard_category_country_and_year(params[:search])).where(user: current_user)
     else
       @wineboxes = Winebox.where(user: current_user)
     end
@@ -41,6 +49,7 @@ class WinesController < ApplicationController
     @spirits = Wine.where("category = 'Spiritueux'")
     @order_wine = OrderWine.new
     @user = User.where(id: current_user.id)
+    @appellations = Wine.all.map {|wine| wine.designation}.uniq
     @winebox = Winebox.new
     if params[:search].present?
       @wines = Wine.search_by_name_grapevariety_vineyard_category_country_and_year(params[:search])
@@ -49,4 +58,3 @@ class WinesController < ApplicationController
     end
   end
 end
-
