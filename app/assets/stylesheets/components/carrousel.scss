@@ -51,8 +51,16 @@
 .card-body-carousel {
   background-color: white;
   height: 150px;
-  padding-top: 10px;
-  border-radius: 30px;
+  padding: 30px 70px 30px 70px;
+  border-radius: 6px;
+}
+
+.card-body-carousel p {
+  margin-bottom: 15px;
+}
+
+.card-body-carousel em {
+  margin-bottom: 15px;
 }
 
 .card-body-carousel > .stars {
