@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" data-category="<%= wine.category %>" data-country="<%= wine.country %>" data-year="<%= wine.year%>">
   <%= link_to wine_path(wine), class: "link-wine" do%>
     <div class="card-wine-img">
       <%= cl_image_tag wine.photo.key, crop: :fill %>
