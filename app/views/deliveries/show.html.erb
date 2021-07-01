@@ -63,7 +63,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Récapitulatif livraison</h5>
+        <h5 class="modal-title"><strong>Récapitulatif livraison</strong></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -82,12 +82,12 @@
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+      <div class="modal-footer-livraison">
+        <button type="button" class="btn-annuler-modal-livraison" data-dismiss="modal">Annuler</button>
+        <button class="btn-valider-payer-modal-livraison">
+          <%= link_to "Valider et payer", update_delivery_path(@delivery, total_price_cents: @total_price_cents), method: :patch %>
+        </button>
         <%= f.submit 'Se faire livrer', class: "btn btn-primary", hidden: true %>
-      </div>
-      <div class="btn-valider-payer">
-        <%= link_to "Valider et payer", update_delivery_path(@delivery, total_price_cents: @total_price_cents), method: :patch %>
       </div>
       <% end %>
     </div>
