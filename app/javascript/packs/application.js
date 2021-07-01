@@ -29,9 +29,6 @@ import "bootstrap";
 // Internal imports, e.g:
 import {filterByType} from "../components/categoryButton"
 import {filterDropdown} from "../components/filterDropdown"
-import {filterByCategory} from "../components/filterCategories"
-import {filterByCountry} from "../components/filterCountry"
-import {filterByYear} from "../components/filterYear"
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initSelect2 } from '../components/init_select2';
