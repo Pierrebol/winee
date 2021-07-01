@@ -26,12 +26,20 @@
             <%= simple_form_for(@winebox) do |f| %>
               <%= f.association :wine, class: 'select2' %>
               <%= f.input :quantity_of_wine %>
-              <div class="modal-footer">
-                <button type="button" class="stock-btn" data-dismiss="modal">Annuler</button>
-                <%= f.submit class: 'modal-button' %>
-              </div>
-            <% end %>
+              <%= f.input :pick_up_date, label: "Date de récupération de votre vin", as: :string, required: false, input_html: {id: "delivery_date"} %>
+              <%= f.input :pick_up_address, input_html: { value: current_user.address }, label: "Adresse de récupération", as: :hidden %>
+            <div id="map"
+              style="width: 100%; height: 400px;"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
           </div>
+          <div class="modal-footer">
+            <button type="button" class="stock-btn" data-dismiss="modal">Annuler</button>
+            <%= f.submit class: 'modal-button' %>
+          </div>
+          <% end %>
+          
 
 
           <%# <script>

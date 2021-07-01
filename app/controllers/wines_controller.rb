@@ -21,8 +21,15 @@ class WinesController < ApplicationController
     @spirits = Wine.where("category = 'Spiritueux'")
     @order_wine = OrderWine.new
     @delivery_product = DeliveryProduct.new
-    @user = User.where(id: current_user.id)
     @winebox = Winebox.new
+    @user = User.where(id: current_user.id)
+    @markers = @user.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        image_url: helpers.asset_url('corkscrew.png')
+      }
+    end
     if params[:search].present?
       @wineboxes = Winebox.search_by_title_and_description(params[:search]).where(user: current_user)
     else
@@ -49,4 +56,3 @@ class WinesController < ApplicationController
     end
   end
 end
-
