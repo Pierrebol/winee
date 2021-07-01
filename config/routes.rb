@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/my_cellar', to: 'wines#user_index'
 
 
-  resources :orders, only: [:show, :create, :destroy] do
+  resources :orders, only: [:show, :create, :destroy, :index] do
     resources :order_wines, only: [:create, :destroy, :update] do
       member do
         patch '/add', to: 'order_wines#add'
@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     resources :payments, only: :new
   end
 
-  resources :deliveries, only: [:show, :create, :destroy] do
+  resources :deliveries, only: [:show, :create, :destroy, :index] do
     resources :delivery_products, only: [:create, :destroy, :update] do
       member do
         patch '/add', to: 'delivery_products#add'
