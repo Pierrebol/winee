@@ -141,18 +141,13 @@
 }
 
 .container_show_wine .wine_show_card .wine_show_card_ordering_space button {
-  height: 10vh;
-  width:25vh;
-  background-color: #964242;
-  color: #f2f2f2;
-  float: right;
-  padding: 1vh 2vh;
-  border: solid thin #964242;
-  cursor: pointer;
-  border-radius: 1vh;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-  margin-top: 4vh;
+  border-radius: 10px;
+  padding: 7px;
+  margin-bottom: 20px;
+  background: black;
+  border: black;
+  color: white;
+  width: 175px;
 }
 
 .container_show_wine .wine_show_card .wine_show_card_ordering_space .basket_button {
@@ -232,5 +227,8 @@
   margin-top: 20px;
   margin-left: 180px;
   align-items: baseline;
+}
 
+.delivery_button {
+  border: solid;
 }
