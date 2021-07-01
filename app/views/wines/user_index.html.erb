@@ -24,8 +24,8 @@
           </div>
           <div class="modal-body">
             <%= simple_form_for(@winebox) do |f| %>
-              <%= f.association :wine, class: 'select2' %>
-              <%= f.input :quantity_of_wine, input_html: { value:"1", min: 1 } %>
+              <%= f.association :wine, class: 'select2', label: 'Sélectionner un vin' %>
+              <%= f.input :quantity_of_wine, input_html: { value:"1", min: 1 }, label: 'Sélectionner la quantité' %>
               <%= f.input :pick_up_date, label: "Date de récupération de votre vin", as: :string, required: false, input_html: {id: "delivery_date"} %>
               <%= f.input :pick_up_address, input_html: { value: current_user.address }, label: "Adresse de récupération", as: :hidden %>
             <div id="map"
