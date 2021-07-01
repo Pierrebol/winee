@@ -14,6 +14,9 @@
       <i id="ratingstar"class="fas fa-star"></i>
       <p id="notation"> <%= @wine.reviews.average(:rating) %> </p>
     </div>
+    <button id="avis-btn" data-toggle="modal" data-target="#ReviewModal">
+          Laisser un avis
+    </button>
     <div class="wine_show_card_photo">
      <% if @wine.photo.attached? %>
         <%= cl_image_tag @wine.photo.key, crop: :fill %>
@@ -51,9 +54,6 @@
 
 
     <div class="wine_show_card_ordering">
-      <button id="avis-btn" data-toggle="modal" data-target="#ReviewModal">
-            Laisser un avis
-      </button>
         <div class="modal fade " id="ReviewModal" tabindex="-1" role="dialog" aria-labelledby="ReviewModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
