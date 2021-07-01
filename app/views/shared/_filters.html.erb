@@ -24,13 +24,13 @@
         </div>
 
         <div class="filter_country">
-          <label for="country-select"><strong style="font-size: 20px;">Pays :</strong></label><br>
+          <label for="country-select"><strong style="font-size: 20px;">Appellation :</strong></label><br>
             <div data-country="" id="list3" class="dropdown-check-list" tabindex="100">
               <span class="anchor">Choix :</span>
               <ul class="items">
-                <li class="checkbox-country dropdown-item p-0" data-select="France"><input type="checkbox" hidden=true/> France </li>
-                <li class="checkbox-country dropdown-item p-0" data-select="Italie"><input type="checkbox" hidden=true/> Italie </li>
-                <li class="checkbox-country dropdown-item p-0" data-select="Espagne"><input type="checkbox" hidden=true/> Espagne </li>
+                <% @appellations.each do |appellation| %>
+                  <li class="checkbox-country dropdown-item p-0" data-select="<%= appellation %>"><input type="checkbox" hidden=true/> <%= appellation %> </li>
+                <% end %>
               </ul>
             </div>
         </div>
@@ -41,7 +41,7 @@
             <% years=(1900..2021) %>
             <span class="anchor">Choix :</span>
             <ul class="items">
-              <%= years.reverse_each do |year| %>
+              <% years.reverse_each do |year| %>
                 <li class="checkbox-year dropdown-item p-0" data-select="<%=year%>"><input type="checkbox" hidden=true/> <%= year %> </li>
               <% end %>
             </ul>
