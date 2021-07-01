@@ -104,41 +104,40 @@
 
 
 .cards-all .add_to_basket_button {
-  height: 4.5vh;
-  background-color: #000000;
-  color: #f2f2f2;
-  padding: 1vh 1vh;
-  border: solid thin #000000;
   cursor: pointer;
-  border-radius: 1vh;
   opacity: 1;
-  transition: opacity 0.3s ease;
-  vertical-align: center;
   position: absolute;
-  bottom: 5px;
-}
-
-.add_to_basket_button_cave {
+  bottom: 30px;
   font-size: 12px;
-  width: 115px;
-  height: 30px;
+  width: 105px;
+  height: 40px;
   border: solid thin #000000;
   background-color: #000000;
   color: #f2f2f2;
   border-radius: 5px;
-  margin-top:7px;
+}
+
+.add_to_basket_button_cave {
+  font-size: 12px;
+  width: 105px;
+  height: 40px;
+  border: solid thin #000000;
+  background-color: #000000;
+  color: #f2f2f2;
+  border-radius: 5px;
+  margin-top:14px;
 }
 
 
 .delivery_button_cave {
   font-size: 12px;
-  width: 115px;
-  height: 30px;
+  width: 105px;
+  height: 40px;
   background-color: #964242;
   color: #f2f2f2;
   border: solid thin #964242;
   border-radius: 5px;
-  margin-top:7px;
+  margin-top:14px;
 
 }
 
