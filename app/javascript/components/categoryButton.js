@@ -1,6 +1,6 @@
 const filterByType = () => {
   const btnsType = document.querySelectorAll('.btn-category');
-
+  if (btnsType) {
   btnsType.forEach((btn) => {
     btn.addEventListener('click', (event) => {
       if(event.currentTarget.classList.contains('active')){
@@ -22,6 +22,7 @@ const filterByType = () => {
     }
     })
   })
+  }
 }
 
 export {filterByType};

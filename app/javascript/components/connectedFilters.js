@@ -1,5 +1,6 @@
 const filterAll = () => {
   const allFilters = document.querySelectorAll('.checkbox-cat, .checkbox-country, .checkbox-year');
+  if (allFilters) {
   const filters = []
   allFilters.forEach((filter) => {
     filter.addEventListener('click', (event) => {
@@ -52,6 +53,7 @@ const filterAll = () => {
       }
     })
   })
+  }
 }
 
 export {filterAll};
