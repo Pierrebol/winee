@@ -38,7 +38,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Récapitulatif achat</h5>
+                <h5 class="modal-title"><strong>Récapitulatif achat</strong></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -56,8 +56,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="stock-btn" data-dismiss="modal">Annuler</button>
-            <%= f.submit 'Ajouter au panier', class: "modal-button" %>
+            <button type="button" class="btn-annuler-modal-livraison" data-dismiss="modal">Annuler</button>
+            <%= f.submit 'Ajouter au panier', class: "btn-valider-payer-modal-livraison" %>
         </div>
         <% end %>
         </div>
@@ -69,7 +69,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Récapitulatif livraison</h5>
+                <h5 class="modal-title"><strong>Récapitulatif livraison</strong></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -91,8 +91,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="stock-btn" data-dismiss="modal">Annuler</button>
-            <%= f.submit 'Se faire livrer', class: "modal-button" %>
+            <button type="button" class="btn-annuler-modal-livraison" data-dismiss="modal">Annuler</button>
+            <%= f.submit 'Se faire livrer', class: "btn-valider-payer-modal-livraison" %>
         </div>
         <% end %>
         </div>
