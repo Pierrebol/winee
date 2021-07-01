@@ -6,7 +6,7 @@ def fetch_wine_urls
   urls = []
 
   counter = 1
-  while counter < 4
+  while counter < 2
     url_general = "https://www.twil.fr/france.html?dir=desc&order=wine_note_avg&p=#{counter}"
     doc = Nokogiri::HTML(open(url_general).read)
     wines = doc.search(".no-text-decoration.no_focus")
@@ -36,7 +36,7 @@ def scrape_wine(url)
   designation_description = ''
   category = ''
 
-  doc.search("//span[@itemprop = 'brand']").each do |element|
+  doc.search(".product-show-info .gotham-book-important").each do |element|
     vineyard = element.text.strip
   end
 
