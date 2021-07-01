@@ -1,6 +1,6 @@
 .search_bar input[type=text]{
-    height: 7vh;
-    width: 100vh;
+    height: 60px;
+    width: 700px;
     border-radius: 5px;
     border: solid thin lightgrey;
     padding: 5px 10px;
@@ -17,11 +17,16 @@ input {
 }
 
 #search-bar-second {
-  margin-left: 140px;
+    margin-left: 252px;
+    margin-right: 10px;
 }
 
+#search-bar-second .search_bar {
+    margin-right: 110px;
+
+}
 .search_bar button{
-    height: 7vh;
+    height: 60px;
     background-color: #964242;
     color: #f2f2f2;
     float: right;
@@ -35,4 +40,9 @@ input {
 }
 .search_bar button:hover {
     opacity: 0.6;
+}
+
+
+#search-bar-all {
+    margin-right: 125px;
 }
