@@ -13,7 +13,6 @@ class OrdersController < ApplicationController
   end
 
   def validate
-    # changer le statut du cart
     @order = Order.find(params[:id])
     @order.total_price_cents = params[:total_price_cents].to_i
     @order.status = "pre-payment"
@@ -22,13 +21,13 @@ class OrdersController < ApplicationController
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
-      type: "order",
+      description: 'order',
       name: @order.wines[0].name,
       amount: @order.total_price_cents,
       currency: 'eur',
       quantity: 1
     }],
-    success_url: 'http://2c422d7462fd.ngrok.io/confirmation',
+    success_url: 'http://ce504a83ca5b.ngrok.io//confirmation',
     cancel_url: order_url(@order)
   )
 
