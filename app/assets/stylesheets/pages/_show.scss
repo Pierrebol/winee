@@ -25,9 +25,6 @@
   justify-content: space-evenly;
   padding: 40px 0 40px 0;
   position: relative;
-}
-
-.container_show_wine .wine_show_card :not(.wine_show_card_ordering) {
   align-items:center;
 }
 
@@ -45,6 +42,10 @@
   width: 60%;
 }
 
+
+.wine_show_card_infos h2 {
+  width: 430px
+}
 
 
 
@@ -224,13 +225,9 @@
 
 }
 
-.ratings-show {
-  display: flex;
+#avis-btn {
   position: absolute;
-  top: 40px;
-  left: 670px;
-  margin-top: 20px;
-  margin-left: 180px;
-  align-items: baseline;
-
+  top: 70px;
+  right: 130px;
 }
+
