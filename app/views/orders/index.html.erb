@@ -5,26 +5,28 @@
 <div class="past_deliveries">
   <% @my_orders.where(status: ["paid"]).each do |order| %>
     <div class="notification-content">
-      <div class="cart-product">
-        <h5>Status</h5>
-        <p><%= order.status %></p>
+      <div class="cart-product-head">
+        <div class="item-head-content status">
+          <h5>Status: </h5>
+          <p><%= order.status %></p>
+        </div>
+        <div class="item-head-content prix">
+          <h5>Prix total:</h5>
+          <p><%= humanized_money_with_symbol order.total_price %></p>
+        </div>
       </div>
-      <% order.order_wines.each do |order_wine| %>
-        <p><%= cl_image_tag order_wine.wine.photo.key, crop: :fill %> </p>
-        <div class="cart-product">
-          <h5>Nom du vin</h5>
-          <p><%= order_wine.wine.name %> </p>
-        </div>
-        <div class="cart-product">
-          <h5>Quantité</h5>
-          <p><%= order_wine.quantity_of_wine %> </p>
-        </div>
-      <% end %>
-      <div class="cart-product">
-        <h5>Prix total</h5>
-        <p><%= humanized_money_with_symbol order.total_price %> </p>
+      <div class="order-items">
+        <% order.order_wines.each do |order_wine| %>
+          <div class="order-item">
+            <div class="item-name">
+              <p><%= order_wine.wine.name %> </p>
+            </div>
+            <div class="item-quantity">
+              <p><%= order_wine.quantity_of_wine %> </p>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
-    <div class="trait_dessous"></div>
   <% end %>
 </div>
