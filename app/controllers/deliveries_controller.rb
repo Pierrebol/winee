@@ -19,7 +19,7 @@ class DeliveriesController < ApplicationController
 
   def validate
     # changer le statut du cart
-    @delivery = Order.find(params[:id])
+    @delivery = Delivery.find(params[:id])
     @delivery.total_price_cents = params[:total_price_cents].to_i
     @delivery.status = "pre-payment"
     @delivery.save

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_30_104236) do
+ActiveRecord::Schema.define(version: 2021_07_01_104159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 2021_06_30_104236) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "status", default: "delivery"
     t.string "delivery_address"
+    t.string "checkout_session_id"
+    t.integer "total_price_cents", default: 0, null: false
     t.index ["user_id"], name: "index_deliveries_on_user_id"
   end
 
@@ -124,11 +126,11 @@ ActiveRecord::Schema.define(version: 2021_06_30_104236) do
     t.integer "year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "price_cents", default: 0, null: false
     t.string "hachette_description"
     t.string "designation"
     t.string "service"
     t.string "designation_description"
-    t.integer "price_cents", default: 0, null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

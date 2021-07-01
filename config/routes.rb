@@ -36,6 +36,7 @@ Rails.application.routes.draw do
         patch '/remove', to: 'delivery_products#remove'
       end
     end
+    resources :payments, only: :new
   end
 
   mount StripeEvent::Engine, at: '/stripe-webhooks'
