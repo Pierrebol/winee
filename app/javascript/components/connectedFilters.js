@@ -43,7 +43,6 @@ const filterAll = () => {
       filters.forEach((filter) => {
         finalFilters += filter
       })
-      console.log(finalFilters)
       if(finalFilters===``){
         cards.forEach(card => card.style.display = null)
       } else {
