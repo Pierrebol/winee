@@ -10,6 +10,10 @@
     </form>
   </div>
   <div class="wine_show_card">
+    <div class="ratings-show">
+      <i id="ratingstar"class="fas fa-star"></i>
+      <p id="notation"> <%= @wine.reviews.average(:rating) %> </p>
+    </div>
     <div class="wine_show_card_photo">
      <% if @wine.photo.attached? %>
         <%= cl_image_tag @wine.photo.key, crop: :fill %>

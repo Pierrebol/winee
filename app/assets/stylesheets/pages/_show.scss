@@ -25,6 +25,7 @@
   justify-content: space-evenly;
   padding: 40px 0 40px 0;
   align-items:center;
+  position: relative;
 }
 
 
@@ -50,6 +51,7 @@
 
 .container_show_wine .wine_show_card .wine_show_card_infos_details {
   margin: 15px;
+  margin-left:0;
 }
 
 .container_show_wine .wine_show_card .wine_show_card_infos_advices {
@@ -194,4 +196,35 @@
 
 #starscolor {
   color: $my-yellow;
+}
+
+//reviews
+.list-group-item {
+  width: 700px;
+}
+
+
+.ratings-show {
+  display: flex;
+  position: absolute;
+  top: 40px;
+  left: 670px;
+  margin-top: 20px;
+  margin-left: 180px;
+  align-items: baseline;
+  font-weight: bold;
+  border-radius: 50%;
+  font-size: 25px;
+
+}
+
+.ratings-show {
+  display: flex;
+  position: absolute;
+  top: 40px;
+  left: 670px;
+  margin-top: 20px;
+  margin-left: 180px;
+  align-items: baseline;
+
 }

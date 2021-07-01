@@ -15,7 +15,7 @@
         <div class="infos-quantity-actions">
           <div class="infos-quantity">
             <div class="infos">
-              <p> <%= winebox.wine.name %> </p>
+              <p id="wine_name"> <%= winebox.wine.name %> </p>
               <p id='vineyard-infos' > <%= winebox.wine.vineyard %> </p>
             </div>
             <div class="quantity">
@@ -23,8 +23,8 @@
             </div>
           </div>
           <div class="buttons-action">
-            <p class="add_to_basket_button" data-toggle="modal" data-target="#wine-modal-<%= winebox.wine_id%>">Ajouter au panier</p>
-            <p class="delivery_button" data-toggle="modal" data-target="#delivery-modal-<%= winebox.wine_id %>">Se faire livrer</p>
+            <button class="add_to_basket_button_cave" data-toggle="modal" data-target="#wine-modal-<%= winebox.wine_id%>">Ajouter au panier</button>
+            <button class="delivery_button_cave" data-toggle="modal" data-target="#delivery-modal-<%= winebox.wine_id %>">Se faire livrer</button>
           </div>
         </div>
       </div>

@@ -45,16 +45,6 @@
     <% end %>
 
     <div class="cart-validation-options">
-      <div class="add-or-delivery-options">
-        <div class="choice-category-cart">
-          <div class="livraison btn-category" data-btncategory="livraison">
-            Se faire livrer
-          </div>
-          <div class="ajout-cave btn-category" data-btncategory="ajout">
-            Ajouter à ma cave
-          </div>
-        </div>
-      </div>
       <div class="all-detailed-info-order">
         <div class=" detailed-info-titles">
           <p>Sous-Total</p>
@@ -70,7 +60,7 @@
           <p> <%= @taxes %> € </p>
           <p> <%= @shipping_fees %> € </p>
           <div class="btn-valider-payer">
-            <%= link_to "Valider et payer", validate_order_path(@order, total_price_cents: @total_price_cents), method: :patch, class:"btn btn-info" %>
+            <%= link_to "Valider et payer", validate_order_path(@order, total_price_cents: @total_price_cents), method: :patch %>
           </div>
           <p id="totalofcart"> <%= @total_price %> € </p>
         </div>
