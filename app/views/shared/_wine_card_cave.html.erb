@@ -2,20 +2,20 @@
   <h2> Mes bouteilles </h2>
   <div class="cards-all">
     <% @wineboxes.each do |winebox| %>
-      <div class="card" data-category="<%= winebox.wine.category %>" data-country="<%= winebox.wine.country %>" data-year="<%= winebox.wine.year%>">
+      <div class="card" data-category="<%= winebox.wine.category %>" data-country="<%= winebox.wine.designation %>" data-year="<%= winebox.wine.year%>">
         <%= link_to wine_path(winebox.wine), class: "link-wine" do%>
           <div class="card-wine-img">
             <%= cl_image_tag winebox.wine.photo.key, crop: :fill %>
           </div>
-          <div class="ratings">  
-            <i id="ratingstar"class="fas fa-star"></i> 
-            <p id="notation"> <%= winebox.wine.reviews.average(:rating) %> </p>   
+          <div class="ratings">
+            <i id="ratingstar"class="fas fa-star"></i>
+            <p id="notation"> <%= winebox.wine.reviews.average(:rating) %> </p>
           </div>
        <% end %>
         <div class="infos-quantity-actions">
           <div class="infos-quantity">
             <div class="infos">
-              <p> <%= winebox.wine.name %> </p>
+              <p id="wine_name"> <%= winebox.wine.name %> </p>
               <p id='vineyard-infos' > <%= winebox.wine.vineyard %> </p>
             </div>
             <div class="quantity">
@@ -23,8 +23,8 @@
             </div>
           </div>
           <div class="buttons-action">
-            <p class="add_to_basket_button" data-toggle="modal" data-target="#wine-modal-<%= winebox.wine_id%>">Ajouter au panier</p>
-            <p class="delivery_button" data-toggle="modal" data-target="#delivery-modal-<%= winebox.wine_id %>">Se faire livrer</p>
+            <button class="add_to_basket_button_cave" data-toggle="modal" data-target="#wine-modal-<%= winebox.wine_id%>">Ajouter au panier</button>
+            <button class="delivery_button_cave" data-toggle="modal" data-target="#delivery-modal-<%= winebox.wine_id %>">Se faire livrer</button>
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@
             </div>
             <div class="form-order">
             <%= simple_form_for ([@order, @order_wine]) do |f|%>
-                <%= f.input :quantity_of_wine %>
+                <%= f.input :quantity_of_wine, input_html: { value: 1 } %>
                 <%= f.input :wine_id, input_html: { value: winebox.wine_id }, as: :hidden %>
             </div>
         </div>
@@ -85,7 +85,7 @@
                 <%#= f.simple_fields_for :delivery do |d_f| %>
                 <%#= d_f.input :date, label: "Date de livraison", as: :string, required: false, input_html: {id: "delivery_date"}%>
                 <%#= end %>
-                <%= f.input :quantity_of_wine %>
+                <%= f.input :quantity_of_wine, input_html: { value: 1 } %>
                 <%#= f.input :delivery_address, input_html: { value: current_user.address }, as: :hidden%>
                 <%= f.input :wine_id, input_html: { value: winebox.wine_id }, as: :hidden %>
             </div>
