@@ -24,8 +24,11 @@
   display: flex;
   justify-content: space-evenly;
   padding: 40px 0 40px 0;
-  align-items:center;
   position: relative;
+}
+
+.container_show_wine .wine_show_card :not(.wine_show_card_ordering) {
+  align-items:center;
 }
 
 
@@ -100,13 +103,14 @@
 .container_show_wine .wine_show_card .wine_show_card_ordering {
   width:25%;
   text-align: center;
+  margin-top: 4.8%;
 }
 
 .container_show_wine .wine_show_card .wine_show_card_ordering_space {
   width:38vh;
   background: #EEEEEE;
   border-radius:10px;
-  height:50vh;
+  height:30vh;
   margin: 30% auto 0 auto;
   display: flex;
   flex-direction: column;
@@ -116,13 +120,15 @@
 
 .container_show_wine .wine_show_card .wine_show_card_ordering_space .quantity{
   margin-top:4vh;
+  margin-bottom: 3vh;
 }
 
 .container_show_wine .wine_show_card .wine_show_card_ordering_space .quantity .box_quantity {
   background: white;
   border-radius: 1vh;
   margin: 2vh 0 2vh 0;
-  height: 5vh;
+  height: 8vh;
+  width:15vh;
   display: flex;
   align-items: center;
   justify-content: center;
