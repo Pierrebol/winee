@@ -6,11 +6,11 @@ def fetch_wine_urls
   urls = []
 
   counter = 1
-  while counter < 2
+  while counter < 6
     url_general = "https://www.twil.fr/france.html?dir=desc&order=wine_note_avg&p=#{counter}"
     doc = Nokogiri::HTML(open(url_general).read)
     wines = doc.search(".no-text-decoration.no_focus")
-    wines.take(6).map do |wine|
+    wines.take(36).map do |wine|
       urls << wine.attributes["href"].value
        # scrape_wine(url)
     end

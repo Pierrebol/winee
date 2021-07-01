@@ -135,6 +135,88 @@ user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place 
 
 
 
+
+
+# puts "Creating wineboxes, should take less time, please be patient ^^"
+# Winebox.create!(user: user1, wine: wine_2, quantity_of_wine: 10)
+# Winebox.create!(user: user1, wine: wine_4, quantity_of_wine: 20)
+# Winebox.create!(user: user1, wine: wine_6, quantity_of_wine: 30)
+# Winebox.create!(user: user1, wine: wine_8, quantity_of_wine: 40)
+# Winebox.create!(user: user1, wine: wine_10, quantity_of_wine: 50)
+
+# Winebox.create!(user: user2, wine: wine_1, quantity_of_wine: 10)
+# Winebox.create!(user: user2, wine: wine_3, quantity_of_wine: 20)
+# Winebox.create!(user: user2, wine: wine_5, quantity_of_wine: 30)
+# Winebox.create!(user: user2, wine: wine_7, quantity_of_wine: 40)
+# Winebox.create!(user: user2, wine: wine_9, quantity_of_wine: 50)
+
+# Winebox.create!(user: user3, wine: wine_1, quantity_of_wine: 10)
+# Winebox.create!(user: user3, wine: wine_2, quantity_of_wine: 20)
+# Winebox.create!(user: user3, wine: wine_3, quantity_of_wine: 30)
+# Winebox.create!(user: user3, wine: wine_4, quantity_of_wine: 40)
+# Winebox.create!(user: user3, wine: wine_5, quantity_of_wine: 50)
+
+# Winebox.create!(user: user4, wine: wine_6, quantity_of_wine: 10)
+# Winebox.create!(user: user4, wine: wine_7, quantity_of_wine: 20)
+# Winebox.create!(user: user4, wine: wine_8, quantity_of_wine: 30)
+# Winebox.create!(user: user4, wine: wine_9, quantity_of_wine: 40)
+# Winebox.create!(user: user4, wine: wine_10, quantity_of_wine: 50)
+
+
+# puts "Creating reviews, should take less time, please be patient again zebi^^"
+# Review.create!(user: user1, wine: wine_1, comment: "ça casse la gorge et blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user1, wine: wine_2, comment: "ça casse la gorge et blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user1, wine: wine_3, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user1, wine: wine_4, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user1, wine: wine_5, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user1, wine: wine_6, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user1, wine: wine_7, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user1, wine: wine_8, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user1, wine: wine_9, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+
+# Review.create!(user: user2, wine: wine_1, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
+# Review.create!(user: user2, wine: wine_2, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
+# Review.create!(user: user2, wine: wine_3, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
+# Review.create!(user: user2, wine: wine_4, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
+# Review.create!(user: user2, wine: wine_5, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
+# Review.create!(user: user2, wine: wine_6, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
+# Review.create!(user: user2, wine: wine_7, comment: "ça casse la gorge blablablablablablablablablabla" , rating: 2)
+# Review.create!(user: user2, wine: wine_8, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
+# Review.create!(user: user2, wine: wine_9, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
+
+# Review.create!(user: user3, wine: wine_1, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user3, wine: wine_2, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user3, wine: wine_3, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user3, wine: wine_4, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user3, wine: wine_5, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user3, wine: wine_6, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user3, wine: wine_7, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user3, wine: wine_8, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user3, wine: wine_9, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+
+# Review.create!(user: user4, wine: wine_1, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user4, wine: wine_2, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user4, wine: wine_3, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user4, wine: wine_4, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user4, wine: wine_5, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user4, wine: wine_6, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user4, wine: wine_7, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user4, wine: wine_8, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+# Review.create!(user: user4, wine: wine_9, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
+
+puts "Fetching URLs"
+urls = fetch_wine_urls
+
+wines = urls.map do |url|
+  puts "Scraping #{url}"
+  data = scrape_wine(url)
+  wine = Wine.create(data[:wine])
+  file = URI.open(data[:photo])
+  wine.photo.attach(io: file, filename: 'sables_fauves.jpg', content_type: 'image/jpg')
+  wine.save!
+end
+
+
 wine_8 = Wine.new(name: 'Brastis pastis breton',
                   grape_variety: 'Pastis',
                   vineyard: 'Brastis',
@@ -290,84 +372,5 @@ file_18 = URI.open('https://upload.wikimedia.org/wikipedia/commons/8/8a/Coinreau
 wine_18.photo.attach(io: file_18, filename: 'cointreau.jpg', content_type: 'image/jpg')
 wine_18.save
 
-
-# puts "Creating wineboxes, should take less time, please be patient ^^"
-# Winebox.create!(user: user1, wine: wine_2, quantity_of_wine: 10)
-# Winebox.create!(user: user1, wine: wine_4, quantity_of_wine: 20)
-# Winebox.create!(user: user1, wine: wine_6, quantity_of_wine: 30)
-# Winebox.create!(user: user1, wine: wine_8, quantity_of_wine: 40)
-# Winebox.create!(user: user1, wine: wine_10, quantity_of_wine: 50)
-
-# Winebox.create!(user: user2, wine: wine_1, quantity_of_wine: 10)
-# Winebox.create!(user: user2, wine: wine_3, quantity_of_wine: 20)
-# Winebox.create!(user: user2, wine: wine_5, quantity_of_wine: 30)
-# Winebox.create!(user: user2, wine: wine_7, quantity_of_wine: 40)
-# Winebox.create!(user: user2, wine: wine_9, quantity_of_wine: 50)
-
-# Winebox.create!(user: user3, wine: wine_1, quantity_of_wine: 10)
-# Winebox.create!(user: user3, wine: wine_2, quantity_of_wine: 20)
-# Winebox.create!(user: user3, wine: wine_3, quantity_of_wine: 30)
-# Winebox.create!(user: user3, wine: wine_4, quantity_of_wine: 40)
-# Winebox.create!(user: user3, wine: wine_5, quantity_of_wine: 50)
-
-# Winebox.create!(user: user4, wine: wine_6, quantity_of_wine: 10)
-# Winebox.create!(user: user4, wine: wine_7, quantity_of_wine: 20)
-# Winebox.create!(user: user4, wine: wine_8, quantity_of_wine: 30)
-# Winebox.create!(user: user4, wine: wine_9, quantity_of_wine: 40)
-# Winebox.create!(user: user4, wine: wine_10, quantity_of_wine: 50)
-
-
-# puts "Creating reviews, should take less time, please be patient again zebi^^"
-# Review.create!(user: user1, wine: wine_1, comment: "ça casse la gorge et blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user1, wine: wine_2, comment: "ça casse la gorge et blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user1, wine: wine_3, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user1, wine: wine_4, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user1, wine: wine_5, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user1, wine: wine_6, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user1, wine: wine_7, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user1, wine: wine_8, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user1, wine: wine_9, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-
-# Review.create!(user: user2, wine: wine_1, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
-# Review.create!(user: user2, wine: wine_2, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
-# Review.create!(user: user2, wine: wine_3, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
-# Review.create!(user: user2, wine: wine_4, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
-# Review.create!(user: user2, wine: wine_5, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
-# Review.create!(user: user2, wine: wine_6, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
-# Review.create!(user: user2, wine: wine_7, comment: "ça casse la gorge blablablablablablablablablabla" , rating: 2)
-# Review.create!(user: user2, wine: wine_8, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
-# Review.create!(user: user2, wine: wine_9, comment: "ça casse la gorge blablablablablablablablablabla", rating: 2)
-
-# Review.create!(user: user3, wine: wine_1, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user3, wine: wine_2, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user3, wine: wine_3, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user3, wine: wine_4, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user3, wine: wine_5, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user3, wine: wine_6, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user3, wine: wine_7, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user3, wine: wine_8, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user3, wine: wine_9, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-
-# Review.create!(user: user4, wine: wine_1, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user4, wine: wine_2, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user4, wine: wine_3, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user4, wine: wine_4, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user4, wine: wine_5, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user4, wine: wine_6, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user4, wine: wine_7, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user4, wine: wine_8, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-# Review.create!(user: user4, wine: wine_9, comment: "ça casse la gorge blablablablablablablablablabla", rating: 5)
-
-puts "Fetching URLs"
-urls = fetch_wine_urls
-
-wines = urls.map do |url|
-  puts "Scraping #{url}"
-  data = scrape_wine(url)
-  wine = Wine.create(data[:wine])
-  file = URI.open(data[:photo])
-  wine.photo.attach(io: file, filename: 'sables_fauves.jpg', content_type: 'image/jpg')
-  wine.save!
-end
 
 puts "Done."
