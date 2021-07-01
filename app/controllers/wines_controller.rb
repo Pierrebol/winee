@@ -21,6 +21,7 @@ class WinesController < ApplicationController
     @spirits = Wine.where("category = 'Spiritueux'")
     @order_wine = OrderWine.new
     @delivery_product = DeliveryProduct.new
+    @appellations = Wine.all.map {|wine| wine.designation}.uniq
     @winebox = Winebox.new
     @user = User.where(id: current_user.id)
     @markers = @user.geocoded.map do |user|
@@ -48,6 +49,7 @@ class WinesController < ApplicationController
     @spirits = Wine.where("category = 'Spiritueux'")
     @order_wine = OrderWine.new
     @user = User.where(id: current_user.id)
+    @appellations = Wine.all.map {|wine| wine.designation}.uniq
     @winebox = Winebox.new
     if params[:search].present?
       @wines = Wine.search_by_name_grapevariety_vineyard_category_country_and_year(params[:search])

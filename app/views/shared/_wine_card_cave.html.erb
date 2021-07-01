@@ -2,14 +2,14 @@
   <h2> Mes bouteilles </h2>
   <div class="cards-all">
     <% @wineboxes.each do |winebox| %>
-      <div class="card" data-category="<%= winebox.wine.category %>" data-country="<%= winebox.wine.country %>" data-year="<%= winebox.wine.year%>">
+      <div class="card" data-category="<%= winebox.wine.category %>" data-country="<%= winebox.wine.designation %>" data-year="<%= winebox.wine.year%>">
         <%= link_to wine_path(winebox.wine), class: "link-wine" do%>
           <div class="card-wine-img">
             <%= cl_image_tag winebox.wine.photo.key, crop: :fill %>
           </div>
-          <div class="ratings">  
-            <i id="ratingstar"class="fas fa-star"></i> 
-            <p id="notation"> <%= winebox.wine.reviews.average(:rating) %> </p>   
+          <div class="ratings">
+            <i id="ratingstar"class="fas fa-star"></i>
+            <p id="notation"> <%= winebox.wine.reviews.average(:rating) %> </p>
           </div>
        <% end %>
         <div class="infos-quantity-actions">

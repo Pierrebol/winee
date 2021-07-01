@@ -135,47 +135,160 @@ user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place 
 
 
 
-# wine_8 = Wine.new(name: 'Brastis pastis breton',
-#                   grape_variety: 'Pastis',
-#                   vineyard: 'Brastis',
-#                   description: 'Avec sa bouteille en forme de phare, ce pastis breton fera sensation auprès de vos convives lors de vos apéros, vos barbecues d été et vos parties de pétanque !',
-#                   category: 'Spiritueux',
-#                   price: 32.90,
-#                   country: 'Bretagne',
-#                   year: '2020'
-#                   )
-# file_8 = URI.open('https://vandb-vandb-fr-storage.omn.proximis.com/Imagestorage/imagesSynchro/0/0/bd7b53f53b53b18ef7815c74b44853624e65d883_6963SAB030072_1.png')
-# wine_8.photo.attach(io: file_8, filename: 'brastis.jpg', content_type: 'image/jpg')
-# wine_8.save
+wine_8 = Wine.new(name: 'Brastis pastis breton',
+                  grape_variety: 'Pastis',
+                  vineyard: 'Brastis',
+                  description: 'Avec sa bouteille en forme de phare, ce pastis breton fera sensation auprès de vos convives lors de vos apéros, vos barbecues d été et vos parties de pétanque !',
+                  category: 'Spiritueux',
+                  price_cents: 32.90,
+                  country: 'Bretagne',
+                  year: '2020'
+                  )
+file_8 = URI.open('https://vandb-vandb-fr-storage.omn.proximis.com/Imagestorage/imagesSynchro/0/0/bd7b53f53b53b18ef7815c74b44853624e65d883_6963SAB030072_1.png')
+wine_8.photo.attach(io: file_8, filename: 'brastis.jpg', content_type: 'image/jpg')
+wine_8.save
 
 
 
-# wine_9 = Wine.new(name: 'Rhum Clément - Vieux VO',
-#                   grape_variety: 'Rhum agricole',
-#                   vineyard: 'Rhum Clément',
-#                   description: 'Bien équilibré',
-#                   category: 'Spiritueux',
-#                   price: 34,
-#                   country: 'Martinique',
-#                   year: '2020'
-#                   )
-# file_9 = URI.open('https://media.cdnws.com/_i/21035/1614/3826/15/hw755-vo.jpeg')
-# wine_9.photo.attach(io: file_9, filename: 'rhumclement.jpg', content_type: 'image/jpg')
-# wine_9.save
+wine_9 = Wine.new(name: 'Rhum Clément - Vieux VO',
+                  grape_variety: 'Rhum agricole',
+                  vineyard: 'Rhum Clément',
+                  description: 'Bien équilibré',
+                  category: 'Spiritueux',
+                  price_cents: 34,
+                  country: 'Martinique',
+                  year: '2020'
+                  )
+file_9 = URI.open('https://media.cdnws.com/_i/21035/1614/3826/15/hw755-vo.jpeg')
+wine_9.photo.attach(io: file_9, filename: 'rhumclement.jpg', content_type: 'image/jpg')
+wine_9.save
 
 
-# wine_10 = Wine.new(name: 'Gin Citadelle',
-#                    grape_variety: 'Gin',
-#                    vineyard: 'Citadelle',
-#                    description: 'Une merveille qui va même sans son tonic !',
-#                    category: 'Spiritueux',
-#                    price: 31,
-#                    country: 'France',
-#                    year: '2020'
-#                   )
-# file_10 = URI.open('https://www.whisky.fr/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/1/m1670a_1.jpg')
-# wine_10.photo.attach(io: file_10, filename: 'citadelle.jpg', content_type: 'image/jpg')
-# wine_10.save
+wine_10 = Wine.new(name: 'Gin Citadelle',
+                   grape_variety: 'Gin',
+                   vineyard: 'Citadelle',
+                   description: 'Une merveille qui va même sans son tonic !',
+                   category: 'Spiritueux',
+                   price_cents: 3100,
+                   country: 'France',
+                   year: '2020'
+                  )
+file_10 = URI.open('https://www.whisky.fr/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/1/m1670a_1.jpg')
+wine_10.photo.attach(io: file_10, filename: 'citadelle.jpg', content_type: 'image/jpg')
+wine_10.save
+
+
+wine_11 = Wine.new(name: 'Bombay Sapphire',
+                   grape_variety: 'Gin',
+                   vineyard: 'Bombay Sapphire',
+                   description: 'Une merveille qui va même sans son tonic !',
+                   category: 'Spiritueux',
+                   price_cents: 2400,
+                   country: 'France',
+                   year: '2020'
+                  )
+file_11 = URI.open('https://media-verticommnetwork1.netdna-ssl.com/wines/bombay-sapphire-434353.jpg')
+wine_11.photo.attach(io: file_11, filename: 'bombay.jpg', content_type: 'image/jpg')
+wine_11.save
+
+
+wine_12 = Wine.new(name: 'Nikka from the Barrel',
+                   grape_variety: 'Whisky',
+                   vineyard: 'Nikka',
+                   description: 'Une merveille avec quelques pierres et un bon cigare !',
+                   category: 'Spiritueux',
+                   price_cents: 4900,
+                   country: 'France',
+                   year: '2020'
+                  )
+file_12 = URI.open('https://www.laroutedesvins.com/658-big_default_2x/nikka-from-the-barrel-cask-50cl-51-4.jpg')
+wine_12.photo.attach(io: file_12, filename: 'nikka.jpg', content_type: 'image/jpg')
+wine_12.save
+
+
+
+wine_13 = Wine.new(name: 'Martini Bianco',
+                   grape_variety: 'Martini',
+                   vineyard: 'Martini',
+                   description: 'Une merveille qui va même sans son tonic !',
+                   category: 'Spiritueux',
+                   price_cents: 1200,
+                   country: 'Italie',
+                   year: '2020'
+                  )
+file_13 = URI.open('https://media-verticommnetwork1.netdna-ssl.com/wines/martini-bianco-1l-436238.jpg')
+wine_13.photo.attach(io: file_13, filename: 'martini.jpg', content_type: 'image/jpg')
+wine_13.save
+
+
+
+wine_14 = Wine.new(name: 'Trois Rivière',
+                   grape_variety: 'Rhum',
+                   vineyard: 'Rhum',
+                   description: 'Une merveille qui va même sans son tonic !',
+                   category: 'Spiritueux',
+                   price_cents: 1500,
+                   country: 'France',
+                   year: '2020'
+                  )
+file_14 = URI.open('https://images-na.ssl-images-amazon.com/images/I/712RTl7oFRL._AC_SL1500_.jpg')
+wine_14.photo.attach(io: file_14, filename: '3rivières.jpg', content_type: 'image/jpg')
+wine_14.save
+
+
+wine_15 = Wine.new(name: 'William Peel',
+                   grape_variety: 'Whisky',
+                   vineyard: 'William Peel',
+                   description: 'À boire à température ambiante, ou réchauffé 30 secondes au micro-ondes. Avec une larme de coca-cola !',
+                   category: 'Spiritueux',
+                   price_cents: 1500,
+                   country: 'France',
+                   year: '2020'
+                  )
+file_15 = URI.open('https://www.williampeel.com/content-assets/uploads/2016/04/william-peel-blended-scotch-whisky.png')
+wine_15.photo.attach(io: file_15, filename: 'peel.jpg', content_type: 'image/jpg')
+wine_15.save
+
+
+wine_16 = Wine.new(name: 'Get 27',
+                   grape_variety: 'Spiritueux',
+                   vineyard: 'Get',
+                   description: 'Bien frais avec des glaçons !',
+                   category: 'Spiritueux',
+                   price_cents: 1300,
+                   country: 'France',
+                   year: '2020'
+                  )
+file_16 = URI.open('https://images.plugwine.com/2/20862/zoom_20171106152410.405-2220477070.jpg')
+wine_16.photo.attach(io: file_16, filename: 'get.jpg', content_type: 'image/jpg')
+wine_16.save
+
+wine_17 = Wine.new(name: 'Diplomatico',
+                   grape_variety: 'Rhum',
+                   vineyard: 'Get',
+                   description: 'Bien frais avec des glaçons !',
+                   category: 'Spiritueux',
+                   price_cents: 3000,
+                   country: 'France',
+                   year: '2020'
+                  )
+file_17 = URI.open('https://legroscaviste.com/74679-large_default/rhum-diplomatico-reserva-exclusiva-jeroboam.jpg')
+wine_17.photo.attach(io: file_17, filename: 'get.jpg', content_type: 'image/jpg')
+wine_17.save
+
+
+wine_18 = Wine.new(name: 'Cointreau',
+                   grape_variety: 'Apéritif',
+                   vineyard: 'Cointreau',
+                   description: 'Bien frais avec des glaçons !',
+                   category: 'Spiritueux',
+                   price_cents: 1600,
+                   country: 'France',
+                   year: '2020'
+                  )
+file_18 = URI.open('https://upload.wikimedia.org/wikipedia/commons/8/8a/Coinreau_original_v4.jpg')
+wine_18.photo.attach(io: file_18, filename: 'cointreau.jpg', content_type: 'image/jpg')
+wine_18.save
 
 
 # puts "Creating wineboxes, should take less time, please be patient ^^"
