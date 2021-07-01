@@ -85,7 +85,7 @@
         <%= f.submit 'Se faire livrer', class: "btn btn-primary", hidden: true %>
       </div>
       <div class="btn-valider-payer">
-        <%= link_to "Valider et payer", validate_order_path(@delivery, total_price_cents: @total_price_cents), method: :patch, class:"btn btn-info" %>
+        <%= link_to "Valider et payer", update_delivery_path(@delivery, total_price_cents: @total_price_cents), method: :patch %>
       </div>
       <% end %>
     </div>

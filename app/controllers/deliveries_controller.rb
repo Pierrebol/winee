@@ -17,28 +17,28 @@ class DeliveriesController < ApplicationController
     end
   end
 
-  def validate
+  def update
     # changer le statut du cart
     @delivery = Delivery.find(params[:id])
     @delivery.total_price_cents = params[:total_price_cents].to_i
     @delivery.status = "pre-payment"
-    @delivery.save
+    @delivery.save!
 
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
-      type: "delivery",
-      name: @delivery.wines[0].name,
-      amount: @delivery.total_price_cents,
-      currency: 'eur',
-      quantity: 1
-    }],
-    success_url: 'http://2c422d7462fd.ngrok.io/confirmation',
-    cancel_url: order_url(@delivery)
-  )
+        type: 'delivery',
+        name: @delivery.wines[0].name,
+        amount: @delivery.total_price_cents,
+        currency: 'eur',
+        quantity: 1
+      }],
+      success_url: 'http://2c422d7462fd.ngrok.io/confirmation',
+      cancel_url: order_url(@delivery)
+    )
 
     @delivery.update(checkout_session_id: session.id)
-    redirect_to new_order_payment_path(@delivery), status: 303
+    redirect_to new_delivery_payment_path(@delivery), status: 303
   end
 
   def user_index
