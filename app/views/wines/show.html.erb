@@ -22,7 +22,7 @@
       <% end %>
     </div>
     <div class="wine_show_card_infos">
-      <h2><%= @wine.name %>, <%= @wine.year %></h2>
+      <h2><%= @wine.name %></h2>
       <div class="wine_show_card_infos_details">
         <h3><%= @wine.vineyard%>, <%= @wine.country%></h3>
         <p><%= @wine.description %></p>
@@ -32,6 +32,10 @@
           <h5>Informations</h5>
           <!-- <p><strong>Région : </strong></p> -->
           <p><strong>Appellation : </strong><%= @wine.designation %></p>
+          <% if @wine.category != "Effervescent" && @wine.category != "Spiritueux"%>
+            <p><strong>Millésime : </strong><%= @wine.year %></p>
+          <% end %>
+          <% console %>
           <p><strong>Catégorie : </strong><%= @wine.category %> </p>
           <p><strong>Cépages : </strong><%= @wine.grape_variety %></p>
           <p><strong>Contenance : </strong> 750 mL</p>
