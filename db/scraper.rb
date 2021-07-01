@@ -2,22 +2,15 @@ require 'open-uri'
 require 'nokogiri'
 
 def fetch_wine_urls
-  # top_url = "https://www.twil.fr/france.html?wine_color=Rouge&wine_note_avg_filter=3+et+plus&wine_size=75cl_50cl&wine_vintage=2000_2001_2002_2003_2004_2005_2006_2007_2008_2009_2010_2011_2012_2013_2014_2015_2016_2017_2018_2019_2020_2021"
-  top_url = "https://www.twil.fr/france.html?dir=desc&order=wine_note_avg"
-  doc = Nokogiri::HTML(open(top_url).read)
-  wines = doc.search(".no-text-decoration.no_focus")
+
   urls = []
 
-  wines.take(36).map do |wine|
-    urls << wine.attributes["href"].value
-    # scrape_wine(url)
-  end
-  counter = 2
+  counter = 1
   while counter < 4
     url_general = "https://www.twil.fr/france.html?dir=desc&order=wine_note_avg&p=#{counter}"
-    doc = Nokogiri::HTML(open(top_url).read)
+    doc = Nokogiri::HTML(open(url_general).read)
     wines = doc.search(".no-text-decoration.no_focus")
-    wines.take(36).map do |wine|
+    wines.take(6).map do |wine|
       urls << wine.attributes["href"].value
        # scrape_wine(url)
     end
