@@ -13,8 +13,7 @@ class DeliveriesController < ApplicationController
     @markers = @user.geocoded.map do |user|
       {
         lat: user.latitude,
-        lng: user.longitude,
-        image_url: helpers.asset_url('corkscrew.png')
+        lng: user.longitude
       }
     end
   end
