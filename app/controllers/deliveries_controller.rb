@@ -34,7 +34,7 @@ class DeliveriesController < ApplicationController
         currency: 'eur',
         quantity: 1
       }],
-      success_url: 'http://ce504a83ca5b.ngrok.io/confirmation',
+      success_url: 'http://winee.herokuapp.com/confirmation',
       cancel_url: order_url(@delivery)
     )
 
