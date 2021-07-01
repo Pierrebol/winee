@@ -22,6 +22,7 @@ class OrdersController < ApplicationController
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
+      type: "order",
       name: @order.wines[0].name,
       amount: @order.total_price_cents,
       currency: 'eur',
