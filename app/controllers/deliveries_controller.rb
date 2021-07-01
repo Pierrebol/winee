@@ -41,7 +41,10 @@ class DeliveriesController < ApplicationController
     redirect_to new_delivery_payment_path(@delivery), status: 303
   end
 
-  def user_index
+  def index
+    @deliveries = Delivery.all
+    @my_deliveries = Delivery.where(user: current_user)
+    @my_delivery_products = DeliveryProduct.where(user: current_user)
   end
 
   def destroy
