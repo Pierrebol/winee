@@ -14,3 +14,8 @@
 	transform: rotate(315deg); 
 	color: $my-primary;
 }
+
+.modal-footer {
+	display: flex;
+	justify-content: space-around;
+}

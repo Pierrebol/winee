@@ -82,7 +82,7 @@
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
-      <div class="modal-footer-livraison">
+      <div class="modal-footer">
         <button type="button" class="btn-annuler-modal-livraison" data-dismiss="modal">Annuler</button>
         <button class="btn-valider-payer-modal-livraison">
           <%= link_to "Valider et payer", update_delivery_path(@delivery, total_price_cents: @total_price_cents), method: :patch %>
