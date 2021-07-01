@@ -10,7 +10,6 @@ class Wine < ApplicationRecord
   validates :name, presence: true
   validates :grape_variety, presence: true
   validates :vineyard, presence: true
-  validates :description, presence: true, length: { minimum: 10 }
   validates :category, presence: true
   validates :price, presence: true
   validates :photo, presence: true
