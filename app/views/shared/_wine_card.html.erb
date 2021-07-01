@@ -40,7 +40,7 @@
             </div>
             <div class="form-order">
               <%= simple_form_for ([@order, @order_wine]) do |f|%>
-              <%= f.input :quantity_of_wine, input_html: { value:"1", min: 1 } %>
+              <%= f.input :quantity_of_wine, input_html: { value:"1", min: 1 }, :label => 'Quantité' %>
               <%= f.input :wine_id, input_html: { value: wine.id }, as: :hidden %>
             </div>
         </div>
