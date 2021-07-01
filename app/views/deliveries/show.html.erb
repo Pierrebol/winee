@@ -5,7 +5,7 @@
       <div class="contact-container">
         <h1>Votre panier de livraison Winee est vide</h1>
         <p>
-          <%= link_to "Trouver un vin qui vous plait !", wines_path %>
+          <%= link_to "Faites-vous livrer un vin qui vous plait !", my_cellar_path %>
         </p>
       </div>
     </div>
@@ -24,7 +24,7 @@
           </div>
         </div>
         <div class="cart-product-name">
-          <p> <%= Wine.find(delivery_product.wine_id).name %> <p> </br> 
+          <p> <%= Wine.find(delivery_product.wine_id).name %> <p> </br>
         </div>
         <div class="cart-product-quantity">
           <h5>Quantité</h5>

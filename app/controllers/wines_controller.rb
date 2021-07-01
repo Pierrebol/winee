@@ -9,8 +9,7 @@ class WinesController < ApplicationController
     @markers = @user.geocoded.map do |user|
       {
         lat: user.latitude,
-        lng: user.longitude,
-        image_url: helpers.asset_url('corkscrew.png')
+        lng: user.longitude
       }
     @reviews = Review.all
     end
@@ -27,8 +26,7 @@ class WinesController < ApplicationController
     @markers = @user.geocoded.map do |user|
       {
         lat: user.latitude,
-        lng: user.longitude,
-        image_url: helpers.asset_url('corkscrew.png')
+        lng: user.longitude
       }
     end
     if params[:search].present?

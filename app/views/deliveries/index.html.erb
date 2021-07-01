@@ -3,13 +3,28 @@
 </div>
 
 <div class="past_deliveries">
-  <%# @my_deliveries.where(status: ["paid"]).each do |delivery| %>
+  <% @my_deliveries.where(status: ["paid"]).each do |delivery| %>
     <div class="notification-content">
-      <p>Statut:</p>
-      <p>Date de livraison:</p>
-      <p>image</p>
-      <p>Nom du vin</p>
-      <p>Prix total</p>
+      <div class="cart-product">
+        <h5>Status</h5>
+        <p><%= delivery.status %> </p>
+      </div>
+      <% delivery.delivery_products.each do |delivery_product| %>
+        <p><%= cl_image_tag delivery_product.wine.photo.key, crop: :fill %> </p>
+        <div class="cart-product">
+          <h5>Nom du vin</h5>
+          <p><%= delivery_product.wine.name %> </p>
+        </div>
+        <div class="cart-product">
+          <h5>Quantité</h5>
+          <p><%= delivery_product.quantity_of_wine %> </p>
+        </div>
+      <% end %>
+      <div class="cart-product">
+        <h5>Prix total</h5>
+        <p><%= humanized_money_with_symbol delivery.total_price %> </p>
+      </div>
     </div>
-  <%# end %>
+    <div class="trait_dessous"></div>
+  <% end %>
 </div>
