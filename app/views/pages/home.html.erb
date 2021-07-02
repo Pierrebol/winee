@@ -57,7 +57,9 @@
                 </div>
                 <div class="ratings-carroussel">
                   <i id="ratingstar"class="fas fa-star"></i>
-                  <p id="notation"> <%= wine.reviews.average(:rating).round(2) %> </p>
+                  <% if rating != nil %>
+                    <p id="notation"> <%= wine.reviews.average(:rating).round(2) %> </p>
+                  <% end %>
                 </div>
               </div>
             </div>

@@ -9,7 +9,9 @@
           </div>
           <div class="ratings">
             <i id="ratingstar"class="fas fa-star"></i>
-            <p id="notation"> <%= winebox.wine.reviews.average(:rating).round(2) %> </p>
+            <% if rating != nil %>
+                <p id="notation"> <%= winebox.wine.reviews.average(:rating).round(2) %> </p>
+            <% end %>
           </div>
        <% end %>
         <div class="infos-quantity-actions">
