@@ -12,7 +12,9 @@
   <div class="wine_show_card">
     <div class="ratings-show">
       <i id="ratingstar"class="fas fa-star"></i>
-      <p id="notation"> <%= @wine.reviews.average(:rating).round(2) %> </p>
+      <% if @wine.reviews.average(:rating) != nil %>
+        <p id="notation"> <%= @wine.reviews.average(:rating).round(2) %> </p>
+      <% end %>
     </div>
     <button id="avis-btn" data-toggle="modal" data-target="#ReviewModal">
           Laisser un avis
