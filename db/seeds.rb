@@ -26,10 +26,10 @@ User.destroy_all
 
 puts "Creating Users..."
 
-user1 = User.create!(email: "bollack@edhec.com", password: "azerty", address:"33 rue Bonaparte Paris", username: 'Bobolalackiki')
-user2 = User.create!(email: "gasp@edhec.com", password: "azerty", address: "15 Rue de Lille Paris", username: 'Leplusbg')
-user3 = User.create!(email: "dubet@edhec.com", password: "azerty", address:"204 rue Saint-Maur Paris", username: 'chienhaineux78')
-user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place de la République Paris", username: 'Zuuuubi')
+user1 = User.create!(email: "bollack@edhec.com", password: "azerty", address:"33 rue Bonaparte Paris", username: 'Bollack')
+user2 = User.create!(email: "gasp@edhec.com", password: "azerty", address: "15 Rue de Lille Paris", username: 'Gasp')
+user3 = User.create!(email: "dubet@edhec.com", password: "azerty", address:"204 rue Saint-Maur Paris", username: 'Dubetho')
+user4 = User.create!(email: "dez@edhec.com", password: "azerty", address:"Place de la République Paris", username: 'Paul-29')
 
 
 # puts "Creating Wines (can take some time please wait and dance) ^^... AAAANNNNNNDYYYYYYYYY"
