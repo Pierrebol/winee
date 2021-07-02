@@ -1,3 +1,23 @@
 .confirmation-content-container {
   color: white;
 }
+
+.container-global-confirmation {
+  height: 70vh;
+}
+.contact-container-confirmation {
+  background-color: white;
+  width: 75%;
+  margin: auto auto;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#confirmation-title {
+  text-align: center;
+  color: white;
+  padding-top: 40px;
+  padding-bottom: 30px;
+}

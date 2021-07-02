@@ -1,49 +1,43 @@
 <% if @order_payment %>
-  <div class="container">
-    <div class="row py-4">
-      <!-- <div class="col-md-3"><%#= image_tag @order.teddy.photo_url, width: '100%' %></div> -->
-      <div class="col confirmation-content-container">
-        <h1>Confirmation de votre panier</h1>
-        <div class="content-confirmation">
-          <p>Votre commande contient <%= @order_payment.order_wines.count %> types de bouteilles différentes </p>
-          <p>Vous en avez pour un total de <strong><%= humanized_money_with_symbol @order_payment.total_price %></strong></p>
-        </div>
-        <button id="pay" class="btn btn-primary">Payer</button>
-        <script src="https://js.stripe.com/v3/"></script>
-        <script>
-          const paymentButton = document.getElementById('pay');
-          paymentButton.addEventListener('click', () => {
-            const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-            stripe.redirectToCheckout({
-              sessionId: '<%= @order_payment.checkout_session_id %>'
-            });
-          });
-        </script>
+  <h1 id="confirmation-title">Confirmation de votre panier</h1>
+    <div class="container-global-confirmation">
+    <div class="contact-container-confirmation">
+      <div class="contact-container-confirmation-content">
+        <p>Votre commande contient <%= @order_payment.order_wines.count %> types de bouteilles différents </p>
+        <p>Vous en avez pour un total de <strong><%= humanized_money_with_symbol @order_payment.total_price %></strong></p>
       </div>
+        <button id="pay" class="btn-annuler-modal-livraison">Payer</button>
     </div>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+      const paymentButton = document.getElementById('pay');
+      paymentButton.addEventListener('click', () => {
+        const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+        stripe.redirectToCheckout({
+          sessionId: '<%= @order_payment.checkout_session_id %>'
+        });
+      });
+    </script>
   </div>
 <% else %>
-  <div class="container">
-    <div class="row py-4">
-      <!-- <div class="col-md-3"><%#= image_tag @order.teddy.photo_url, width: '100%' %></div> -->
-      <div class="col confirmation-content-container">
-        <h1>Confirmation de votre panier</h1>
-        <div class="content-confirmation">
-          <p>Votre commande contient <%= @delivery_payment.delivery_products.count %> types de bouteilles différentes </p>
-          <p>Vous en avez pour un total de <strong><%= humanized_money_with_symbol @delivery_payment.total_price %></strong></p>
-        </div>
-        <button id="pay" class="btn btn-primary">Payer</button>
-        <script src="https://js.stripe.com/v3/"></script>
-        <script>
-          const paymentButton = document.getElementById('pay');
-          paymentButton.addEventListener('click', () => {
-            const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-            stripe.redirectToCheckout({
-              sessionId: '<%= @delivery_payment.checkout_session_id %>'
-            });
-          });
-        </script>
+  <h1 id="confirmation-title">Confirmation de votre panier</h1>
+    <div class="container-global-confirmation">
+    <div class="contact-container-confirmation">
+      <div class="contact-container-confirmation-content">
+        <p>Votre commande contient <%= @delivery_payment.delivery_products.count %> types de bouteilles différents </p>
+        <p>Vous en avez pour un total de <strong><%= humanized_money_with_symbol @delivery_payment.total_price %></strong></p>
       </div>
+        <button id="pay" class="btn-annuler-modal-livraison">Payer</button>
     </div>
-  </div>
+      <script src="https://js.stripe.com/v3/"></script>
+      <script>
+        const paymentButton = document.getElementById('pay');
+        paymentButton.addEventListener('click', () => {
+          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+          stripe.redirectToCheckout({
+            sessionId: '<%= @delivery_payment.checkout_session_id %>'
+          });
+        });
+      </script>
+    </div>
 <% end %>
